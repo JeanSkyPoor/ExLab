@@ -70,3 +70,23 @@ def test_check_join_header(browser):
     page.check_element_is_present('Join', MainPageLocators.JOIN_BUTTON_HEADER)
     page.click_on_button(*MainPageLocators.JOIN_BUTTON_HEADER)
     page.check_join_opened_correct_url('https://t.me/ExLab_registration_bot')
+
+
+def test_check_is_logo_gif_present(browser):
+    """Checking if logo_gif is present on page. [11] test"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.check_element_is_present('Logo_gif', MainPageLocators.LOGO_GIF)
+    page.matching_item_attribute('http://test.exlab.team/gif/logo.gif', 'src', MainPageLocators.LOGO_GIF)
+
+
+def test_is_your_opportunity_present(browser):
+    """Checking if your opportunity is present on page and check text under your opportunity. [12] test"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.check_element_is_present('Your opportunity', MainPageLocators.YOUR_OPPORTUNITY)
+    page.matching_text_from_element('Твоя возможность:', MainPageLocators.YOUR_OPPORTUNITY)
+    page.check_element_is_present('Text under your opportunity', MainPageLocators.TEXT_UNDER_YOUR_OPPORTUNITY)
+    page.checking_if_matching_text_in_element(['ПОЛУЧИТЬ ТОТ САМЫЙ ОПЫТ', 'ПОРАБОТАТЬ В КОМАНДЕ', 'СОЗДАТЬ ПРОЕКТ С НУЛЯ', 'ПОПОЛНИТЬ ПОРТФОЛИО'],\
+         MainPageLocators.TEXT_UNDER_YOUR_OPPORTUNITY)
+
