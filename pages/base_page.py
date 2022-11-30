@@ -28,7 +28,7 @@ class BasePage():
             return True
 
 
-    def check_current_url(self, correct_link: str):
+    def match_current_url(self, correct_link: str):
         """Matching current URL with correct URL
         correct_link like  'https://www.google.ru/'
         """
