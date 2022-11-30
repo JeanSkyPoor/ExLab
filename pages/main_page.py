@@ -17,6 +17,17 @@ class MainPage(BasePage):
                 assert color == '#ffffff', f"Theme's color is not white, have to be #ffffff, but have {color}"
 
 
+    def check_item_src(self, correct_src: str, item_locator: tuple) -> None:
+        """Matching correct_src and current src from element by 'webelement.get_attribute(src)
+
+        correct_src: str like 'http://test.exlab.team/gif/logo.gif'
+        item_locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped 
+        '"""
+        with allure.step("Checking src from item..."):
+            item_src = self.browser.find_element(*item_locator).get_attribute('src')
+            assert item_src == correct_src, f"SRC is not correct. Have to be {correct_src}, but have {item_src}"
+
+
     def check_element_is_present(self, button_name: str, button_locator: tuple) -> None:
         """
         Checking if an element exists on the page
