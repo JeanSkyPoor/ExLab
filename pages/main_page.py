@@ -6,6 +6,7 @@ class MainPage(BasePage):
 
     def check_background_color(self, theme_type:str) -> None:
         """Checking background color
+        
         theme_type: there are two options: 'dark' and 'white'. 
         """
         with allure.step("Checking background color..."):            
@@ -30,6 +31,7 @@ class MainPage(BasePage):
     def check_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
         """
         Checking anchor element after shifting
+
         anchor_element_name: how you wanna see anchor's name on report and assert error
         anchor_locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped 
         """
@@ -39,6 +41,6 @@ class MainPage(BasePage):
 
     def check_join_opened_correct_url(self, currect_url: str) -> None:
         """Switch to the last window handless and check current URL and currect URL"""
-        with allure.step(f"Checking url have to be... {currect_url}"):
+        with allure.step(f"Checking url, have to be... {currect_url}"):
             self.browser.switch_to.window(self.browser.window_handles[-1])
             assert self.checking_url_to_be(currect_url), f'URL is not correct. Have to be {currect_url}, but {self.browser.current_url}'
