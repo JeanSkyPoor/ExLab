@@ -14,7 +14,6 @@ class MainPage(BasePage):
                 assert color == '#111111', f"Theme's color is not black, have to be #111111, but have {color}"
             if theme_type == 'white':
                 assert color == '#ffffff', f"Theme's color is not white, have to be #, but have {color}"
-            
 
 
     def check_item_is_present(self, button_name: str, button_locator: tuple) -> None:
@@ -36,10 +35,10 @@ class MainPage(BasePage):
         """
         with allure.step(f"Checking {anchor_element_name} after shifting..."):
             assert self.checking_visibility_of_element_located(*anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
-
+            
 
     def check_join_opened_correct_url(self, currect_url: str) -> None:
-        """Switch to the last window handless and check current URL and currect URL """
+        """Switch to the last window handless and check current URL and currect URL"""
         with allure.step(f"Checking url have to be... {currect_url}"):
             self.browser.switch_to.window(self.browser.window_handles[-1])
             assert self.checking_url_to_be(currect_url), f'URL is not correct. Have to be {currect_url}, but {self.browser.current_url}'

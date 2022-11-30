@@ -26,7 +26,6 @@ def browser(request):
     height_window = request.config.getoption('height_window')
 
     if browser_name == "chrome":
-        print("\nstart chrome browser for test..")
         # Чтобы указать язык браузера, использую класс Options и метод add_experimental_option
         # Без браузерный режим для 'Chrome'
         options = Options()
@@ -77,7 +76,6 @@ def browser(request):
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox or yandex")
     yield browser
-    print("\nquit browser..")
     browser.quit()
 
 

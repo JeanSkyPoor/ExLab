@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.color import Color
 from pages.locators import MainPageLocators
-import pytest
 
 class BasePage():    
     def __init__(self, browser, link):
