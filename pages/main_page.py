@@ -6,7 +6,7 @@ class MainPage(BasePage):
 
     def check_background_color(self, theme_type:str) -> None:
         """Checking background color
-        
+
         theme_type: there are two options: 'dark' and 'white'. 
         """
         with allure.step("Checking background color..."):            
@@ -14,10 +14,10 @@ class MainPage(BasePage):
             if theme_type == 'dark':
                 assert color == '#111111', f"Theme's color is not black, have to be #111111, but have {color}"
             if theme_type == 'white':
-                assert color == '#ffffff', f"Theme's color is not white, have to be #, but have {color}"
+                assert color == '#ffffff', f"Theme's color is not white, have to be #ffffff, but have {color}"
 
 
-    def check_item_is_present(self, button_name: str, button_locator: tuple) -> None:
+    def check_element_is_present(self, button_name: str, button_locator: tuple) -> None:
         """
         Checking if an element exists on the page
 
