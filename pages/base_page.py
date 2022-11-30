@@ -14,12 +14,30 @@ class BasePage():
 
     def open(self) -> None:
         """Open Page using added browser and link"""
+
         with allure.step('Open Page...'):
             self.browser.get(self.link)
 
+
+    def get_element_attribute(self, element_locator: tuple, attribute_element=None):
+        """Get element's attribute and return it"""
+
+        return self.browser.find_element(*element_locator).get_attribute(attribute_element)
+
+
+    def get_element_attribute(self, locator: tuple, attribute: str):
+        """Get attribute from item
+
+        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped \n
+        attribute: str like 'src'
+        """
+        with allure.step(f"Getting {attribute} from {locator} item..."):
+            return self.browser.find_element(*locator).get_attribute(attribute)
     
+
     def is_element_present(self, how, what) -> bool:
         """Сhecking for the presence of an element on the page""" 
+
         with allure.step("Checking present of element"):
             try:
                 self.browser.find_element(how, what)
@@ -30,6 +48,7 @@ class BasePage():
 
     def match_current_url(self, correct_link: str):
         """Matching current URL with correct URL
+        
         correct_link like  'https://www.google.ru/'
         """
         with allure.step(f"Checking URL link... Have to be {correct_link}"):
