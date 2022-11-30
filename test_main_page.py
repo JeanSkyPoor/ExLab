@@ -62,7 +62,7 @@ def test_click_sun_icon(browser):
 
 
 def test_check_join_header(browser):
-    """CHecking Join button open registration TG-bot"""
+    """CHecking Join button open registration TG-bot. [9] test"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
     page.check_item_is_present('Join', MainPageLocators.JOIN_BUTTON_HEADER)
