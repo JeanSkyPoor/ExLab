@@ -44,7 +44,6 @@ def browser(request):
 
     elif browser_name == "firefox":
 
-        print("\nstart firefox browser for test..")
         # Без браузерный режим для 'Firefox', через импорт библиотеки 'os'
         if headless == 'true':
             os.environ['MOZ_HEADLESS'] = '1'
