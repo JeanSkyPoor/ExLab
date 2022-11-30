@@ -6,7 +6,7 @@ def test_checking_url_and_theme_color(browser):
     """Checking current URL and theme's color. [1] test"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
-    page.check_current_url('http://test.exlab.team/')
+    page.match_current_url('http://test.exlab.team/')
     page.check_background_color('black')
 
 
