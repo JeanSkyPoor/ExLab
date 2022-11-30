@@ -47,9 +47,9 @@ def test_check_startup_for_header(browser):
     """Checking StartUp For button and shift to StartUp For block. [6] test"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
-    page.check_item_is_present('Mentors', MainPageLocators.STARTUP_FOR_BUTTON_HEADER)
+    page.check_item_is_present('StartUp For', MainPageLocators.STARTUP_FOR_BUTTON_HEADER)
     page.click_on_button(*MainPageLocators.STARTUP_FOR_BUTTON_HEADER)
-    page.check_anchor_element_after_shifting('Mentors', MainPageLocators.STARTUP_FOR_ANCHOR)
+    page.check_anchor_element_after_shifting('StartUp For', MainPageLocators.STARTUP_FOR_ANCHOR)
 
 
 def test_click_sun_icon(browser):
