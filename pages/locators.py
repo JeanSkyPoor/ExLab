@@ -14,9 +14,16 @@ class MainPageLocators():
     STARTUP_FOR_BUTTON_HEADER = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4)')
     JOIN_BUTTON_HEADER = (By.CSS_SELECTOR, 'div.sc-hAZoDl.hrEelO')
     SUN_ICON = (By.CSS_SELECTOR, 'div.sc-fnykZs.fEkGUM')
-    LOGO_GIF = (By.CSS_SELECTOR, 'div.sc-idiyUo.jKIKBm > img')
+    
 
     ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '#about')
     PROJECT_ANCHOR = (By.CSS_SELECTOR, '#projects')
     MENTORS_ANCHOR = (By.CSS_SELECTOR, '#mentors')
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '#startup')
+
+    
+
+    #Block YOUR OPPORTUNITY
+    LOGO_GIF = (By.CSS_SELECTOR, 'div.sc-idiyUo.jKIKBm > img')
+    YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gupdxc')
+    TEXT_UNDER_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-bBrHrO.lmeoyY')
