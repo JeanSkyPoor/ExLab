@@ -8,7 +8,7 @@ def test_checking_url_and_theme_color(browser):
     page.open()
     page.match_current_url('http://test.exlab.team/')
     page.check_background_color('black')
-    page.check_item_src('http://test.exlab.team/gif/logo.gif', MainPageLocators.LOGO_GIF)
+    page.matching_item_attribute('http://test.exlab.team/gif/logo.gif', MainPageLocators.LOGO_GIF, 'src')
 
 
 @pytest.mark.skip(reason="Refresh method is not added")
