@@ -18,7 +18,8 @@ class BasePage():
             self.browser.get(self.link)
 
     
-    def is_element_present(self, how, what) -> bool: 
+    def is_element_present(self, how, what) -> bool:
+        """Сhecking for the presence of an element on the page""" 
         with allure.step("Checking present of element"):
             try:
                 self.browser.find_element(how, what)
@@ -28,7 +29,7 @@ class BasePage():
 
 
     def check_current_url(self, correct_link: str):
-        """Checking current URL with correct link
+        """Matching current URL with correct URL
         correct_link like  'https://www.google.ru/'
         """
         with allure.step(f"Checking URL link... Have to be {correct_link}"):
