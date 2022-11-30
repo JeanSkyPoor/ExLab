@@ -33,7 +33,19 @@ class BasePage():
         """
         with allure.step(f"Getting {attribute} from {locator} item..."):
             return self.browser.find_element(*locator).get_attribute(attribute)
+
     
+    def get_element_text(self, locator: tuple) -> str:
+        """Get text from item
+        
+        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped
+        """
+        with allure.step(f"Getting text from {locator} item..."):
+            try:                
+                return self.browser.find_element(*locator).text
+            except:
+                return 'None'
+
 
     def is_element_present(self, how, what) -> bool:
         """Сhecking for the presence of an element on the page""" 
