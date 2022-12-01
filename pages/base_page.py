@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.color import Color
 from pages.locators import MainPageLocators
+from selenium.webdriver.common.keys import Keys
 
 class BasePage():    
     def __init__(self, browser, link):
@@ -28,7 +29,7 @@ class BasePage():
     def get_element_attribute(self, locator: tuple, attribute: str):
         """Get attribute from item
 
-        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped \n
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped \n
         attribute: str like 'src'
         """
         with allure.step(f"Getting {attribute} from {locator} item..."):
@@ -38,13 +39,13 @@ class BasePage():
     def get_element_text(self, locator: tuple) -> str:
         """Get text from item
         
-        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
         """
         with allure.step(f"Getting text from {locator} item..."):
             try:                
                 return self.browser.find_element(*locator).text
             except:
-                return 'None'
+                return None
 
 
     def is_element_present(self, how, what) -> bool:
@@ -89,9 +90,19 @@ class BasePage():
         return True
 
 
-    def checking_url_to_be(self,correct_url, timeout=4) ->bool:
+    def checking_url_to_be(self, correct_url: str, timeout=4) ->bool:
         try:
             WebDriverWait(self.browser, timeout, 1).until(EC.url_to_be(correct_url))
         except TimeoutException:
             return False
         return True
+        
+
+    def scroll_down_to_element(self, locator: tuple):
+        """Scroll down to element with locator
+        
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
+        """
+        with allure.step(f"Searching element with {locator} and scroll to him..."):
+            element = self.browser.find_element(*locator)
+            self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
