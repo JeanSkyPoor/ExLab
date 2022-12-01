@@ -1,6 +1,7 @@
 from pages.locators import MainPageLocators
 from pages.main_page import MainPage
 import pytest
+import time
 
 def test_checking_url_and_theme_color(browser):
     """Checking current URL and theme's color. [1] test"""
@@ -80,7 +81,7 @@ def test_check_is_logo_gif_present(browser):
     page.matching_item_attribute('http://test.exlab.team/gif/logo.gif', 'src', MainPageLocators.LOGO_GIF)
 
 
-def test_is_your_opportunity_present(browser):
+def test_is_your_opportunity_block_present(browser):
     """Checking if your opportunity is present on page and check text under your opportunity. [12] test"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
@@ -89,4 +90,40 @@ def test_is_your_opportunity_present(browser):
     page.check_element_is_present('Text under your opportunity', MainPageLocators.TEXT_UNDER_YOUR_OPPORTUNITY)
     page.checking_if_matching_text_in_element(['ПОЛУЧИТЬ ТОТ САМЫЙ ОПЫТ', 'ПОРАБОТАТЬ В КОМАНДЕ', 'СОЗДАТЬ ПРОЕКТ С НУЛЯ', 'ПОПОЛНИТЬ ПОРТФОЛИО'],\
          MainPageLocators.TEXT_UNDER_YOUR_OPPORTUNITY)
+
+
+def test_is_about_us_block_present(browser):
+    """Checking if About Us block is present on page and check text under About Us. [13] test"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.scroll_down_to_element(MainPageLocators.ABOUT_US_ANCHOR)
+    page.check_element_is_present('About Us', MainPageLocators.ABOUT_US_MAIN)
+    page.matching_text_from_element('О нас', MainPageLocators.ABOUT_US_MAIN)
+    page.check_element_is_present('About Us text', MainPageLocators.ABOUT_US_BLOCK_TEXT)
+    page.checking_if_matching_text_in_element(['каждый', 'выделится', 'подготовленного'], MainPageLocators.ABOUT_US_BLOCK_TEXT)
+
+
+def test_is_why_exlab_present(browser):
+    """Checking if Why ExLab block is present on page and check text under Whe ExLab. [14] test"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.scroll_down_to_element(MainPageLocators.WHY_EXLAB_ANCHOR)
+    page.scroll_down_to_element(MainPageLocators.WHY_EXLAB_MAIN)
+    page.check_element_is_present('Why ExLab', MainPageLocators.WHY_EXLAB_MAIN)
+    page.matching_text_from_element('Почему ExLab?', MainPageLocators.WHY_EXLAB_MAIN)
+    page.check_element_is_present('Why ExLab block text', MainPageLocators.WHY_EXLAB_BLOCK_TEXT)
+    page.checking_if_matching_text_in_element(['Участие', 'Поддержка', 'рекрутеры', 'оригинальные'], MainPageLocators.WHY_EXLAB_BLOCK_TEXT)
+
+
+def test_is_why_exlab_join_present(browser):
+    """Checking if Join button on why exlab block is present and click it. [15] test"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.scroll_down_to_element(MainPageLocators.WHY_EXLAB_ANCHOR)
+    page.check_element_is_present('Присоединиться', MainPageLocators.WHY_EXLAB_JOIN)
+    page.matching_text_from_element('Присоединиться', MainPageLocators.WHY_EXLAB_JOIN)
+    page.click_on_button(*MainPageLocators.WHY_EXLAB_JOIN)
+    page.check_join_opened_correct_url('https://t.me/ExLab_registration_bot')
+
+
 
