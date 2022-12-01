@@ -90,6 +90,7 @@ class BasePage():
             current_url = self.get_current_url()            
             assert current_url == correct_url, f"URL is wrong. Have to be {correct_url}, but have {current_url}"
 
+
     def click_on_element(self, locator) -> None:
         """Click on element using locator\n
 

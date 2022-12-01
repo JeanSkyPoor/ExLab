@@ -22,10 +22,8 @@ class MainPage(BasePage):
         """Checking About Us button in HEADER is present"""
         assert self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not found"
 
-
     def click_on_about_us_header(self):
         self.click_on_element(MainPageLocators.ABOUT_US_HEADER_BUTTON)
-
 
     def checking_about_us_anchor_after_shifting(self):
         self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
