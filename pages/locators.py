@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     
-    LINK = 'https://www.m-translate.ru'
+    LINK = 'http://test.exlab.team/'
     
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
 
