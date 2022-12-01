@@ -2,14 +2,22 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     
-    LINK = 'http://test.exlab.team/'
+    LINK = 'https://www.m-translate.ru'
     
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
 
     #Block HEADER
+    ABOUT_US_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1) > a')
+    PROJECTS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(2) > a')
+    MENTORS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(3) > a')
+    STARTUP_FOR_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4) > a') 
 
-
-
+    #Anchor to blocks
+    ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '#about')
+    PROJECTS_ANCHOR = (By.CSS_SELECTOR, '#projects')
+    MENTORS_ANCHOR = (By.CSS_SELECTOR, '#mentors')
+    STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '#startup')
+    
 
 
 
@@ -42,7 +50,7 @@ class MainPageLocators():
     # PROJECT_ANCHOR = (By.CSS_SELECTOR, '#projects')
     # MENTORS_ANCHOR = (By.CSS_SELECTOR, '#mentors')
     # STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '#startup')
-    # WHY_EXLAB_ANCHOR = (By.CSS_SELECTOR, 'div.sc-jdAMXn.iDQeOI')
+    
 
     # #Block YOUR OPPORTUNITY
     # LOGO_GIF = (By.CSS_SELECTOR, 'div.sc-idiyUo.jKIKBm > img')
