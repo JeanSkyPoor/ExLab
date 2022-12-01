@@ -24,74 +24,74 @@ def test_display_logo_ExLab(browser):
 
 
 def test_about_us_header(browser):
-    """Test About Us button in HEADER. [3] test from check-list"""
+    """Test 'About Us' button in HEADER. [3] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if About Us HEADER element exists"):
+    with allure.step("Step 2. Сhecking if 'About Us' HEADER element exists"):
         page.checking_about_us_header_is_present()
 
-    with allure.step("Step 3. Click on About us in HEADER"):
+    with allure.step("Step 3. Click on 'About us' in HEADER"):
         page.click_on_about_us_header()
 
-    with allure.step("Step 4. Checking About Us anchor element after shifting"):
+    with allure.step("Step 4. Checking 'About Us' anchor element after shifting"):
         page.checking_about_us_anchor_after_shifting()
 
 
 def test_projects_header(browser):
-    """Test Projects button in HEADER. [4] test from check-list"""
+    """Test 'Projects' button in HEADER. [4] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if Projects HEADER element exists"):
+    with allure.step("Step 2. Сhecking if 'Projects' HEADER element exists"):
         page.checking_projects_header_is_present()
 
-    with allure.step("Step 3. Click on Projects in HEADER"):
+    with allure.step("Step 3. Click on 'Projects' in HEADER"):
         page.click_on_projects_header() 
 
-    with allure.step("Step 4. Checking Projects anchor element after shifting"):
+    with allure.step("Step 4. Checking 'Projects' anchor element after shifting"):
         page.checking_projects_anchor_after_shifting()
 
 
 def test_mentors_header(browser):
-    """Test Mentors button in HEADER. [5] test from check-list"""
+    """Test 'Mentors' button in HEADER. [5] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if Mentors HEADER element exists"):
+    with allure.step("Step 2. Сhecking if 'Mentors' HEADER element exists"):
         page.checking_mentors_header_is_present()
 
-    with allure.step("Step 3. Click on Mentors in HEADER"):
+    with allure.step("Step 3. Click on 'Mentors' in HEADER"):
         page.click_on_mentors_header() 
 
-    with allure.step("Step 4. Checking Mentors anchor element after shifting"):
+    with allure.step("Step 4. Checking 'Mentors' anchor element after shifting"):
         page.checking_mentors_anchor_after_shifting()
 
 
 def test_startup_for_header(browser):
-    """Test StartUp for button in HEADER. [6] test from check-list"""
+    """Test 'StartUp for' button in HEADER. [6] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if StartUp for HEADER element exists"):
+    with allure.step("Step 2. Сhecking if 'StartUp for' HEADER element exists"):
         page.checking_startup_for_header_is_present()
 
-    with allure.step("Step 3. Click on StartUp for in HEADER"):
+    with allure.step("Step 3. Click on 'StartUp for' in HEADER"):
         page.click_on_startup_for_header() 
 
-    with allure.step("Step 4. Checking StartUp for anchor element after shifting"):
+    with allure.step("Step 4. Checking 'StartUp for' anchor element after shifting"):
         page.checking_startup_for_anchor_after_shifting()
 
 
