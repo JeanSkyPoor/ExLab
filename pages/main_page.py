@@ -26,7 +26,7 @@ class MainPage(BasePage):
 
         correct_src: str like 'http://test.exlab.team/gif/logo.gif'\n
         attribute: str like 'src' \n
-        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped         
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped         
         '"""
 
         with allure.step(f"Checking item's {attribute} ..."):
@@ -38,7 +38,7 @@ class MainPage(BasePage):
         """Matching correct text and text from 'webelement.text
         
         correct_text: str like 'Твоя возможность' \n
-        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
         '"""
         with allure.step(f"Matching text from item and correct_text..."):
             text = self.get_element_text(locator)
@@ -49,7 +49,7 @@ class MainPage(BasePage):
         """Checking if an element exists on the page
 
         button_name: how you wanna see button's name on report and assert error \n
-        button_locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped 
+        button_locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped 
         """
 
         with allure.step(f"Checking {button_name} on page..."):
@@ -60,7 +60,7 @@ class MainPage(BasePage):
         """Checking anchor element after shifting
 
         anchor_element_name: how you wanna see anchor's name on report and assert error \n
-        anchor_locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped 
+        anchor_locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped 
         """
 
         with allure.step(f"Checking {anchor_element_name} after shifting..."):
@@ -87,9 +87,10 @@ class MainPage(BasePage):
         """Checking if items from matching_list in text by iterator
         
         match_list: list like ['ПОЛУЧИТЬ ТОТ САМЫЙ ОПЫТ', 'ПОРАБОТАТЬ В КОМАНДЕ'] \n
-        locator: tuple like (By.CSS_SECELTOR, 'random selector'). Not unzipped
+        locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
         """
         with allure.step("Getting text and check in matching_list"):
             text = self.get_element_text(locator)
             assert self.iterator_mathcing_list(matching_list, text), f"Text is wrong. Not found one or more elements from {matching_list} in {text}"
             
+
