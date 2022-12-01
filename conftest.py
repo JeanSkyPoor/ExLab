@@ -54,7 +54,7 @@ def browser(request):
         fp.set_preference("intl.accept_languages", user_language)
         browser = webdriver.Firefox(firefox_profile=fp)
         browser.set_window_size(width_window, height_window)
-        browser.implicitly_wait(10)  # Не явное ожидание элементов 10 сек.
+        browser.implicitly_wait(5)  # Не явное ожидание элементов 10 сек.
 
 
     elif browser_name == "yandex":
