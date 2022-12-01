@@ -1,44 +1,67 @@
+from pages.locators import MainPageLocators
 from pages.base_page import BasePage
 import allure
 import re
 
-from pages.locators import MainPageLocators
+
 
 
 class MainPage(BasePage):
 
-    def checking_landing_url(self, correct_url: str):
-        """Checking that landing URL is correct\n
-        
-        correct_url: str like 'https://www.google.ru/'
-        """
-        self.matching_current_and_correct_urls(correct_url)
+    def checking_landing_url(self,):
+        """Checking that landing URL is correct"""
+        self.matching_current_and_correct_urls('http://test.exlab.team/')
 
 
-    def checking_dark_mode_on(self, locator: tuple, attribute_name: str, correct_value: str):
-        """Checking if dark mode on\n
-        
-        locator: tuple like (By.CSS_SELECTOR, '#about')
-        attribute_name: str attribute's name what we want to get like 'src'
-        correct_value: str value
-        """
-        self.matching_attribute_value_with_correct_value(locator, attribute_name, correct_value)
+    def checking_dark_mode_on(self):
+        """Checking if dark mode on"""
+        self.matching_attribute_value_with_correct_value(MainPageLocators.THEME, 'class', 'sc-bczRLJ ckyTig')
 
 
+    def checking_about_us_header_is_present(self):
+        """Checking About Us button in HEADER is present"""
+        assert self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not found"
 
 
+    def click_on_about_us_header(self):
+        self.click_on_element(MainPageLocators.ABOUT_US_HEADER_BUTTON)
 
 
+    def checking_about_us_anchor_after_shifting(self):
+        self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
 
 
+    def checking_projects_header_is_present(self):
+        """Checking Project button in HEADER is present"""
+        assert self.is_element_present(MainPageLocators.PROJECTS_HEADER_BUTTON), "Project button in HEADER is not found"
+
+    def click_on_projects_header(self):
+        self.click_on_element(MainPageLocators.PROJECTS_HEADER_BUTTON)
+
+    def checking_projects_anchor_after_shifting(self):
+        self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
 
 
+    def checking_mentors_header_is_present(self):
+        """Checking Mentors button in HEADER is present"""
+        assert self.is_element_present(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not found"
+
+    def click_on_mentors_header(self):
+        self.click_on_element(MainPageLocators.MENTORS_HEADER_BUTTON)
+
+    def checking_mentors_anchor_after_shifting(self):
+        self.checking_anchor_element_after_shifting('Mentors', MainPageLocators.MENTORS_ANCHOR)
 
 
+    def checking_startup_for_header_is_present(self):
+        """Checking StartUp for button in HEADER is present"""
+        assert self.is_element_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON), "StartUp for button in HEADER is not found"
 
+    def click_on_startup_for_header(self):
+        self.click_on_element(MainPageLocators.STARTUP_FOR_HEADER_BUTTON)
 
-
-
+    def checking_startup_for_anchor_after_shifting(self):
+        self.checking_anchor_element_after_shifting('StartUp for', MainPageLocators.STARTUP_FOR_ANCHOR)
 
 
 
