@@ -90,9 +90,32 @@ class BasePage():
             current_url = self.get_current_url()            
             assert current_url == correct_url, f"URL is wrong. Have to be {correct_url}, but have {current_url}"
 
+    def click_on_element(self, locator) -> None:
+        """Click on element using locator\n
+
+        locator: tuple like (By.CSS_SELECTOR, '#about')
+        """
+        with allure.step(f"Cliking on {locator}"):
+           self.browser.find_element(*locator).click() 
 
 
+    def checking_visibility_of_element_located(self, locator: tuple, timeout=4) -> None:
+        try:
+            WebDriverWait(self.browser, timeout, 1).until(EC.visibility_of_element_located((locator)))
+        except TimeoutException:
+            return False
+        return True
 
+
+    def checking_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
+        """Checking anchor element after shifting\n
+
+        anchor_element_name: how you wanna see anchor's name on report and assert error
+        anchor_locator: tuple like (By.CSS_SELECTOR, '#about')
+        """
+
+        with allure.step(f"Checking {anchor_element_name} after shifting"):
+            assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
 
 
 
