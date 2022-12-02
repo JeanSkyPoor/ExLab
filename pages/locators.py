@@ -13,10 +13,10 @@ class MainPageLocators():
     STARTUP_FOR_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4)') 
 
     #Anchor to blocks
-    ABOUT_US_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(2) > #about')
-    PROJECTS_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(3)')
-    MENTORS_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(4)')
-    STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(5)')
+    ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '[id=about]')
+    PROJECTS_ANCHOR = (By.CSS_SELECTOR, '[id=projects]')
+    MENTORS_ANCHOR = (By.CSS_SELECTOR, '[id=mentors]')
+    STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
     
 
 
@@ -45,12 +45,7 @@ class MainPageLocators():
     # JOIN_BUTTON_HEADER = (By.CSS_SELECTOR, 'div.sc-hAZoDl.hrEelO')
     # SUN_ICON = (By.CSS_SELECTOR, 'div.sc-fnykZs.fEkGUM')
     
-    # #Anchor to blocks
-    # ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '#about')
-    # PROJECT_ANCHOR = (By.CSS_SELECTOR, '#projects')
-    # MENTORS_ANCHOR = (By.CSS_SELECTOR, '#mentors')
-    # STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '#startup')
-    
+        
 
     # #Block YOUR OPPORTUNITY
     # LOGO_GIF = (By.CSS_SELECTOR, 'div.sc-idiyUo.jKIKBm > img')
