@@ -2,21 +2,21 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     
-    LINK = 'http://test.exlab.team/'
+    LINK = 'https://exlab.team/'
     
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
 
     #Block HEADER
-    ABOUT_US_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1) > a')
-    PROJECTS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(2) > a')
-    MENTORS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(3) > a')
-    STARTUP_FOR_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4) > a') 
+    ABOUT_US_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1)')
+    PROJECTS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(2)')
+    MENTORS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(3)')
+    STARTUP_FOR_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4)') 
 
     #Anchor to blocks
-    ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '#about')
-    PROJECTS_ANCHOR = (By.CSS_SELECTOR, '#projects')
-    MENTORS_ANCHOR = (By.CSS_SELECTOR, '#mentors')
-    STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '#startup')
+    ABOUT_US_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(2) > #about')
+    PROJECTS_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(3)')
+    MENTORS_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(4)')
+    STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv:nth-of-type(5)')
     
 
 
