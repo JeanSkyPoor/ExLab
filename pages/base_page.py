@@ -23,7 +23,8 @@ class BasePage():
     def is_element_present(self, locator: tuple) -> bool:
         """Сhecking for the presence of an element on the page\n
 
-        locator: tuple like (By.CSS_SELECTOR, '#about')
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
         """ 
         with allure.step(f"Checking if element is present with {locator}"):
             try:
@@ -36,7 +37,8 @@ class BasePage():
     def get_text_from_element(self, locator: tuple) -> str:
         """Getting text from element and return it\n
         
-        locator: tuple like (By.CSS_SELECTOR, '#about')
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
         """
         with allure.step(f"Getting text from {locator} element"):
             return self.browser.find_element(*locator).text
@@ -45,8 +47,9 @@ class BasePage():
     def matching_element_text_with_correct_text(self, locator: tuple, correct_text: str) -> None:
         """Matching text from element and correct text\n
         
-        locator: tuple like (By.CSS_SELECTOR, '#about')
-        correct_text: str value
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - correct_text: str value
         """
         with allure.step("Matching element text and correct text"):
             element_text = self.get_text_from_element(locator)
@@ -56,8 +59,9 @@ class BasePage():
     def get_attribute_value(self, locator: tuple, attribute_name: str) -> str:
         """Getting specified attribute value from element and return it\n
         
-        locator: tuple like (By.CSS_SELECTOR, '#about')
-        attribute_name: attribute's name what we want to get like 'src'
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - attribute_name: attribute's name what we want to get like 'src'
         """
         with allure.step(f"Getting {attribute_name} from {locator} element"):
             return self.browser.find_element(*locator).get_attribute(attribute_name)
@@ -66,9 +70,10 @@ class BasePage():
     def matching_attribute_value_with_correct_value(self, locator: tuple, attribute_name: str, correct_value: str) -> None:
         """Matching attribute value and correct attribute value\n
         
-        locator: tuple like (By.CSS_SELECTOR, '#about')
-        attribute_name: str attribute's name what we want to get like 'src'
-        correct_value: str value
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - attribute_name: str attribute's name what we want to get like 'src'
+         - correct_value: str value
         """
         with allure.step("Matching attribute value and correct value"):
             attribute_value = self.get_attribute_value(locator, attribute_name)
@@ -84,7 +89,8 @@ class BasePage():
     def matching_current_and_correct_urls(self, correct_url: str) -> None:
         """Matching current URL and correct URL letter to letter\n
         
-        correct_url: str like 'https://www.google.ru/'
+        Args:
+         - correct_url: str like 'https://www.google.ru/'
         """
         with allure.step("Matching current URL and correct URL"):
             current_url = self.get_current_url()            
@@ -94,7 +100,8 @@ class BasePage():
     def click_on_element(self, locator) -> None:
         """Click on element using locator\n
 
-        locator: tuple like (By.CSS_SELECTOR, '#about')
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
         """
         with allure.step(f"Cliking on {locator}"):
            self.browser.find_element(*locator).click() 
@@ -111,8 +118,9 @@ class BasePage():
     def checking_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
         """Checking anchor element after shifting\n
 
-        anchor_element_name: how you wanna see anchor's name on report and assert error
-        anchor_locator: tuple like (By.CSS_SELECTOR, '#about')
+        Args:
+         - anchor_element_name: how you wanna see anchor's name on report and assert error
+         - anchor_locator: tuple like (By.CSS_SELECTOR, '#about')
         """
 
         with allure.step(f"Checking {anchor_element_name} after shifting"):
