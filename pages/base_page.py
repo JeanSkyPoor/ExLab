@@ -115,7 +115,7 @@ class BasePage():
 
     def checking_visibility_of_element_located(self, locator: tuple, timeout=4) -> None:
         try:
-            WebDriverWait(self.browser, timeout, 1).until(EC.visibility_of_element_located((locator)))
+            WebDriverWait(self.browser, timeout, 2).until(EC.visibility_of_element_located((locator)))
         except TimeoutException:
             return False
         return True
