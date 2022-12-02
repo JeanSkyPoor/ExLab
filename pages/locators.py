@@ -3,10 +3,10 @@ from selenium.webdriver.common.by import By
 class MainPageLocators():
     
     LINK = 'https://exlab.team/'
-    
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
 
     #Block HEADER
+    EXLAB_LOGO_HEADER = (By.CSS_SELECTOR, 'div.sc-gKXOVf.hXUcbs > [id=logo_mobile]')
     ABOUT_US_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1)')
     PROJECTS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(2)')
     MENTORS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(3)')
