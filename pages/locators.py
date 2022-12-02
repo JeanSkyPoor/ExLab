@@ -11,6 +11,8 @@ class MainPageLocators():
     PROJECTS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(2)')
     MENTORS_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(3)')
     STARTUP_FOR_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(4)') 
+    SUN_ICON_HEADER_BUTTON = (By.CSS_SELECTOR, 'div.sc-fnykZs.fEkGUM')
+    JOIN_HEADER_BUTTON = (By.CSS_SELECTOR, 'div.sc-hAZoDl.hrEelO')
 
     #Anchor to blocks
     ABOUT_US_ANCHOR = (By.CSS_SELECTOR, '[id=about]')
@@ -18,7 +20,6 @@ class MainPageLocators():
     MENTORS_ANCHOR = (By.CSS_SELECTOR, '[id=mentors]')
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
     
-
 
 
 
