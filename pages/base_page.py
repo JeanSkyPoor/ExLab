@@ -27,7 +27,7 @@ class BasePage():
 
     
     def is_element_present(self, locator: tuple) -> bool:
-        """Сhecking for the presence of an element on the page\n
+        """Сhecking for the presence of an element on the page. doesn't mean element is visible on screen \n
 
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
@@ -38,6 +38,16 @@ class BasePage():
             except NoSuchElementException:
                 return False
             return True
+
+    
+    def is_element_displayed(self, locator: tuple) -> bool:
+        """Checking for element is displayed on screen. Have to use after self.is_element_present
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+        """
+        with allure.step(f"Checking if element is displayed with {locator}"):
+            return self.browser.find_element(*locator).is_displayed()
 
 
     def get_text_from_element(self, locator: tuple) -> str:
@@ -133,6 +143,17 @@ class BasePage():
             assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
 
 
+    def checking_url_to_be(self, correct_url: str, timeout=4) ->bool:
+        """Checking current URL with correct URL using EXPECTATION. If URLs matched, return True, else False
+        
+        Args:
+         - correct_url: str for matching like 'https://www.m-translate.ru'
+        """
+        try:
+            WebDriverWait(self.browser, timeout, 1).until(EC.url_to_be(correct_url))
+        except TimeoutException:
+            return False
+        return True
 
 
 
