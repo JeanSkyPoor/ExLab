@@ -6,7 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.color import Color
 from pages.locators import MainPageLocators
 from selenium.webdriver.common.keys import Keys
-
+import requests
 
 class BasePage():    
     def __init__(self, browser, link):
@@ -79,7 +79,7 @@ class BasePage():
          - locator: tuple like (By.CSS_SELECTOR, '#about')
          - attribute_name: attribute's name what we want to get like 'src'
         """
-        with allure.step(f"Getting {attribute_name} from {locator} element"):
+        with allure.step(f"Getting {attribute_name} attribute from {locator} element"):
             return self.browser.find_element(*locator).get_attribute(attribute_name)
             
 
