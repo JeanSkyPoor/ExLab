@@ -22,13 +22,10 @@ class MainPage(BasePage):
         self.matching_attribute_value_with_correct_value(MainPageLocators.THEME, 'class', 'sc-bczRLJ cxdoLY')
 
 
-    def checking_about_us_header_is_present(self):
-        """Checking 'About Us' button in HEADER is present"""
+    def checking_about_us_header_is_present_and_displayed(self):
+        """Checking 'About Us' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not found"
-
-    def checking_about_us_header_is_displayed(self):
-        """Checking 'About Us' button in HEADER is displayed"""
-        assert self.is_element_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not displayed"
+        assert self.is_element_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not displayed"    
 
     def click_on_about_us_header(self):
         """Click on 'About Us' button in HEADER"""
@@ -39,12 +36,9 @@ class MainPage(BasePage):
         self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
 
 
-    def checking_projects_header_is_present(self):
-        """Checking Project button in HEADER is present"""
+    def checking_projects_header_is_present_and_displayed(self):
+        """Checking Project button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.PROJECTS_HEADER_BUTTON), "Projects button in HEADER is not found"
-
-    def checking_projects_header_is_displayed(self):
-        """Checking 'Projects' button in HEADER is displayed"""
         assert self.is_element_displayed(MainPageLocators.PROJECTS_HEADER_BUTTON), "Projects button in HEADER is not displayed"
 
     def click_on_projects_header(self):
@@ -56,13 +50,10 @@ class MainPage(BasePage):
         self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
 
 
-    def checking_mentors_header_is_present(self):
-        """Checking 'Mentors' button in HEADER is present"""
+    def checking_mentors_header_is_present_and_displayed(self):
+        """Checking 'Mentors' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not found"
-
-    def checking_mentors_header_is_displayed(self):
-        """Checking 'Mentors' button in HEADER is displayed"""
-        assert self.is_element_displayed(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not displayed"
+        assert self.is_element_displayed(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not displayed"        
 
     def click_on_mentors_header(self):
         """Click on 'Mentors' button in HEADER"""
@@ -73,12 +64,9 @@ class MainPage(BasePage):
         self.checking_anchor_element_after_shifting('Mentors', MainPageLocators.MENTORS_ANCHOR)
 
 
-    def checking_startup_for_header_is_present(self):
-        """Checking 'StartUp for' button in HEADER is present"""
+    def checking_startup_for_header_is_present_and_displayed(self):
+        """Checking 'StartUp for' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON), "StartUp for button in HEADER is not found"
-
-    def checking_startup_for_header_is_displayed(self):
-        """Checking 'StartUp for' button in HEADER is displayed"""
         assert self.is_element_displayed(MainPageLocators.STARTUP_FOR_HEADER_BUTTON), "StartUp for button in HEADER is not displayed"
 
     def click_on_startup_for_header(self):
@@ -90,12 +78,9 @@ class MainPage(BasePage):
         self.checking_anchor_element_after_shifting('StartUp for', MainPageLocators.STARTUP_FOR_ANCHOR)
 
     
-    def checking_sun_icon_header_is_present(self):
-        """Checking 'Sun icon' button in HEADER is present"""
+    def checking_sun_icon_header_is_present_and_displayed(self):
+        """Checking 'Sun icon' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.SUN_ICON_HEADER_BUTTON), "Sun icon button in HEADER is not found"
-
-    def checking_sun_icon_header_is_displayed(self):
-        """Checking 'Sun icon' button in HEADER is displayed"""
         assert self.is_element_displayed(MainPageLocators.SUN_ICON_HEADER_BUTTON), "Sun icon button in HEADER is not displayed"
 
     def click_on_sun_icon_header(self):
@@ -103,18 +88,14 @@ class MainPage(BasePage):
         self.click_on_element(MainPageLocators.SUN_ICON_HEADER_BUTTON)
 
 
-    def checking_join_header_is_present(self):
-        """Checking 'Join' button in HEADER is present"""
+    def checking_join_header_is_present_and_displayed(self):
+        """Checking 'Join' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.JOIN_HEADER_BUTTON), "Join button in HEADER is not found"
-    
-    def checking_join_header_is_displayed(self):
-        """Checking 'Join' button in HEADER is displayed"""
         assert self.is_element_displayed(MainPageLocators.JOIN_HEADER_BUTTON), "Join button in HEADER is not displayed"
 
     def click_on_join_header(self):
         """Click on 'Join' button in HEADER"""
         self.click_on_element(MainPageLocators.JOIN_HEADER_BUTTON)
-
 
     def checking_url_after_click_on_join_header(self):
         """Switch to the last opened window and check URL"""
