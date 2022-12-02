@@ -10,7 +10,7 @@ class MainPage(BasePage):
 
     def checking_landing_url(self,):
         """Checking that landing URL is correct"""
-        self.matching_current_and_correct_urls('http://test.exlab.team/')
+        self.matching_current_and_correct_urls('https://exlab.team/')
 
 
     def checking_dark_mode_on(self):
