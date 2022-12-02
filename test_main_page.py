@@ -80,7 +80,7 @@ def test_mentors_header(browser):
         page.checking_mentors_anchor_after_shifting()
 
 
-#@pytest.mark.skip(reason='Button behaves strangely')
+@pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
     """Test 'StartUp for' button in HEADER. [6] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
