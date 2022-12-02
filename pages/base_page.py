@@ -10,6 +10,12 @@ from selenium.webdriver.common.keys import Keys
 
 class BasePage():    
     def __init__(self, browser, link):
+        """Creating BasePage class\n
+        
+        Args:
+         - browser: fixture or browser driver
+         - link: URL address 
+        """
         self.browser = browser
         self.link = link
 
