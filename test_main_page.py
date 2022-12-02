@@ -17,10 +17,11 @@ def test_landing_url_and_black_theme(browser):
         page.checking_dark_mode_on()
 
 
-@pytest.mark.skip(reason="Refresh functioan is not created")
+#@pytest.mark.skip(reason="Refresh functioan is not created")
 def test_display_logo_ExLab(browser):
     """Test logo ExLab. [2] test from check-list"""
-    pass
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
 
 
 def test_about_us_header(browser):
@@ -32,8 +33,7 @@ def test_about_us_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'About Us' HEADER element present and displayed"):
-        page.checking_about_us_header_is_present()
-        page.checking_about_us_header_is_displayed()
+        page.checking_about_us_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'About us' in HEADER"):
         page.click_on_about_us_header()
@@ -51,8 +51,7 @@ def test_projects_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'Projects' HEADER element present and displayed"):
-        page.checking_projects_header_is_present()
-        page.checking_projects_header_is_displayed
+        page.checking_projects_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'Projects' in HEADER"):
         page.click_on_projects_header() 
@@ -70,8 +69,7 @@ def test_mentors_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'Mentors' HEADER element present and displayed"):
-        page.checking_mentors_header_is_present()
-        page.checking_mentors_header_is_displayed()
+        page.checking_mentors_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'Mentors' in HEADER"):
         page.click_on_mentors_header() 
@@ -90,8 +88,7 @@ def test_startup_for_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'StartUp for' HEADER element present and displayed"):
-        page.checking_startup_for_header_is_present()
-        page.checking_startup_for_header_is_displayed()
+        page.checking_startup_for_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'StartUp for' in HEADER"):
         page.click_on_startup_for_header() 
@@ -109,8 +106,7 @@ def test_sun_icon_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'Sun icon' HEADER element present and displayed"):
-        page.checking_sun_icon_header_is_present()
-        page.checking_sun_icon_header_is_displayed()
+        page.checking_sun_icon_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'Sun icon' in HEADER"):
         page.click_on_sun_icon_header()
@@ -128,15 +124,13 @@ def test_join_header(browser):
         page.checking_landing_url()
 
     with allure.step("Step 2. Сhecking if 'Join' HEADER element present and displayed"):
-        page.checking_join_header_is_present()
-        page.checking_join_header_is_displayed()
+        page.checking_join_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'Join' in HEADER"):
         page.click_on_join_header()
 
     with allure.step("Step 4. Checking URL opened page"):
         page.checking_url_after_click_on_join_header()
-
 
 
 
