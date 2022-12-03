@@ -139,7 +139,7 @@ class BasePage():
          - anchor_locator: tuple like (By.CSS_SELECTOR, '#about')
         """
 
-        with allure.step(f"Checking {anchor_element_name} after shifting"):
+        with allure.step(f"Checking {anchor_element_name} anchor after shifting"):
             assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
 
 
