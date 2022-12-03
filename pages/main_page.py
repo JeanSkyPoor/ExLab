@@ -106,7 +106,8 @@ class MainPage(BasePage):
                 but have {current_url}"
 
 
-
+    def scroll_to_footer(self):
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 
 
