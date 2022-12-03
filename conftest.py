@@ -38,9 +38,9 @@ def browser(request):
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         browser = webdriver.Chrome(options=options)
 
-
-        browser.set_window_size(width_window, height_window)
-        browser.implicitly_wait(10) # Не явное ожидание элементов 10 сек.
+        browser.maximize_window()
+        #browser.set_window_size(width_window, height_window) #Настройка размера открывающегося окна
+        browser.implicitly_wait(5) # Не явное ожидание элементов 5 сек.
 
     elif browser_name == "firefox":
 
@@ -53,8 +53,8 @@ def browser(request):
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
         browser = webdriver.Firefox(firefox_profile=fp)
-        browser.set_window_size(width_window, height_window)
-        browser.implicitly_wait(5)  # Не явное ожидание элементов 10 сек.
+        browser.set_window_size(width_window, height_window) #Настройка размера открывающегося окна
+        browser.implicitly_wait(5)  # Не явное ожидание элементов 5 сек.
 
 
     elif browser_name == "yandex":
@@ -68,8 +68,9 @@ def browser(request):
         # // Отключение сообщений в консоли типа: USB: usb_device_handle...
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         browser = webdriver.Chrome(options=options, service=service)
-        browser.set_window_size(width_window, height_window)
-        browser.implicitly_wait(10)
+        browser.set_window_size(width_window, height_window) #Настройка размера открывающегося окна
+        browser.implicitly_wait(5) # Не явное ожидание элементов 5 сек.
+
 
 
     else:
