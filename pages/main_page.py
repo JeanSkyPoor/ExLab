@@ -106,6 +106,7 @@ class MainPage(BasePage):
 
 
     def scroll_to_footer(self):
+        """Scroll down to footer of page"""
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 
@@ -115,10 +116,12 @@ class MainPage(BasePage):
         assert self.is_element_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY), "Logo in block YOUR OPPORTUNITY is not displayed"
 
     def checking_main_title_in_your_opportunity_block_is_present_and_displayed(self):
+        """Checking main title in your opportynity block is present and displayed"""
         assert self.is_element_present(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY), "Main title in block YOUR OPPORTUNITY is not found"
         assert self.is_element_displayed(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY), "Main title in block YOUR OPPORTUNITY is not displayed"
 
     def checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed(self):
+        """Checking text under main title in your opportunity block is present and displayed"""
         assert self.is_element_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not found"
         assert self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not displayed" 
 
