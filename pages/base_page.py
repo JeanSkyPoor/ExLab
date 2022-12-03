@@ -144,7 +144,7 @@ class BasePage():
 
 
     def scroll_down_certain_distance(self, certain_distance: int) -> None:
-        """Scrolling down to certain distance
+        """Scrolling down certain distance
         
         Args:
          - certain_distance: distance in int format like 100
@@ -152,11 +152,23 @@ class BasePage():
         self.browser.execute_script(f"window.scrollTo(0, {certain_distance})") 
 
 
-    def switch_to_the_last_opened_window(self):
+    def scroll_down_to_element(self, locator: tuple) -> None:
+        """Scroll down to element with locator
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+        """
+        with allure.step(f"Searching element with {locator} and scroll to him"):
+            element = self.browser.find_element(*locator)
+            self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+
+
+    def switch_to_the_last_opened_window(self) -> None:
         """Switch accent to the last opened window"""
         self.browser.switch_to.window(self.browser.window_handles[-1])
 
 
+    
 
 
 
