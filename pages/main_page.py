@@ -100,9 +100,9 @@ class MainPage(BasePage):
     def checking_url_after_click_on_join_header(self):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
-            self.browser.switch_to.window(self.browser.window_handles[-1])
+            self.switch_to_the_last_opened_window()
             current_url = self.get_current_url()
-            assert self.checking_url_to_be('https://t.me/ExLab_registration_bot'), f"URL is not correct. Have to be 'https://t.me/ExLab_registration_bot',\
+            self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot'), f"URL is not correct. Have to be 'https://t.me/ExLab_registration_bot',\
                 but have {current_url}"
 
 
