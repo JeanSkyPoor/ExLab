@@ -4,7 +4,7 @@ class MainPageLocators():
     
     LINK = 'https://exlab.team/'
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
-
+    SELECTOR_FOR_SCROLL = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv') #находит элементы для прыжков-скролов
 
     #Block HEADER
     EXLAB_LOGO_HEADER = (By.CSS_SELECTOR, 'div.sc-gKXOVf.hXUcbs > [id=logo_mobile]')
@@ -27,7 +27,7 @@ class MainPageLocators():
     BLOCK_TEXT_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gUFAgN')
 
 
-
+    FOOTER = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv > [id=footer]')
 
 
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
