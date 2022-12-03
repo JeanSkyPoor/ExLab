@@ -17,7 +17,7 @@ def test_landing_url_and_black_theme(browser):
         page.checking_dark_mode_on()
 
 
-#@pytest.mark.skip(reason="Refresh functioan is not created")
+@pytest.mark.skip(reason="Refresh functioan is not created")
 def test_display_logo_ExLab(browser):
     """Test logo ExLab. [2] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
