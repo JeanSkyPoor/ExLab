@@ -7,6 +7,8 @@ from selenium.webdriver.support.color import Color
 from pages.locators import MainPageLocators
 from selenium.webdriver.common.keys import Keys
 import requests
+import time
+
 
 class BasePage():    
     def __init__(self, browser, link):
@@ -143,32 +145,20 @@ class BasePage():
             assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
 
 
-    def scroll_down_certain_distance(self, certain_distance: int) -> None:
-        """Scrolling down certain distance
-        
-        Args:
-         - certain_distance: distance in int format like 100
-        """
-        self.browser.execute_script(f"window.scrollTo(0, {certain_distance})") 
-
-
-    def scroll_down_to_element(self, locator: tuple) -> None:
-        """Scroll down to element with locator
-        
-        Args:
-         - locator: tuple like (By.CSS_SELECTOR, '#about')
-        """
-        with allure.step(f"Searching element with {locator} and scroll to him"):
-            element = self.browser.find_element(*locator)
-            self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
-
-
     def switch_to_the_last_opened_window(self) -> None:
         """Switch accent to the last opened window"""
         self.browser.switch_to.window(self.browser.window_handles[-1])
 
 
-    
+    def scroll_down_element_to_element(self, list_of_element: list):
+        """Лютый костыль. В цикле скролит по элементам
+        
+        Args:
+         - list_of_element: list with elements from find_elements
+        """
+        for element in list_of_element:
+            self.browser.execute_script("arguments[0].scrollIntoView();", element)
+            time.sleep(0.5)
 
 
 
