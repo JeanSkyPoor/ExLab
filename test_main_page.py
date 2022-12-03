@@ -3,7 +3,7 @@ from pages.main_page import MainPage
 import pytest
 import time
 import allure
-
+from selenium.webdriver.common.by import By
 
 def test_landing_url_and_black_theme(browser):
     """Test landing URL and black theme on default. [1] test from check-list"""
@@ -156,17 +156,35 @@ def test_text_your_opportunity_block(browser):
     with allure.step("Step 2. Checking if Main title in block 'Your opportunity' is present and displayed"):
         page.checking_main_title_in_your_opportunity_block_is_present_and_displayed()
 
-    with allure.step("Step 3. Checking if text in block under Main title is present and displayed"):
+    with allure.step("Step 3. Checking if text in block ''Your opportunity' under Main title is present and displayed"):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # def test_footer(browser):
-#     page = MainPage(browser, MainPageLocators.TEST_LINK)
+#     page = MainPage(browser, MainPageLocators.LINK)
 #     page.open()
-#     page.scroll_down_to_element(MainPageLocators.TEST_EXAMLPE)
-#     time.sleep(4)
+#     elements = page.browser.find_elements(By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv')
+
+#     page.scroll_to_footer()
+#     time.sleep(5)
+
+#     # for i in elements:
+#     #     page.browser.execute_script("arguments[0].scrollIntoView();", i)
+#     #     time.sleep(1)
+#     # time.sleep(4)
 
 
 
