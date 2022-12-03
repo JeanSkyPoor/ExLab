@@ -136,6 +136,12 @@ def test_join_header(browser):
 
 
 
+# def test_scroll(browser):
+#     page = MainPage(browser, MainPageLocators.LINK)
+#     page.open()
+#     page.scroll_down_certain_distance(3000)
+#     time.sleep(5)
+
 
 
 
