@@ -21,9 +21,10 @@ class MainPageLocators():
     MENTORS_ANCHOR = (By.CSS_SELECTOR, '[id=mentors]')
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
     
-
-
-
+    #Block YOUR OPPORTUNITY 
+    LOGO_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-dIouRR.gWQVjR > img')
+    MAIN_TITLE_YOUR_OPPROTUNITY = (By.CSS_SELECTOR, 'div.sc-dmRaPn.ljhwJa')
+    BLOCK_TEXT_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gUFAgN')
 
 
 
