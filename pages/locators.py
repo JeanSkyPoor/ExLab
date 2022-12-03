@@ -5,6 +5,7 @@ class MainPageLocators():
     LINK = 'https://exlab.team/'
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
 
+
     #Block HEADER
     EXLAB_LOGO_HEADER = (By.CSS_SELECTOR, 'div.sc-gKXOVf.hXUcbs > [id=logo_mobile]')
     ABOUT_US_HEADER_BUTTON = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1)')
@@ -20,12 +21,6 @@ class MainPageLocators():
     MENTORS_ANCHOR = (By.CSS_SELECTOR, '[id=mentors]')
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
     
-
-
-
-
-
-
 
 
 
