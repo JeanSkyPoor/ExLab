@@ -143,20 +143,18 @@ class BasePage():
             assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
 
 
-    def checking_url_to_be(self, correct_url: str, timeout=4) ->bool:
-        """Checking current URL with correct URL using EXPECTATION. If URLs matched, return True, else False
+    def scroll_down_certain_distance(self, certain_distance: int) -> None:
+        """Scrolling down to certain distance
         
         Args:
-         - correct_url: str for matching like 'https://www.m-translate.ru'
+         - certain_distance: distance in int format like 100
         """
-        try:
-            WebDriverWait(self.browser, timeout, 1).until(EC.url_to_be(correct_url))
-        except TimeoutException:
-            return False
-        return True
+        self.browser.execute_script(f"window.scrollTo(0, {certain_distance})") 
 
 
-
+    def switch_to_the_last_opened_window(self):
+        """Switch accent to the last opened window"""
+        self.browser.switch_to.window(self.browser.window_handles[-1])
 
 
 
