@@ -101,8 +101,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot'), f"URL is not correct. Have to be 'https://t.me/ExLab_registration_bot',\
-                but have {current_url}"
+            self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot')
 
 
     def scroll_to_footer(self):
