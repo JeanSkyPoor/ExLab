@@ -1,0 +1,20 @@
+name: GitHub_Actions_run_tests
+
+on:
+  push:
+    branches:
+      -master
+      
+jobs:
+  run_test:
+    runs-on: windows
+  steps:
+    run: |
+      python install --upgrade pip
+      pip install -r requirements.txt
+      
+    run: |
+      pytest --alluredir report test_main_page.py
+    
+    run: |
+      allure serve report/
