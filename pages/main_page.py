@@ -126,29 +126,39 @@ class MainPage(BasePage):
 
 
     def scroll_to_about_us(self):
+        """Scroll from top to 'About us' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:2])
+        self.checking_about_us_anchor_after_shifting()
 
     def scroll_to_project(self):
+        """Scroll from top to 'Project' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:3])
+        self.checking_projects_anchor_after_shifting()
 
     def scroll_to_mentors(self):
+        """Scroll from top to 'Mentors' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:4])
+        self.checking_mentors_anchor_after_shifting()
 
     def scroll_to_startup_for(self):
+        """Scroll from top to 'StartUp for' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:5])
+        self.checking_startup_for_anchor_after_shifting()
+
 
     def scroll_to_help_project(self):
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:6])
+        #TO DO: добавить проверку якоря в поле помощь проекту
 
     def scroll_to_footer(self):
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:7])
-
+        #TO DO: добавить проверку якоря в поле футер 
 
 
 
