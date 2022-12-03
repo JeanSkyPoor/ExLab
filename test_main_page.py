@@ -133,8 +133,31 @@ def test_join_header(browser):
         page.checking_url_after_click_on_join_header()
 
 
+def test_logo_in_block_your_opportunity(browser):
+    """Test Logo in block YOUR OPPORTYNITY is present and displayed. [11] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Checking if logo in block 'Your opportunity' is present and displayed"):
+        page.checking_logo_in_your_opportunity_block_is_present_and_displayed()
 
 
+def test_text_your_opportunity_block(browser):
+    """Test text in block YOUR OPPORTUNITY is present and displayed. [12] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Checking if Main title in block 'Your opportunity' is present and displayed"):
+        page.checking_main_title_in_your_opportunity_block_is_present_and_displayed()
+
+    with allure.step("Step 3. Checking if text in block under Main title is present and displayed"):
+        page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
 
