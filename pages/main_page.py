@@ -2,7 +2,7 @@ from pages.locators import MainPageLocators
 from pages.base_page import BasePage
 import allure
 import re
-
+from selenium.webdriver.common.by import By
 
 
 
@@ -125,14 +125,29 @@ class MainPage(BasePage):
         assert self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not displayed" 
 
 
+    def scroll_to_about_us(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:2])
 
+    def scroll_to_project(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:3])
 
+    def scroll_to_mentors(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:4])
 
+    def scroll_to_startup_for(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:5])
 
+    def scroll_to_help_project(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:6])
 
-
-
-
+    def scroll_to_footer(self):
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:7])
 
 
 
