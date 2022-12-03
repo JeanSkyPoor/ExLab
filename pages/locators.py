@@ -32,7 +32,7 @@ class MainPageLocators():
 
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
 
-    # #Block HEADERS
+    
     # LIGHT_ICON_WHILE_DARK_MODE = (By.CSS_SELECTOR, 'div.sc-fnykZs.fEkGUM')
     # LOGO_ICON = (By.CSS_SELECTOR, 'div.sc-gKXOVf >div.sc-jqUVSM.EnPDN')
     # ABOUT_US_BUTTON_HEADER = (By.CSS_SELECTOR, 'li.sc-crXcEl:nth-of-type(1)')
