@@ -176,15 +176,15 @@ def test_text_your_opportunity_block(browser):
 # def test_footer(browser):
 #     page = MainPage(browser, MainPageLocators.LINK)
 #     page.open()
-#     elements = page.browser.find_elements(By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv')
+#     #elements = page.browser.find_elements(By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv')
 
-#     page.scroll_to_footer()
+#     page.scroll_to_project()
 #     time.sleep(5)
 
-#     # for i in elements:
-#     #     page.browser.execute_script("arguments[0].scrollIntoView();", i)
-#     #     time.sleep(1)
-#     # time.sleep(4)
+    # for i in elements:
+    #     page.browser.execute_script("arguments[0].scrollIntoView();", i)
+    #     time.sleep(1)
+    # time.sleep(4)
 
 
 
