@@ -44,7 +44,7 @@ class MainPageLocators():
     
         
 
-    # #Block YOUR OPPORTUNITY
+    #Block YOUR OPPORTUNITY
     # LOGO_GIF = (By.CSS_SELECTOR, 'div.sc-idiyUo.jKIKBm > img')
     # YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gupdxc')
     # TEXT_UNDER_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-bBrHrO.lmeoyY')
