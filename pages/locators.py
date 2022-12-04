@@ -20,14 +20,15 @@ class MainPageLocators():
     PROJECTS_ANCHOR = (By.CSS_SELECTOR, '[id=projects]')
     MENTORS_ANCHOR = (By.CSS_SELECTOR, '[id=mentors]')
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
-    
+    HELP_PROJECT_ANCHOR = (By.CSS_SELECTOR, 'div.sc-jTYCaT.coDMnK')
+    FOOTER_ANCHOR = (By.CSS_SELECTOR, '[id=footer]')
+
     #Block YOUR OPPORTUNITY 
     LOGO_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-dIouRR.gWQVjR > img')
     MAIN_TITLE_YOUR_OPPROTUNITY = (By.CSS_SELECTOR, 'div.sc-dmRaPn.ljhwJa')
     BLOCK_TEXT_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gUFAgN')
 
 
-    FOOTER = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv > [id=footer]')
 
 
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
