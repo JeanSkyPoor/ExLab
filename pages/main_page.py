@@ -16,7 +16,7 @@ class MainPage(BasePage):
     def checking_dark_mode_on(self):
         """Checking if dark mode on"""
         self.matching_attribute_value_with_correct_value(MainPageLocators.THEME, 'class', 'sc-bczRLJ ckyTig')
-    
+
     def checking_light_mode_on(self):
         """Checking if light mode on"""
         self.matching_attribute_value_with_correct_value(MainPageLocators.THEME, 'class', 'sc-bczRLJ cxdoLY')
@@ -31,10 +31,6 @@ class MainPage(BasePage):
         """Click on 'About Us' button in HEADER"""
         self.click_on_element(MainPageLocators.ABOUT_US_HEADER_BUTTON)
 
-    def checking_about_us_anchor_after_shifting(self):
-        """Checking anchor element after 'About Us' button in HEADER was clicked"""
-        self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
-
 
     def checking_projects_header_is_present_and_displayed(self):
         """Checking Project button in HEADER is present and displayed"""
@@ -44,10 +40,6 @@ class MainPage(BasePage):
     def click_on_projects_header(self):
         """Click on 'Projects' button in HEADER"""
         self.click_on_element(MainPageLocators.PROJECTS_HEADER_BUTTON)
-
-    def checking_projects_anchor_after_shifting(self):
-        """Checking anchor element after 'Project' button in HEADER was clicked"""
-        self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
 
 
     def checking_mentors_header_is_present_and_displayed(self):
@@ -59,10 +51,6 @@ class MainPage(BasePage):
         """Click on 'Mentors' button in HEADER"""
         self.click_on_element(MainPageLocators.MENTORS_HEADER_BUTTON)
 
-    def checking_mentors_anchor_after_shifting(self):
-        """Checking anchor element after 'Mentors' button in HEADER was clicked"""
-        self.checking_anchor_element_after_shifting('Mentors', MainPageLocators.MENTORS_ANCHOR)
-
 
     def checking_startup_for_header_is_present_and_displayed(self):
         """Checking 'StartUp for' button in HEADER is present and displayed"""
@@ -73,11 +61,7 @@ class MainPage(BasePage):
         """Click on 'StartUp for' button in HEADER"""
         self.click_on_element(MainPageLocators.STARTUP_FOR_HEADER_BUTTON)
 
-    def checking_startup_for_anchor_after_shifting(self):
-        """Checking anchor element after 'StartUp for' button in HEADER was clicked"""
-        self.checking_anchor_element_after_shifting('StartUp for', MainPageLocators.STARTUP_FOR_ANCHOR)
-
-    
+ 
     def checking_sun_icon_header_is_present_and_displayed(self):
         """Checking 'Sun icon' button in HEADER is present and displayed"""
         assert self.is_element_present(MainPageLocators.SUN_ICON_HEADER_BUTTON), "Sun icon button in HEADER is not found"
@@ -104,11 +88,6 @@ class MainPage(BasePage):
             self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot')
 
 
-    def scroll_to_footer(self):
-        """Scroll down to footer of page"""
-        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-
     def checking_logo_in_your_opportunity_block_is_present_and_displayed(self):
         """Checking Logo in block YOUR OPPORTUNITY is present and displayed"""
         assert self.is_element_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY), "Logo in block YOUR OPPORTUNITY is not found"
@@ -123,6 +102,31 @@ class MainPage(BasePage):
         """Checking text under main title in your opportunity block is present and displayed"""
         assert self.is_element_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not found"
         assert self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not displayed" 
+
+
+    def checking_about_us_anchor_after_shifting(self):
+        """Checking anchor element in 'About Us' block"""
+        self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
+
+    def checking_projects_anchor_after_shifting(self):
+        """Checking anchor element in 'Projects' block"""
+        self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
+
+    def checking_mentors_anchor_after_shifting(self):
+        """Checking anchor element in 'Mentors' block"""
+        self.checking_anchor_element_after_shifting('Mentors', MainPageLocators.MENTORS_ANCHOR)
+
+    def checking_startup_for_anchor_after_shifting(self):
+        """Checking anchor element in 'StartUp for' block"""
+        self.checking_anchor_element_after_shifting('StartUp for', MainPageLocators.STARTUP_FOR_ANCHOR)
+
+    def checking_help_project_anchor_after_shifting(self):
+        """Checking anchor element in 'Help project' block"""
+        self.checking_anchor_element_after_shifting('Help Project', MainPageLocators.HELP_PROJECT_ANCHOR)
+
+    def checking_footer_anchor_after_shifting(self):
+        """Checking anchor element in 'Footer' block"""
+        self.checking_anchor_element_after_shifting('Footer', MainPageLocators.FOOTER_ANCHOR)
 
 
     def scroll_to_about_us(self):
@@ -149,16 +153,18 @@ class MainPage(BasePage):
         self.scroll_down_element_to_element(elements[:5])
         self.checking_startup_for_anchor_after_shifting()
 
-
     def scroll_to_help_project(self):
+        """Scroll from top to 'Help project' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:6])
-        #TO DO: добавить проверку якоря в поле помощь проекту
-
+        self.checking_help_project_anchor_after_shifting()
+     
     def scroll_to_footer(self):
+        """Scroll from top to 'Footer' block and check anchor element"""
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:7])
-        #TO DO: добавить проверку якоря в поле футер 
+        self.checking_footer_anchor_after_shifting()
+
 
 
 
