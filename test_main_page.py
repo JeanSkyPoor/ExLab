@@ -178,7 +178,8 @@ def test_text_your_opportunity_block(browser):
 #     page.open()
 #     #elements = page.browser.find_elements(By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv')
 
-#     page.scroll_to_project()
+#     page.scroll_to_footer()
+#     page.checking_help_project_anchor_after_shifting()
 #     time.sleep(5)
 
     # for i in elements:
