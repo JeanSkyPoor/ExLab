@@ -23,7 +23,7 @@ def test_display_logo_ExLab(browser):
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
-
+@allure.feature("header button")
 def test_about_us_header(browser):
     """Test 'About Us' button in HEADER. [3] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -41,7 +41,7 @@ def test_about_us_header(browser):
     with allure.step("Step 4. Checking 'About Us' anchor element after shifting"):
         page.checking_about_us_anchor_after_shifting()
 
-
+@allure.feature("header button")
 def test_projects_header(browser):
     """Test 'Projects' button in HEADER. [4] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -59,7 +59,7 @@ def test_projects_header(browser):
     with allure.step("Step 4. Checking 'Projects' anchor element after shifting"):
         page.checking_projects_anchor_after_shifting()
 
-
+@allure.feature("header button")
 def test_mentors_header(browser):
     """Test 'Mentors' button in HEADER. [5] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -77,7 +77,7 @@ def test_mentors_header(browser):
     with allure.step("Step 4. Checking 'Mentors' anchor element after shifting"):
         page.checking_mentors_anchor_after_shifting()
 
-
+@allure.feature("header button")
 @pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
     """Test 'StartUp for' button in HEADER. [6] test from check-list"""
@@ -96,7 +96,7 @@ def test_startup_for_header(browser):
     with allure.step("Step 4. Checking 'StartUp for' anchor element after shifting"):
         page.checking_startup_for_anchor_after_shifting()
 
-
+@allure.feature("header button")
 def test_sun_icon_header(browser):
     """Test 'Sun icon' button in HEADER. [7] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -114,7 +114,7 @@ def test_sun_icon_header(browser):
     with allure.step("Step 4. Checking light theme on"):
         page.checking_light_mode_on()
     
-
+@allure.feature("header button")
 def test_join_header(browser):
     """Test 'Join' button in HEADER. [9] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
