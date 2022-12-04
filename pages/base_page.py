@@ -11,7 +11,7 @@ import time
 
 
 class BasePage():    
-    def __init__(self, browser, link):
+    def __init__(self, browser, link) -> None:
         """Creating BasePage class\n
         
         Args:
@@ -150,7 +150,7 @@ class BasePage():
         self.browser.switch_to.window(self.browser.window_handles[-1])
 
 
-    def scroll_down_element_to_element(self, list_of_element: list):
+    def scroll_down_element_to_element(self, list_of_element: list) -> None:
         """Лютый костыль. В цикле скролит по элементам
         
         Args:
