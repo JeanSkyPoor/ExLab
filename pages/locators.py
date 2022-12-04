@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     
-    LINK = 'https://exlab.team/'
+    LINK = 'http://test.exlab.team/'
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
     SELECTOR_FOR_SCROLL = (By.CSS_SELECTOR, 'div.sc-fEOsli.iema-Dv') #находит элементы для прыжков-скролов
 
