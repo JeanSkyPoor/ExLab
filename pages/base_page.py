@@ -165,27 +165,27 @@ class BasePage():
             time.sleep(0.5)
 
 
-    def is_url_will_be(self, correct_url: str, timeout=5) -> bool:
-        """Wait while current url will be correct_url and return True, else False
+    def is_url_contain(self, correct_url: str, timeout=5) -> bool:
+        """Wait while current url have to contrain correct_url fragment in address
         
         Args:
          - correct_url: str like 'https://www.m-translate.ru'
         """
         try:
-            WebDriverWait(self.browser, timeout, 1).until(EC.url_to_be(correct_url))
+            WebDriverWait(self.browser, timeout, 1).until(EC.url_contains(correct_url))
         except TimeoutException:
             return False
         return True
 
 
-    def url_have_to_be(self, correct_url: str) -> None:
+    def url_have_to_contain(self, correct_url: str) -> None:
         """Checking if current url will be correct_url
         
         Args:
          - correct_url: str like 'https://www.m-translate.ru'
         """
-        if self.is_url_will_be(correct_url) != True:
-            raise AssertionError(f"URL is wrong. Have to be {correct_url}, but have {self.get_current_url()}")
+        if self.is_url_contain(correct_url) != True:
+            raise AssertionError(f"URL is wrong. Have to contain {correct_url} in address, but have {self.get_current_url()}")
 
 
 
