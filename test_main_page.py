@@ -235,7 +235,7 @@ def test_telegram_footer(browser):
 
 @allure.feature('FOOTER buttons')
 def test_youtube_footer(browser):
-    """Test 'Youtube' button in FOOTER. [40] test from check-list"""
+    """Test 'Youtube' button in FOOTER. [41] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
