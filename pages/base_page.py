@@ -6,6 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.color import Color
 from pages.locators import MainPageLocators
 from selenium.webdriver.common.keys import Keys
+from allure_commons.types import AttachmentType
 import requests
 import time
 
@@ -27,7 +28,16 @@ class BasePage():
         with allure.step("Opening page"):
             self.browser.get(self.link)
 
-    
+
+    def attach_screenshot(self, file_name: str) -> None:
+        """Create screenshot of current window and attach it in allure report
+        
+        Args:
+         - file_name: str like 'Linkedin_button_not_found'
+        """
+        allure.attach(self.browser.get_screenshot_as_png(), name = file_name, attachment_type=AttachmentType.PNG)
+
+
     def is_element_present(self, locator: tuple) -> bool:
         """Сhecking for the presence of an element on the page. doesn't mean element is visible on screen \n
 
@@ -146,6 +156,7 @@ class BasePage():
 
         with allure.step(f"Checking {anchor_element_name} anchor after shifting"):
             if self.checking_visibility_of_element_located(anchor_locator) != True:
+                self.attach_screenshot(f"{anchor_element_name} anchor_is_not_founded_after_shifting")
                 raise AssertionError(f"{anchor_element_name} anchor is not founded after shifting")
 
 
