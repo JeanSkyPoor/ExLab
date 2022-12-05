@@ -24,8 +24,11 @@ class MainPage(BasePage):
 
     def checking_about_us_header_is_present_and_displayed(self):
         """Checking 'About Us' button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON), "About Us button in HEADER is not displayed"    
+        if self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON) != True:
+            raise AssertionError("About Us button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON) != True:
+            raise AssertionError("About Us button in HEADER is not displayed")    
 
     def click_on_about_us_header(self):
         """Click on 'About Us' button in HEADER"""
@@ -34,8 +37,11 @@ class MainPage(BasePage):
 
     def checking_projects_header_is_present_and_displayed(self):
         """Checking Project button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.PROJECTS_HEADER_BUTTON), "Projects button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.PROJECTS_HEADER_BUTTON), "Projects button in HEADER is not displayed"
+        if self.is_element_present(MainPageLocators.PROJECTS_HEADER_BUTTON) != True:
+            raise AssertionError("Projects button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.PROJECTS_HEADER_BUTTON) != True:
+            raise AssertionError("Projects button in HEADER is not displayed")
 
     def click_on_projects_header(self):
         """Click on 'Projects' button in HEADER"""
@@ -44,8 +50,11 @@ class MainPage(BasePage):
 
     def checking_mentors_header_is_present_and_displayed(self):
         """Checking 'Mentors' button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.MENTORS_HEADER_BUTTON), "Mentors button in HEADER is not displayed"        
+        if self.is_element_present(MainPageLocators.MENTORS_HEADER_BUTTON) != True:
+            raise AssertionError("Mentors button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.MENTORS_HEADER_BUTTON) != True:
+            raise AssertionError("Mentors button in HEADER is not displayed")
 
     def click_on_mentors_header(self):
         """Click on 'Mentors' button in HEADER"""
@@ -54,8 +63,11 @@ class MainPage(BasePage):
 
     def checking_startup_for_header_is_present_and_displayed(self):
         """Checking 'StartUp for' button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON), "StartUp for button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.STARTUP_FOR_HEADER_BUTTON), "StartUp for button in HEADER is not displayed"
+        if self.is_element_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON) != True:
+            raise AssertionError("StartUp for button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.STARTUP_FOR_HEADER_BUTTON) != True:
+            raise AssertionError("StartUp for button in HEADER is not displayed")
 
     def click_on_startup_for_header(self):
         """Click on 'StartUp for' button in HEADER"""
@@ -64,8 +76,11 @@ class MainPage(BasePage):
  
     def checking_sun_icon_header_is_present_and_displayed(self):
         """Checking 'Sun icon' button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.SUN_ICON_HEADER_BUTTON), "Sun icon button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.SUN_ICON_HEADER_BUTTON), "Sun icon button in HEADER is not displayed"
+        if self.is_element_present(MainPageLocators.SUN_ICON_HEADER_BUTTON) != True:
+            raise AssertionError("Sun icon button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.SUN_ICON_HEADER_BUTTON) != True:
+            raise AssertionError("Sun icon button in HEADER is not displayed")
 
     def click_on_sun_icon_header(self):
         """Click on 'Sun icon' button in HEADER"""
@@ -74,8 +89,11 @@ class MainPage(BasePage):
 
     def checking_join_header_is_present_and_displayed(self):
         """Checking 'Join' button in HEADER is present and displayed"""
-        assert self.is_element_present(MainPageLocators.JOIN_HEADER_BUTTON), "Join button in HEADER is not found"
-        assert self.is_element_displayed(MainPageLocators.JOIN_HEADER_BUTTON), "Join button in HEADER is not displayed"
+        if self.is_element_present(MainPageLocators.JOIN_HEADER_BUTTON) != True:
+            raise AssertionError("Join button in HEADER is not found")
+
+        if self.is_element_displayed(MainPageLocators.JOIN_HEADER_BUTTON) != True:
+            raise AssertionError("Join button in HEADER is not displayed")
 
     def click_on_join_header(self):
         """Click on 'Join' button in HEADER"""
@@ -90,18 +108,27 @@ class MainPage(BasePage):
 
     def checking_logo_in_your_opportunity_block_is_present_and_displayed(self):
         """Checking Logo in block YOUR OPPORTUNITY is present and displayed"""
-        assert self.is_element_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY), "Logo in block YOUR OPPORTUNITY is not found"
-        assert self.is_element_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY), "Logo in block YOUR OPPORTUNITY is not displayed"
+        if self.is_element_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY) != True:
+            raise AssertionError("Logo in block YOUR OPPORTUNITY is not found")
+
+        if self.is_element_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY) != True:
+            raise AssertionError("Logo in block YOUR OPPORTUNITY is not displayed")
 
     def checking_main_title_in_your_opportunity_block_is_present_and_displayed(self):
         """Checking main title in your opportynity block is present and displayed"""
-        assert self.is_element_present(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY), "Main title in block YOUR OPPORTUNITY is not found"
-        assert self.is_element_displayed(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY), "Main title in block YOUR OPPORTUNITY is not displayed"
+        if self.is_element_present(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY) != True:
+            raise AssertionError("Main title in block YOUR OPPORTUNITY is not found")
+
+        if self.is_element_displayed(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY) != True:
+            raise AssertionError("Main title in block YOUR OPPORTUNITY is not displayed")
 
     def checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed(self):
         """Checking text under main title in your opportunity block is present and displayed"""
-        assert self.is_element_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not found"
-        assert self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY), "Text under Main title in block YOUR OPPORTUNITY is not displayed" 
+        if self.is_element_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY) != True:
+            raise AssertionError("Text under Main title in block YOUR OPPORTUNITY is not found")
+
+        if self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY) != True:
+            raise AssertionError("Text under Main title in block YOUR OPPORTUNITY is not displayed")
 
 
     def checking_about_us_anchor_after_shifting(self):
@@ -164,8 +191,6 @@ class MainPage(BasePage):
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:7])
         self.checking_footer_anchor_after_shifting()
-
-
 
 
 
