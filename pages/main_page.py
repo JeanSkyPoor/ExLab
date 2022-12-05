@@ -260,7 +260,7 @@ class MainPage(BasePage):
             raise AssertionError('Youtube button in FOOTER block is not displayed')
 
     def click_on_youtube_footer(self):
-        """Click on 'Telegram' button in FOOTER"""
+        """Click on 'Youtube' button in FOOTER"""
         self.click_on_element(MainPageLocators.YOUTUBE_FOOTER)
 
     def checking_url_after_click_on_telegram_footer(self):
