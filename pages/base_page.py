@@ -128,7 +128,7 @@ class BasePage():
            self.browser.find_element(*locator).click() 
 
 
-    def checking_visibility_of_element_located(self, locator: tuple, timeout=4) -> bool:
+    def checking_visibility_of_element_located(self, locator: tuple, timeout=5) -> bool:
         try:
             WebDriverWait(self.browser, timeout, 2).until(EC.visibility_of_element_located((locator)))
         except TimeoutException:
@@ -165,8 +165,27 @@ class BasePage():
             time.sleep(0.5)
 
 
+    def is_url_will_be(self, correct_url: str, timeout=5) -> bool:
+        """Wait while current url will be correct_url and return True, else False
+        
+        Args:
+         - correct_url: str like 'https://www.m-translate.ru'
+        """
+        try:
+            WebDriverWait(self.browser, timeout, 1).until(EC.url_to_be(correct_url))
+        except TimeoutException:
+            return False
+        return True
 
 
+    def url_have_to_be(self, correct_url: str) -> None:
+        """Checking if current url will be correct_url
+        
+        Args:
+         - correct_url: str like 'https://www.m-translate.ru'
+        """
+        if self.is_url_will_be(correct_url) != True:
+            raise AssertionError(f"URL is wrong. Have to be {correct_url}, but have {self.get_current_url()}")
 
 
 
