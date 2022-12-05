@@ -103,6 +103,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
+            self.url_have_to_be('https://t.me/ExLab_registration_bot')
             self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot')
 
 
@@ -191,6 +192,91 @@ class MainPage(BasePage):
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:7])
         self.checking_footer_anchor_after_shifting()
+
+
+    def checking_linkedin_footer_is_present_and_displayed(self):
+        """Checking 'Linkedin' button in FOOTER is present and displayed"""
+        if self.is_element_present(MainPageLocators.LINKEDIN_FOOTER) != True:
+            raise AssertionError('Linkedin button in FOOTER block is not found')
+
+        if self.is_element_displayed(MainPageLocators.LINKEDIN_FOOTER) != True:
+            raise AssertionError('Linkedin button in FOOTER block is not displayed')
+
+    def click_on_linkedin_footer(self):
+        """Click on 'Linkedin' button in FOOTER"""
+        self.click_on_element(MainPageLocators.LINKEDIN_FOOTER)
+
+    def checking_url_after_click_on_linkedin_footer(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_be('https://www.linkedin.com/company/exlab-start-up')
+
+
+    def checking_instagram_footer_is_present_and_displayed(self):
+        """Checking 'Instagram' button in FOOTER is present and displayed"""
+        if self.is_element_present(MainPageLocators.INSTAGRAM_FOOTER) != True:
+            raise AssertionError('Instagram button in FOOTER block is not found')
+
+        if self.is_element_displayed(MainPageLocators.INSTAGRAM_FOOTER) != True:
+            raise AssertionError('Instagram button in FOOTER block is not displayed')
+
+    def click_on_instagram_footer(self):
+        """Click on 'Instagram' button in FOOTER"""
+        self.click_on_element(MainPageLocators.INSTAGRAM_FOOTER)
+
+    def checking_url_after_click_on_instagram_footer(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_be('https://www.instagram.com/exlab_startup/')
+
+
+    def checking_telegram_footer_is_present_and_displayed(self):
+        """Checking 'Telegram' button in FOOTER is present and displayed"""
+        if self.is_element_present(MainPageLocators.TELEGRAM_FOOTER) != True:
+            raise AssertionError('Telegram button in FOOTER block is not found')
+
+        if self.is_element_displayed(MainPageLocators.TELEGRAM_FOOTER) != True:
+            raise AssertionError('Telegram button in FOOTER block is not displayed')
+
+    def click_on_telegram_footer(self):
+        """Click on 'Telegram' button in FOOTER"""
+        self.click_on_element(MainPageLocators.TELEGRAM_FOOTER)
+
+    def checking_url_after_click_on_telegram_footer(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_be('https://t.me/ExLabChannel')
+
+
+    def checking_youtube_footer_is_present_and_displayed(self):
+        """Checking 'Youtube' button in FOOTER is present and displayed"""
+        if self.is_element_present(MainPageLocators.YOUTUBE_FOOTER) != True:
+            raise AssertionError('Youtube button in FOOTER block is not found')
+
+        if self.is_element_displayed(MainPageLocators.YOUTUBE_FOOTER) != True:
+            raise AssertionError('Youtube button in FOOTER block is not displayed')
+
+    def click_on_youtube_footer(self):
+        """Click on 'Telegram' button in FOOTER"""
+        self.click_on_element(MainPageLocators.YOUTUBE_FOOTER)
+
+    def checking_url_after_click_on_telegram_footer(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_be('https://www.youtube.com/channel/UC-TAnVYVN7qg5dgsYQJkuvA')
+
+
+
+
+
+
+
+
+
 
 
 
