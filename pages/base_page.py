@@ -166,7 +166,7 @@ class BasePage():
 
 
     def is_url_contain(self, correct_url: str, timeout=5) -> bool:
-        """Wait while current url have to contrain correct_url fragment in address
+        """Wait while current url will be contrain correct_url fragment in address
         
         Args:
          - correct_url: str like 'https://www.m-translate.ru'
@@ -179,7 +179,7 @@ class BasePage():
 
 
     def url_have_to_contain(self, correct_url: str) -> None:
-        """Checking if current url will be correct_url
+        """Checking if current url will contain correct_url fragment
         
         Args:
          - correct_url: str like 'https://www.m-translate.ru'
