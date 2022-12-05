@@ -167,7 +167,6 @@ def test_text_your_opportunity_block(browser):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
-@pytest.mark.skip(reason="Linkedin works stangely")
 @allure.feature('FOOTER buttons')
 def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
@@ -253,7 +252,7 @@ def test_youtube_footer(browser):
         page.click_on_youtube_footer()
 
     with allure.step("Step 5. Checking URL opened page"):
-        page.checking_url_after_click_on_telegram_footer()    
+        page.checking_url_after_click_on_youtube_footer()    
 
 
 
