@@ -103,8 +103,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.url_have_to_be('https://t.me/ExLab_registration_bot')
-            self.matching_current_and_correct_urls('https://t.me/ExLab_registration_bot')
+            self.url_have_to_contain('https://t.me')
 
 
     def checking_logo_in_your_opportunity_block_is_present_and_displayed(self):
@@ -210,7 +209,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.url_have_to_be('https://www.linkedin.com/company/exlab-start-up')
+            self.url_have_to_contain('https://www.linkedin.com')
 
 
     def checking_instagram_footer_is_present_and_displayed(self):
@@ -229,7 +228,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.url_have_to_be('https://www.instagram.com/exlab_startup/')
+            self.url_have_to_contain('https://www.instagram.com')
 
 
     def checking_telegram_footer_is_present_and_displayed(self):
@@ -248,7 +247,7 @@ class MainPage(BasePage):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.url_have_to_be('https://t.me/ExLabChannel')
+            self.url_have_to_contain('https://t.me')
 
 
     def checking_youtube_footer_is_present_and_displayed(self):
@@ -263,11 +262,11 @@ class MainPage(BasePage):
         """Click on 'Youtube' button in FOOTER"""
         self.click_on_element(MainPageLocators.YOUTUBE_FOOTER)
 
-    def checking_url_after_click_on_telegram_footer(self):
+    def checking_url_after_click_on_youtube_footer(self):
         """Switch to the last opened window and check URL"""
         with allure.step(f"Checking url opened page"):
             self.switch_to_the_last_opened_window()
-            self.url_have_to_be('https://www.youtube.com/channel/UC-TAnVYVN7qg5dgsYQJkuvA')
+            self.url_have_to_contain('https://www.youtube.com')
 
 
 
