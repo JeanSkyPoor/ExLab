@@ -28,7 +28,11 @@ class MainPageLocators():
     MAIN_TITLE_YOUR_OPPROTUNITY = (By.CSS_SELECTOR, 'div.sc-dmRaPn.ljhwJa')
     BLOCK_TEXT_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-kgflAQ.gUFAgN')
 
-
+    #block FOOTER
+    LINKEDIN_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(1)')
+    INSTAGRAM_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(2)')
+    TELEGRAM_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(3)')
+    YOUTUBE_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(4)')
 
 
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
