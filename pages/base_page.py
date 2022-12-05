@@ -71,7 +71,8 @@ class BasePage():
         """
         with allure.step("Matching element text and correct text"):
             element_text = self.get_text_from_element(locator)
-            assert element_text == correct_text, f"Text is wrong. Have to be {correct_text}, but have {element_text}"
+            if element_text != correct_text:
+                raise AssertionError(f"Text is wrong. Have to be {correct_text}, but have {element_text}")
 
 
     def get_attribute_value(self, locator: tuple, attribute_name: str) -> str:
@@ -95,7 +96,8 @@ class BasePage():
         """
         with allure.step("Matching attribute value and correct value"):
             attribute_value = self.get_attribute_value(locator, attribute_name)
-            assert attribute_value == correct_value, f"Wrong attribute value. Have to be {correct_value}, but have {attribute_value}"
+            if attribute_value != correct_value:
+                raise AssertionError(f"Wrong attribute value. Have to be {correct_value}, but have {attribute_value}")
 
 
     def get_current_url(self) -> str:
@@ -112,7 +114,8 @@ class BasePage():
         """
         with allure.step("Matching current URL and correct URL"):
             current_url = self.get_current_url()            
-            assert current_url == correct_url, f"URL is wrong. Have to be {correct_url}, but have {current_url}"
+            if current_url != correct_url:
+                raise AssertionError(f"URL is wrong. Have to be {correct_url}, but have {current_url}")
 
 
     def click_on_element(self, locator) -> None:
@@ -125,7 +128,7 @@ class BasePage():
            self.browser.find_element(*locator).click() 
 
 
-    def checking_visibility_of_element_located(self, locator: tuple, timeout=4) -> None:
+    def checking_visibility_of_element_located(self, locator: tuple, timeout=4) -> bool:
         try:
             WebDriverWait(self.browser, timeout, 2).until(EC.visibility_of_element_located((locator)))
         except TimeoutException:
@@ -142,7 +145,8 @@ class BasePage():
         """
 
         with allure.step(f"Checking {anchor_element_name} anchor after shifting"):
-            assert self.checking_visibility_of_element_located(anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
+            if self.checking_visibility_of_element_located(anchor_locator) != True:
+                raise AssertionError(f"{anchor_element_name} anchor is not founded after shifting")
 
 
     def switch_to_the_last_opened_window(self) -> None:
