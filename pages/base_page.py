@@ -138,9 +138,17 @@ class BasePage():
            self.browser.find_element(*locator).click() 
 
 
-    def checking_visibility_of_element_located(self, locator: tuple, timeout=5) -> bool:
+    def checking_visibility_of_element_located(self, locator: tuple, timeout=5, checking_time=2) -> bool:
+        """Wait while element will be visible and return True. If element is not vilible, return False
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - timeout: int. How long wait while element will be visible
+         - checking_time: int or float. How offen create visibility request 
+        """
+
         try:
-            WebDriverWait(self.browser, timeout, 2).until(EC.visibility_of_element_located((locator)))
+            WebDriverWait(self.browser, timeout, checking_time).until(EC.visibility_of_element_located((locator)))
         except TimeoutException:
             return False
         return True
@@ -197,6 +205,7 @@ class BasePage():
         """
         if self.is_url_contain(fragment_url) != True:
             raise AssertionError(f"URL is wrong. Have to contain {fragment_url} in address, but have {self.get_current_url()}")
+
 
 
 
