@@ -19,12 +19,14 @@ class BasePage():
          - browser: fixture or browser driver
          - link: URL address 
         """
+
         self.browser = browser
         self.link = link
 
 
     def open(self) -> None:
         """Open Page using added browser and link using self.browser and self.link"""
+
         with allure.step("Opening page"):
             self.browser.get(self.link)
 
@@ -35,6 +37,7 @@ class BasePage():
         Args:
          - file_name: str like 'Linkedin_button_not_found'
         """
+
         allure.attach(self.browser.get_screenshot_as_png(), name = file_name, attachment_type=AttachmentType.PNG)
 
 
@@ -51,7 +54,7 @@ class BasePage():
         except NoSuchElementException:
             return False
 
-    
+
     def is_element_displayed(self, locator: tuple) -> bool:
         """Checking for element is displayed on screen. Have to use after self.is_element_present
         
@@ -62,20 +65,16 @@ class BasePage():
         return self.browser.find_element(*locator).is_displayed()
 
 
-    def is_element_clickable(self, locator: tuple, timeout: int = 5, checking_time: int = 0.5) -> bool:
-        """Checking for element is clickable. Have to use after self.is_element_displayed
+    def get_value_of_css_property(self, locator: tuple, property: str) -> str:
+        """Get property from element and return it
         
         Args:
-         - locator: tuple like (By.CSS_SELECTOR, '#about')
-         - timeout: int. How long wait while element will be clickable
-         - checking_time: int or float. How offen create clickable request 
+         - property: str like 'cursor'
         """
-        
         try:
-            WebDriverWait(self.browser, timeout, checking_time).until(EC.element_to_be_clickable(locator))
-            return True
-        except TimeoutException:
-            return False
+            return self.browser.find_element(*locator).value_of_css_property(property)
+        except Exception as e:
+            raise NoSuchElementException(f"Propery is not found. ERROR: {e}")
 
 
     def get_text_from_element(self, locator: tuple) -> str:
@@ -108,8 +107,8 @@ class BasePage():
          - locator: tuple like (By.CSS_SELECTOR, '#about')
          - attribute_name: attribute's name what we want to get like 'src'
         """
-        with allure.step(f"Getting {attribute_name} attribute from {locator} element"):
-            return self.browser.find_element(*locator).get_attribute(attribute_name)
+        
+        return self.browser.find_element(*locator).get_attribute(attribute_name)
             
 
     def matching_attribute_value_with_correct_value(self, locator: tuple, attribute_name: str, correct_value: str) -> None:
@@ -150,8 +149,8 @@ class BasePage():
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
         """
-        with allure.step(f"Cliking on {locator}"):
-           self.browser.find_element(*locator).click() 
+
+        self.browser.find_element(*locator).click() 
 
 
     def checking_visibility_of_element_located(self, locator: tuple, timeout=5, checking_time=2) -> bool:
@@ -160,7 +159,7 @@ class BasePage():
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
          - timeout: int. How long wait while element will be visible
-         - checking_time: int or float. How offen create visibility request 
+         - checking_time: int or float. How often create visibility request 
         """
 
         try:
