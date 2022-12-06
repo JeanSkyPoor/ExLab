@@ -18,6 +18,7 @@ def test_landing_url_and_black_theme(browser):
         page.checking_dark_mode_on()
 
 
+@allure.feature("Functional")
 @pytest.mark.skip(reason="Refresh functioan is not created")
 def test_display_logo_ExLab(browser):
     """Test logo ExLab. [2] test from check-list"""
@@ -25,6 +26,7 @@ def test_display_logo_ExLab(browser):
     page.open()
 
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 def test_about_us_header(browser):
     """Test 'About Us' button in HEADER. [3] test from check-list"""
@@ -44,6 +46,7 @@ def test_about_us_header(browser):
         page.checking_about_us_anchor_after_shifting()
 
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 def test_projects_header(browser):
     """Test 'Projects' button in HEADER. [4] test from check-list"""
@@ -63,6 +66,7 @@ def test_projects_header(browser):
         page.checking_projects_anchor_after_shifting()
 
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 def test_mentors_header(browser):
     """Test 'Mentors' button in HEADER. [5] test from check-list"""
@@ -82,6 +86,7 @@ def test_mentors_header(browser):
         page.checking_mentors_anchor_after_shifting()
 
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 @pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
@@ -102,6 +107,7 @@ def test_startup_for_header(browser):
         page.checking_startup_for_anchor_after_shifting()
 
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 def test_sun_icon_header(browser):
     """Test 'Sun icon' button in HEADER. [7] test from check-list"""
@@ -121,6 +127,7 @@ def test_sun_icon_header(browser):
         page.checking_light_mode_on()
     
 
+@allure.feature("Functional")
 @allure.feature("HEADER buttons")
 def test_join_header(browser):
     """Test 'Join' button in HEADER. [9] test from check-list"""
@@ -167,6 +174,7 @@ def test_text_your_opportunity_block(browser):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
+@allure.feature("Functional")
 @allure.feature('FOOTER buttons')
 def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
@@ -189,6 +197,7 @@ def test_linkedin_footer(browser):
         page.checking_url_after_click_on_linkedin_footer()
 
 
+@allure.feature("Functional")
 @allure.feature('FOOTER buttons')
 def test_instagram_footer(browser):
     """Test 'Instagram' button in FOOTER. [39] test from check-list"""
@@ -211,6 +220,7 @@ def test_instagram_footer(browser):
         page.checking_url_after_click_on_instagram_footer()    
 
 
+@allure.feature("Functional")
 @allure.feature('FOOTER buttons')
 def test_telegram_footer(browser):
     """Test 'Telegram' button in FOOTER. [40] test from check-list"""
@@ -233,6 +243,7 @@ def test_telegram_footer(browser):
         page.checking_url_after_click_on_telegram_footer()    
 
 
+@allure.feature("Functional")
 @allure.feature('FOOTER buttons')
 def test_youtube_footer(browser):
     """Test 'Youtube' button in FOOTER. [41] test from check-list"""
@@ -255,6 +266,7 @@ def test_youtube_footer(browser):
         page.checking_url_after_click_on_youtube_footer()    
 
 
+@allure.feature("Functional")
 def test_join_why_exlab_block(browser):
     """Test 'Join' button in Why Exlab block. [15] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -276,6 +288,7 @@ def test_join_why_exlab_block(browser):
         page.checking_url_after_click_on_join_why_exlab()
 
 
+@allure.feature("Functional")
 def test_mentors_spoilers(browser):
     """Test spoilers of mentors in mentors block. [20] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
