@@ -38,6 +38,11 @@ class MainPageLocators():
     WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-cCsOjp.bWNIcl')
     JOIN_WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-jdAMXn.gLqyEH > a')
 
+    #block MENTORS
+    MENTORS_ALL_SPOILERS_BLOCK = (By.CSS_SELECTOR, 'div.sc-jIAOiI.eSpxWu')
+    MENTORS_BLOCK_WITH_DATA = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc')
+    MENTOR_IMAGE = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > img')
+    MENTOR_DESCRIPTION = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > ul.sc-dsQDmV.iZMcmm')
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
 
     
