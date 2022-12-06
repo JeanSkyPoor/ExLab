@@ -27,18 +27,10 @@ class MainPage(BasePage):
 
 
     def checking_about_us_header_is_present_and_displayed(self):
-        """Checking 'About Us' button in HEADER is present and displayed"""
+        """Checking 'About_Us' button in HEADER is present and displayed"""
 
-        with allure.step("Сhecking if the 'About Us' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.ABOUT_US_HEADER_BUTTON) != True:
-                self.attach_screenshot('About_Us_button_in_HEADER_is_not_found')
-                raise AssertionError("About Us button in HEADER is not found")
-
-        with allure.step("Сhecking if the 'About Us' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON) != True:
-                self.attach_screenshot('About_Us_button_in_HEADER_is_not_displayed')
-                raise AssertionError("About Us button in HEADER is not displayed")    
-
+        self.checking_if_element_is_present(MainPageLocators.ABOUT_US_HEADER_BUTTON, 'About_Us', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.ABOUT_US_HEADER_BUTTON, 'About_Us', 'HEADER')
 
     def click_on_about_us_header(self):
         """Click on 'About Us' button in HEADER"""
@@ -49,16 +41,8 @@ class MainPage(BasePage):
     def checking_projects_header_is_present_and_displayed(self):
         """Checking Project button in HEADER is present and displayed"""
 
-        with allure.step("Checking if the 'Projects' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.PROJECTS_HEADER_BUTTON) != True:
-                self.attach_screenshot('Projects_button_in_HEADER_is_not_found')
-                raise AssertionError("Projects button in HEADER is not found")
-
-        with allure.step("Checking if the 'Projects' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.PROJECTS_HEADER_BUTTON) != True:
-                self.attach_screenshot('Project_button_in_HEADER_is_not_displayed')
-                raise AssertionError("Projects button in HEADER is not displayed")
-
+        self.checking_if_element_is_present(MainPageLocators.PROJECTS_HEADER_BUTTON, 'Projects', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.PROJECTS_HEADER_BUTTON, 'Projects', 'HEADER')
 
     def click_on_projects_header(self):
         """Click on 'Projects' button in HEADER"""
@@ -69,15 +53,8 @@ class MainPage(BasePage):
     def checking_mentors_header_is_present_and_displayed(self):
         """Checking 'Mentors' button in HEADER is present and displayed"""
 
-        with allure.step("Checking if the 'Mentors' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.MENTORS_HEADER_BUTTON) != True:
-                self.attach_screenshot('Mentors_button_in_HEADER_is_not_found')
-                raise AssertionError("Mentors button in HEADER is not found")
-
-        with allure.step("Checking if the 'Mentors' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.MENTORS_HEADER_BUTTON) != True:
-                self.attach_screenshot('Mentors_button_in_HEADER_is_not_displayed')
-                raise AssertionError("Mentors button in HEADER is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.MENTORS_HEADER_BUTTON, 'Mentors', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.MENTORS_HEADER_BUTTON, 'Mentors', 'HEADER')
 
     def click_on_mentors_header(self):
         """Click on 'Mentors' button in HEADER"""
@@ -86,17 +63,10 @@ class MainPage(BasePage):
 
 
     def checking_startup_for_header_is_present_and_displayed(self):
-        """Checking 'StartUp for' button in HEADER is present and displayed"""
+        """Checking 'StartUp_for' button in HEADER is present and displayed"""
 
-        with allure.step("Checking if the 'StartUp for' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON) != True:
-                self.attach_screenshot('Startup_for_button_in_HEADER_is_not_found')
-                raise AssertionError("StartUp for button in HEADER is not found")
-
-        with allure.step("Checking if the 'Start Up' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.STARTUP_FOR_HEADER_BUTTON) != True:
-                self.attach_screenshot('Startup_for_button_in_HEADER_is_not_displayed')
-                raise AssertionError("StartUp for button in HEADER is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.STARTUP_FOR_HEADER_BUTTON, 'StartUp_For', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.STARTUP_FOR_HEADER_BUTTON, 'StartUp_For', 'HEADER')
 
     def click_on_startup_for_header(self):
         """Click on 'Startup For' button in HEADER"""
@@ -105,20 +75,13 @@ class MainPage(BasePage):
 
  
     def checking_sun_icon_header_is_present_and_displayed(self):
-        """Checking 'Sun icon' button in HEADER is present and displayed"""
+        """Checking 'Sun_icon' button in HEADER is present and displayed"""
 
-        with allure.step("Checking if the 'Sun icon' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.SUN_ICON_HEADER_BUTTON) != True:
-                self.attach_screenshot('Sun_icon_in_HEADER_is_not_found')
-                raise AssertionError("Sun icon button in HEADER is not found")
-
-        with allure.step("Checking if the 'Sun icon' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.SUN_ICON_HEADER_BUTTON) != True:
-                self.attach_screenshot('Sun_icon_button_in_HEADER_is_not_displayed')
-                raise AssertionError("Sun icon button in HEADER is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.SUN_ICON_HEADER_BUTTON, 'Sun_Icon', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.SUN_ICON_HEADER_BUTTON, 'Sun_Icon', 'HEADER')
 
     def click_on_sun_icon_header(self):
-        """Click on 'Sun icon' button in HEADER"""
+        """Click on 'Sun_Icon' button in HEADER"""
 
         self.click_on_element(MainPageLocators.SUN_ICON_HEADER_BUTTON)
 
@@ -126,15 +89,8 @@ class MainPage(BasePage):
     def checking_join_header_is_present_and_displayed(self):
         """Checking 'Join' button in HEADER is present and displayed"""
 
-        with allure.step("Checking if the 'Join' button in HEADER is present"):
-            if self.is_element_present(MainPageLocators.JOIN_HEADER_BUTTON) != True:
-                self.attach_screenshot('Join_button_in_HEADER_is_not_found')
-                raise AssertionError("Join button in HEADER is not found")
-
-        with allure.step("Checking if the 'Join' button in HEADER is displayed"):
-            if self.is_element_displayed(MainPageLocators.JOIN_HEADER_BUTTON) != True:
-                self.attach_screenshot('Join_button_in_HEADER_is_not_displayed')
-                raise AssertionError("Join button in HEADER is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.JOIN_HEADER_BUTTON, 'Join', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.JOIN_HEADER_BUTTON, 'Join', 'HEADER')
 
     def click_on_join_header(self):
         """Click on 'Join' button in HEADER"""
@@ -148,80 +104,59 @@ class MainPage(BasePage):
         self.url_have_to_contain('https://t.me')
 
 
-    def checking_logo_in_your_opportunity_block_is_present_and_displayed(self):
-        """Checking Logo in block YOUR OPPORTUNITY is present and displayed"""
+    def checking_logo_gif_in_your_opportunity_block_is_present_and_displayed(self):
+        """Checking 'Logo_Gif' in block YOUR OPPORTUNITY is present and displayed"""
 
-        with allure.step("Checking if the 'Logo' in YOUR OPPORTUNITY block is present"):
-            if self.is_element_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY) != True:
-                self.attach_screenshot('Logo_in_your_opportunity_block_is_not_found')
-                raise AssertionError("Logo in block YOUR OPPORTUNITY is not found")
-
-        with allure.step("Checking if the 'Logo' in YOUR OPPORTUNITY block is displayed"):
-            if self.is_element_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY) != True:
-                self.attach_screenshot('Logo_in_your_opportunity_block_is_not_displayed')
-                raise AssertionError("Logo in block YOUR OPPORTUNITY is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY, 'Logo_Gif', 'YOUR_OPPORTUNITY')
+        self.checking_if_element_is_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY, 'Logo_Gif', 'YOUR_OPPORTUNITY')
 
     def checking_main_title_in_your_opportunity_block_is_present_and_displayed(self):
-        """Checking main title in your opportynity block is present and displayed"""
+        """Checking 'Main_Title' in your opportynity block is present and displayed"""
 
-        with allure.step("Checking if the 'Main title' in YOUR OPPORTUNITY block is present"):
-            if self.is_element_present(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY) != True:
-                self.attach_screenshot('Main_title_in_your_opportunity_block_is_not_found')
-                raise AssertionError("Main title in block YOUR OPPORTUNITY is not found")
-
-        with allure.step("Checking if the 'Main title' in YOUR OPPORTUNITY block is displayed"):
-            if self.is_element_displayed(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY) != True:
-                self.attach_screenshot('Main_title_in_your_opportunity_block_is_not_displayed')
-                raise AssertionError("Main title in block YOUR OPPORTUNITY is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY, 'Main_Title', 'YOUR_OPPORTUNITY')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_YOUR_OPPROTUNITY, 'Main_Title', 'YOUR_OPPORTUNITY')
 
     def checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed(self):
-        """Checking text under main title in your opportunity block is present and displayed"""
+        """Checking 'Text_Under_Main_Title' in your opportunity block is present and displayed"""
 
-        with allure.step("Checking if the 'Text under Main Title' in YOUR OPPORTUNITY block is present"):
-            if self.is_element_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY) != True:
-                self.attach_screenshot('Text_under_Main_title_in_your_opportunity_block_is_not_found')
-                raise AssertionError("Text under Main title in block YOUR OPPORTUNITY is not found")
-
-        with allure.step("Checking if the 'Text under Main Title' in YOUR OPPORTUNITY block is displayed"):
-            if self.is_element_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY) != True:
-                self.attach_screenshot('Text_under_Main_title_in_your_opportunity_block_is_not_displayed')
-                raise AssertionError("Text under Main title in block YOUR OPPORTUNITY is not displayed")
+        self.checking_if_element_is_present(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY, 'Text_Under_Main_Title', 'YOUR_OPPORTUNITY')
+        self.checking_if_element_is_displayed(MainPageLocators.BLOCK_TEXT_YOUR_OPPORTUNITY, 'Text_Under_Main_Title', 'YOUR_OPPORTUNITY')
 
 
     def checking_about_us_anchor_after_shifting(self):
         """Checking anchor element in 'About Us' block"""
 
-        self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.ABOUT_US_ANCHOR, 'About_Us')
 
     def checking_why_exlab_anchor_after_shifting(self):
         """Checking anchor element in 'Why Exlab' block"""
 
-        self.checking_anchor_element_after_shifting('Why Exlab', MainPageLocators.WHY_EXLAB_BLOCK)
+        self.checking_anchor_element_after_shifting(MainPageLocators.WHY_EXLAB_BLOCK, 'Why_Exlab')
 
     def checking_projects_anchor_after_shifting(self):
         """Checking anchor element in 'Projects' block"""
 
-        self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.PROJECTS_ANCHOR, 'Project')
 
     def checking_mentors_anchor_after_shifting(self):
         """Checking anchor element in 'Mentors' block"""
 
-        self.checking_anchor_element_after_shifting('Mentors', MainPageLocators.MENTORS_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.MENTORS_ANCHOR, 'Mentors')
 
     def checking_startup_for_anchor_after_shifting(self):
         """Checking anchor element in 'StartUp for' block"""
 
-        self.checking_anchor_element_after_shifting('StartUp for', MainPageLocators.STARTUP_FOR_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.STARTUP_FOR_ANCHOR, 'StartUp_For')
 
     def checking_help_project_anchor_after_shifting(self):
         """Checking anchor element in 'Help project' block"""
 
-        self.checking_anchor_element_after_shifting('Help Project', MainPageLocators.HELP_PROJECT_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.HELP_PROJECT_ANCHOR, 'Help_Project')
 
     def checking_footer_anchor_after_shifting(self):
         """Checking anchor element in 'Footer' block"""
 
-        self.checking_anchor_element_after_shifting('Footer', MainPageLocators.FOOTER_ANCHOR)
+        self.checking_anchor_element_after_shifting(MainPageLocators.FOOTER_ANCHOR, 'Footer')
 
 
     def scroll_to_about_us(self):
@@ -278,15 +213,8 @@ class MainPage(BasePage):
     def checking_linkedin_footer_is_present_and_displayed(self):
         """Checking 'Linkedin' button in FOOTER is present and displayed"""
 
-        with allure.step("Checking if the 'Linkedin' button in FOOTER is present"):
-            if self.is_element_present(MainPageLocators.LINKEDIN_FOOTER) != True:
-                self.attach_screenshot('Linkedin_button_in_FOOTER_block_is_not_found')
-                raise AssertionError('Linkedin button in FOOTER block is not found')
-
-        with allure.step("Checking if the 'Linkedin' button in FOOTER is displayed"):
-            if self.is_element_displayed(MainPageLocators.LINKEDIN_FOOTER) != True:
-                self.attach_screenshot('Linkedin_button_in_FOOTER_block_is_not_displayed')
-                raise AssertionError('Linkedin button in FOOTER block is not displayed')
+        self.checking_if_element_is_present(MainPageLocators.LINKEDIN_FOOTER, 'Linkedin', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.LINKEDIN_FOOTER, 'Linkedin', 'FOOTER')
 
     def click_on_linkedin_footer(self):
         """Click on 'Linkedin' button in FOOTER"""
@@ -295,6 +223,7 @@ class MainPage(BasePage):
 
     def checking_url_after_click_on_linkedin_footer(self):
         """Switch to the last opened window and check URL"""
+
         self.switch_to_the_last_opened_window()
         self.url_have_to_contain('https://www.linkedin.com')
 
@@ -302,15 +231,8 @@ class MainPage(BasePage):
     def checking_instagram_footer_is_present_and_displayed(self):
         """Checking 'Instagram' button in FOOTER is present and displayed"""
 
-        with allure.step("Checking if the 'Instagram' button in FOOTER is present"):
-            if self.is_element_present(MainPageLocators.INSTAGRAM_FOOTER) != True:
-                self.attach_screenshot('Instagram_button_in_FOOTER_block_is_not_found')
-                raise AssertionError('Instagram button in FOOTER block is not found')
-
-        with allure.step("Checking if the 'Linkedin' button in FOOTER is displayed"):
-            if self.is_element_displayed(MainPageLocators.INSTAGRAM_FOOTER) != True:
-                self.attach_screenshot('Instagram_button_in_FOOTER_block_is_not_displayed')
-                raise AssertionError('Instagram button in FOOTER block is not displayed')
+        self.checking_if_element_is_present(MainPageLocators.INSTAGRAM_FOOTER, 'Instagram', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.INSTAGRAM_FOOTER, 'Instagram', 'FOOTER')
 
     def click_on_instagram_footer(self):
         """Click on 'Instagram' button in FOOTER"""
@@ -327,15 +249,8 @@ class MainPage(BasePage):
     def checking_telegram_footer_is_present_and_displayed(self):
         """Checking 'Telegram' button in FOOTER is present and displayed"""
 
-        with allure.step("Checking if the 'Telegram' button in FOOTER is present"):
-            if self.is_element_present(MainPageLocators.TELEGRAM_FOOTER) != True:
-                self.attach_screenshot('Telegram_button_in_FOOTER_block_is_not_found')
-                raise AssertionError('Telegram button in FOOTER block is not found')
-
-        with allure.step("Checking if the 'Telegram' button in FOOTER is displayed"):
-            if self.is_element_displayed(MainPageLocators.TELEGRAM_FOOTER) != True:
-                self.attach_screenshot('Telegram_button_in_FOOTER_block_is_not_displayed')
-                raise AssertionError('Telegram button in FOOTER block is not displayed')
+        self.checking_if_element_is_present(MainPageLocators.TELEGRAM_FOOTER, 'Telegram', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.TELEGRAM_FOOTER, 'Telegram', 'FOOTER')
 
     def click_on_telegram_footer(self):
         """Click on 'Telegram' button in FOOTER"""
@@ -352,15 +267,8 @@ class MainPage(BasePage):
     def checking_youtube_footer_is_present_and_displayed(self):
         """Checking 'Youtube' button in FOOTER is present and displayed"""
 
-        with allure.step("Checking if the 'Youtube' button in FOOTER is present"):
-            if self.is_element_present(MainPageLocators.YOUTUBE_FOOTER) != True:
-                self.attach_screenshot('Youtube_button_in_FOOTER_block_is_not_found')
-                raise AssertionError('Youtube button in FOOTER block is not found')
-
-        with allure.step("Checking if the 'Youtube' button in FOOTER is displayed"):
-            if self.is_element_displayed(MainPageLocators.YOUTUBE_FOOTER) != True:
-                self.attach_screenshot('Youtube_button_in_FOOTER_block_is_not_displayed')
-                raise AssertionError('Youtube button in FOOTER block is not displayed')
+        self.checking_if_element_is_present(MainPageLocators.YOUTUBE_FOOTER, 'Youtube', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.YOUTUBE_FOOTER, 'Youtube', 'FOOTER')
 
     def click_on_youtube_footer(self):
         """Click on 'Youtube' button in FOOTER"""
@@ -377,15 +285,8 @@ class MainPage(BasePage):
     def checking_join_why_exlab_is_present_and_displayed(self):
         """Checking 'Join' button in 'Why Exlab' is present and displayed"""
 
-        with allure.step("Checking if the 'Join' button in Why Exlab block is present"):
-            if self.is_element_present(MainPageLocators.JOIN_WHY_EXLAB_BLOCK) != True:
-                self.attach_screenshot('Join_button_in_Why_Exlab_block_is_not_found')
-                raise AssertionError('Join button in Why Exlab block is not found')
-
-        with allure.step("Checking if the 'Join' button in Why Exlab block is displayed"):
-            if self.is_element_displayed(MainPageLocators.JOIN_WHY_EXLAB_BLOCK) != True:
-                self.attach_screenshot('Join_button_in_Why_Exlab_block_is_not_displayed')
-                raise AssertionError('Join button in Why Exlab block is not displayed')
+        self.checking_if_element_is_present(MainPageLocators.JOIN_WHY_EXLAB_BLOCK, 'Join', 'Why_Exlab')
+        self.checking_if_element_is_displayed(MainPageLocators.JOIN_WHY_EXLAB_BLOCK, 'Join', 'Why_Exlab')
 
     def click_on_join_why_exlab(self):
         """Click on 'Join' button in Why Exlab block"""
@@ -430,20 +331,15 @@ class MainPage(BasePage):
                 if self.is_element_present(locator) != True: #При закрытом спойлере появляется объект с локатором locator, если спойлер не закрыть, объекта не будет и тест упадет
                     self.attach_screenshot('Spoiler_is_not_closed') 
                     raise AssertionError(f"Spoiler is not closed. {index+1} spoiler")
+                    #TO DO: по возможности переделать этот метод
 
     
     def checking_boosty_help_project_button_is_present_and_displayed(self):
         """Checking 'Boosty' button in Help Project block is present and displayed"""
 
-        with allure.step("Checking if the 'Boosty' button in Help Project block is present"):
-            if self.is_element_present(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON) != True:
-                self.attach_screenshot('Boosty_button_is_not_present')
-                raise AssertionError('Boosty button in Help Project block is not present')
+        self.checking_if_element_is_present(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON, 'Boosty', 'Help_Project')
+        self.checking_if_element_is_displayed(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON, 'Boosty', 'Help_Project')
 
-        with allure.step("Checking if the 'Boosty' button in Help Project block is displayed"):
-            if self.is_element_displayed(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON) != True:
-                self.attach_screenshot('Boosty button is not displayed')
-                raise AssertionError('Boosty button in Help Project block is not displayed')
                 
     def click_on_boosty_help_project(self):
         """Click on 'Boosty' button in Help Project block"""
