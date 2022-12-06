@@ -27,20 +27,20 @@ def test_display_logo_ExLab(browser):
 
 @allure.feature("HEADER buttons")
 def test_about_us_header(browser):
-    """Test 'About Us' button in HEADER. [3] test from check-list"""
+    """Test 'About_Us' button in HEADER. [3] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if 'About Us' HEADER element present, displayed and clickable"):
+    with allure.step("Step 2. Сhecking if 'About_Us' HEADER element present, displayed and clickable"):
         page.checking_about_us_header_is_present_and_displayed()
 
-    with allure.step("Step 3. Click on 'About us' in HEADER"):
+    with allure.step("Step 3. Click on 'About_Us' in HEADER"):
         page.click_on_about_us_header()
 
-    with allure.step("Step 4. Checking 'About Us' anchor element after shifting"):
+    with allure.step("Step 4. Checking 'About_Us' anchor element after shifting"):
         page.checking_about_us_anchor_after_shifting()
 
 
@@ -85,36 +85,36 @@ def test_mentors_header(browser):
 @allure.feature("HEADER buttons")
 @pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
-    """Test 'StartUp for' button in HEADER. [6] test from check-list"""
+    """Test 'StartUp_For' button in HEADER. [6] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if 'StartUp for' HEADER element present and displayed"):
+    with allure.step("Step 2. Сhecking if 'StartUp_For' HEADER element present and displayed"):
         page.checking_startup_for_header_is_present_and_displayed()
 
-    with allure.step("Step 3. Click on 'StartUp for' in HEADER"):
+    with allure.step("Step 3. Click on 'StartUp_For' in HEADER"):
         page.click_on_startup_for_header() 
 
-    with allure.step("Step 4. Checking 'StartUp for' anchor element after shifting"):
+    with allure.step("Step 4. Checking 'StartUp_For' anchor element after shifting"):
         page.checking_startup_for_anchor_after_shifting()
 
 
 @allure.feature("HEADER buttons")
 def test_sun_icon_header(browser):
-    """Test 'Sun icon' button in HEADER. [7] test from check-list"""
+    """Test 'Sun_Icon' button in HEADER. [7] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if 'Sun icon' HEADER element present and displayed"):
+    with allure.step("Step 2. Сhecking if 'Sun_Icon' HEADER element present and displayed"):
         page.checking_sun_icon_header_is_present_and_displayed()
 
-    with allure.step("Step 3. Click on 'Sun icon' in HEADER"):
+    with allure.step("Step 3. Click on 'Sun_Icon' in HEADER"):
         page.click_on_sun_icon_header()
 
     with allure.step("Step 4. Checking light theme on"):
@@ -141,29 +141,29 @@ def test_join_header(browser):
 
 
 def test_logo_in_block_your_opportunity(browser):
-    """Test Logo in block YOUR OPPORTYNITY is present and displayed. [11] test from check-list"""
+    """Test 'Logo_Gif' in block YOUR OPPORTYNITY is present and displayed. [11] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Checking if logo in block 'Your opportunity' is present and displayed"):
-        page.checking_logo_in_your_opportunity_block_is_present_and_displayed()
+    with allure.step("Step 2. Checking if 'Logo_Gif' in block 'Your opportunity' is present and displayed"):
+        page.checking_logo_gif_in_your_opportunity_block_is_present_and_displayed()
 
 
 def test_text_your_opportunity_block(browser):
-    """Test text in block YOUR OPPORTUNITY is present and displayed. [12] test from check-list"""
+    """Test 'Text_Under_Main_Title' block YOUR OPPORTUNITY is present and displayed. [12] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Checking if Main title in block 'Your opportunity' is present and displayed"):
+    with allure.step("Step 2. Checking if 'Text_Under_Main_Title' in block Your opportunity is present and displayed"):
         page.checking_main_title_in_your_opportunity_block_is_present_and_displayed()
 
-    with allure.step("Step 3. Checking if text in block ''Your opportunity' under Main title is present and displayed"):
+    with allure.step("Step 3. Checking if 'Text_Under_Main_Title' in block ' in Your opportunity under Main title is present and displayed"):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
