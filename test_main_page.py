@@ -255,8 +255,40 @@ def test_youtube_footer(browser):
         page.checking_url_after_click_on_youtube_footer()    
 
 
+def test_join_why_exlab_block(browser):
+    """Test 'Join' button in Why Exlab block. [15] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Why Exlab'"):
+        page.scroll_to_why_exlab()
+
+    with allure.step("Step 3. Checking if 'Join' button in 'Why Exlab' block is present and displayed"):
+        page.checking_join_why_exlab_is_present_and_displayed()
+
+    with allure.step("Step 4. Click on 'Join' in Why Exlab block"):
+        page.click_on_join_why_exlab()
+
+    with allure.step("Step 5. Checking URL opened page"):
+        page.checking_url_after_click_on_join_why_exlab()
 
 
+
+
+
+
+
+
+
+
+def test_test(browser):
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+    page.scroll_to_why_exlab()
+    time.sleep(5)
 
 
 
