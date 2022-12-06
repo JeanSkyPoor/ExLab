@@ -3,7 +3,7 @@ from pages.base_page import BasePage
 import allure
 import re
 from selenium.webdriver.common.by import By
-
+import time
 
 
 class MainPage(BasePage):
@@ -332,7 +332,7 @@ class MainPage(BasePage):
         spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
         for index, spoiler in enumerate(spoilers):
             with allure.step(f"Checking {index+1} spoiler of mentors"):
-                locator = (By.CSS_SELECTOR, f'div:nth-child({index+10}) > div.sc-bUbCnL.gFhhBm')
+                locator = (By.CSS_SELECTOR, f'div:nth-child({index+1}) > div.sc-bUbCnL.gFhhBm > img')
 
                 spoiler.click()
 
