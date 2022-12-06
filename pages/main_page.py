@@ -153,6 +153,10 @@ class MainPage(BasePage):
         """Checking anchor element in 'About Us' block"""
         self.checking_anchor_element_after_shifting('About Us', MainPageLocators.ABOUT_US_ANCHOR)
 
+    def checking_why_exlab_anchor_after_shifting(self):
+        """Checking anchor element in 'Why Exlab' block"""
+        self.checking_anchor_element_after_shifting('Why Exlab', MainPageLocators.WHY_EXLAB_BLOCK)
+
     def checking_projects_anchor_after_shifting(self):
         """Checking anchor element in 'Projects' block"""
         self.checking_anchor_element_after_shifting('Project', MainPageLocators.PROJECTS_ANCHOR)
@@ -179,6 +183,13 @@ class MainPage(BasePage):
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:2])
         self.checking_about_us_anchor_after_shifting()
+
+    def scroll_to_why_exlab(self):
+        """Scroll from top to 'Why Exlab' block and check anchor element"""
+        elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
+        self.scroll_down_element_to_element(elements[:2]) 
+        self.scroll_down_element_to_element([self.browser.find_element(*MainPageLocators.WHY_EXLAB_BLOCK)]) #Костыль!
+        self.checking_why_exlab_anchor_after_shifting()
 
     def scroll_to_project(self):
         """Scroll from top to 'Project' block and check anchor element"""
@@ -295,10 +306,25 @@ class MainPage(BasePage):
             self.url_have_to_contain('https://www.youtube.com')
 
 
+    def checking_join_why_exlab_is_present_and_displayed(self):
+        """Checking 'Join' button in 'Why Exlab' is present and displayed"""
+        if self.is_element_present(MainPageLocators.JOIN_WHY_EXLAB_BLOCK) != True:
+            self.attach_screenshot('Join_button_in_Why_Exlab_block_is_not_found')
+            raise AssertionError('Join button in Why Exlab block is not found')
 
+        if self.is_element_displayed(MainPageLocators.JOIN_WHY_EXLAB_BLOCK) != True:
+            self.attach_screenshot('Join_button_in_Why_Exlab_block_is_not_displayed')
+            raise AssertionError('Join button in Why Exlab block is not displayed')
 
+    def click_on_join_why_exlab(self):
+        """Click on 'Join' button in Why Exlab"""
+        self.click_on_element(MainPageLocators.JOIN_WHY_EXLAB_BLOCK)
 
-
+    def checking_url_after_click_on_join_why_exlab(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_contain('https://t.me')
 
 
 
