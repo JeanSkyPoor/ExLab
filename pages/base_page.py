@@ -55,6 +55,23 @@ class BasePage():
             return False
 
 
+    def checking_if_element_is_present(self, locator: tuple, element_name: str, block_name: str) -> None:
+        """Checking if element is present. If not, create screenshot of visible window and raise AssertionError
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - element_name: str like 'Join' or 'StartUp_for'
+         - block_name: str like 'HEADER' or 'YOUR_OPPORTUNITY'
+
+        Raise AssertionError like 'Join in HEADER is not present'
+        """
+        
+        with allure.step(f"Checking if {element_name} is present in {block_name} block"):
+            if self.is_element_present(locator) != True:
+                self.attach_screenshot(f"{element_name}_in_{block_name}_is_not_present")
+                raise AssertionError(f"{element_name} in {block_name} is not present")
+
+
     def is_element_displayed(self, locator: tuple) -> bool:
         """Checking for element is displayed on screen. Have to use after self.is_element_present
         
@@ -63,6 +80,22 @@ class BasePage():
         """
         
         return self.browser.find_element(*locator).is_displayed()
+
+
+    def checking_if_element_is_displayed(self, locator: tuple, element_name: str, block_name: str) -> None:
+        """Checking if element is displayed. If not, create screenshot of visible window and raise AssertionError
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - element_name: str like 'Join' or 'StartUp_for'
+         - block_name: str like 'HEADER' or 'YOUR_OPPORTUNITY'
+        
+        Raise AssertionError like 'Join in HEADER is not displayed'
+        """
+        with allure.step(f"Checking if {element_name} is displayed in {block_name} block"):
+            if self.is_element_displayed(locator) != True:
+                self.attach_screenshot(f"{element_name}_in_{block_name}_is_not_displayed")
+                raise AssertionError(f"{element_name} in {block_name} is not displayed")
 
 
     def get_value_of_css_property(self, locator: tuple, property: str) -> str:
@@ -169,12 +202,14 @@ class BasePage():
             return False
 
 
-    def checking_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
+    def checking_anchor_element_after_shifting(self, anchor_locator: tuple, anchor_element_name: str) -> None:
         """Checking anchor element after shifting\n
 
         Args:
-         - anchor_element_name: how you wanna see anchor's name on report and assert error
          - anchor_locator: tuple like (By.CSS_SELECTOR, '#about')
+         - anchor_element_name: str like 'Join' or 'StartUp_for'
+        
+        Raise AssertionError like 'About_us anchor is not founded after shifting'
         """
 
         with allure.step(f"Checking {anchor_element_name} anchor after shifting"):
