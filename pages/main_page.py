@@ -327,6 +327,35 @@ class MainPage(BasePage):
             self.url_have_to_contain('https://t.me')
 
 
+    def check_all_mentors_spoilers(self):
+        """one by one checking mentor's spoilers in mentors block"""
+        spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
+        for index, spoiler in enumerate(spoilers):
+            with allure.step(f"Checking {index+1} spoiler of mentors"):
+                
+                spoiler.click()
+
+                if self.checking_visibility_of_element_located(MainPageLocators.MENTORS_BLOCK_WITH_DATA, checking_time=0.5) != True: 
+                    self.attach_screenshot('Block_with_data_of_mentor_is_not_displayed')           
+                    raise AssertionError(f"Block with data of mentor is not displayed. {index+1} spoiler")
+
+                if self.checking_visibility_of_element_located(MainPageLocators.MENTOR_IMAGE, checking_time=0.5) != True:
+                    self.attach_screenshot('Image_of_mentor_is_not_displayed') 
+                    raise AssertionError(f"Image of mentor is not displayed. {index+1} spoiler")    
+
+                if self.checking_visibility_of_element_located(MainPageLocators.MENTOR_DESCRIPTION, checking_time=0.5) != True:
+                    self.attach_screenshot('Description_info_of_mentor_is_not_displayed') 
+                    raise AssertionError(f"Description info of mentor is not displayed. {index+1} spoiler")
+
+                spoiler.click()
+
+                if self.checking_visibility_of_element_located(MainPageLocators.MENTORS_BLOCK_WITH_DATA, timeout=1, checking_time=0.5) != False: 
+                    self.attach_screenshot('Block_with_data_of_mentor_is_displayed')           
+                    raise AssertionError(f"Block with data of mentor is displayed. {index+1} spoiler")
+                
+
+            
+
 
 
 
