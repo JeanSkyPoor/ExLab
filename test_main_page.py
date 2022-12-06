@@ -276,19 +276,32 @@ def test_join_why_exlab_block(browser):
         page.checking_url_after_click_on_join_why_exlab()
 
 
-
-
-
-
-
-
-
-
-def test_test(browser):
+def test_mentors_spoilers(browser):
+    """Test spoilers of mentors in mentors block. [20] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
-    page.scroll_to_why_exlab()
-    time.sleep(5)
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Mentors'"):
+        page.scroll_to_mentors()
+
+    with allure.step("Step 3. Checking all mentor's spoilers"):
+        page.check_all_mentors_spoilers()
+
+
+
+
+
+
+
+
+# def test_test(browser):
+#     page = MainPage(browser, MainPageLocators.LINK)
+#     page.open()
+#     page.scroll_to_why_exlab()
+#     time.sleep(5)
 
 
 
