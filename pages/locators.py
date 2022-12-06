@@ -43,6 +43,11 @@ class MainPageLocators():
     MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc')
     MENTOR_IMAGE = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > img')
     MENTOR_DESCRIPTION = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > ul.sc-dsQDmV.iZMcmm')
+
+
+    #block HELP PROJECT
+    BOOSTY_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(1)')
+    PATREON_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(2)')
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
 
     
