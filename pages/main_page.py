@@ -328,7 +328,7 @@ class MainPage(BasePage):
 
 
     def check_all_mentors_spoilers(self):
-        """one by one checking mentor's spoilers in mentors block"""
+        """One by one checking mentor's spoilers in mentors block"""
         spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
         for index, spoiler in enumerate(spoilers):
             with allure.step(f"Checking {index+1} spoiler of mentors"):
@@ -353,109 +353,24 @@ class MainPage(BasePage):
                 if self.is_element_present(locator) != True: #При закрытом спойлере появляется объект с локатором locator, если спойлер не закрыть, объекта не будет и тест упадет
                     self.attach_screenshot('Spoiler_is_not_closed') 
                     raise AssertionError(f"Spoiler is not closed {index+1} spoiler")
-                #TO DO: реализовать проверку, что спойлер закрылся
+
+    
+    def checking_boosty_help_project_button_is_present_and_displayed(self):
+        """Checking 'Boosty' button in Help Project block is present and displayed"""
+        if self.is_element_present(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON) != True:
+            self.attach_screenshot('Boosty_button_is_not_present')
+            raise AssertionError('Boosty button in help project block is not present')
+
+        if self.is_element_displayed(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON) != True:
+            self.attach_screenshot('Boosty button is not displayed')
+            raise AssertionError('Boosty button in help project block is not displayed')
                 
-
+    def click_on_boosty_help_project(self):
+        """Click on 'Boosty' button in Help Project block"""
+        self.click_on_element(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON)
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # def check_background_color(self, theme_type:str) -> None:
-    #     """Checking background color
-
-    #     theme_type: there are two options: 'dark' and 'white'. 
-    #     """
-
-    #     with allure.step("Checking background color..."):            
-    #         color = self.get_background_color()
-    #         if theme_type == 'dark':
-    #             assert color == '#111111', f"Theme's color is not black, have to be #111111, but have {color}"
-    #         if theme_type == 'white':
-    #             assert color == '#ffffff', f"Theme's color is not white, have to be #ffffff, but have {color}"
-
-
-    # def matching_item_attribute(self, correct_src: str, attribute: str, locator: tuple) -> None:
-    #     """Matching correct_src and current src from element by 'webelement.get_attribute(src)
-
-    #     correct_src: str like 'http://test.exlab.team/gif/logo.gif'\n
-    #     attribute: str like 'src' \n
-    #     locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped         
-    #     '"""
-
-    #     with allure.step(f"Checking item's {attribute} ..."):
-    #         srs = self.get_element_attribute(locator, attribute)
-    #         assert srs == correct_src, f"SRC is not correct. Have to be {correct_src}, but have {srs}"
-
-
-    # def matching_text_from_element(self, correct_text: str, locator: tuple):
-    #     """Matching correct text and text from 'webelement.text
-        
-    #     correct_text: str like 'Твоя возможность' \n
-    #     locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
-    #     '"""
-    #     with allure.step(f"Matching text from item and correct_text..."):
-    #         text = self.get_element_text(locator)
-    #         assert text == correct_text, f"text is wrong. Have to be {correct_text}, but have {text}"
-
-
-    # def check_element_is_present(self, button_name: str, button_locator: tuple) -> None:
-    #     """Checking if an element exists on the page
-
-    #     button_name: how you wanna see button's name on report and assert error \n
-    #     button_locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped 
-    #     """
-
-    #     with allure.step(f"Checking {button_name} on page..."):
-    #         assert self.is_element_present(*button_locator), f"{button_name} is not founded"
-
-    
-    # def check_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
-    #     """Checking anchor element after shifting
-
-    #     anchor_element_name: how you wanna see anchor's name on report and assert error \n
-    #     anchor_locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped 
-    #     """
-
-    #     with allure.step(f"Checking {anchor_element_name} after shifting..."):
-    #         assert self.checking_visibility_of_element_located(*anchor_locator), f"{anchor_element_name} anchor is not founded after shifting"
-            
-
-    # def check_join_opened_correct_url(self, currect_url: str) -> None:
-    #     """Switch to the last window handless and check current URL and currect URL"""
-
-    #     with allure.step(f"Checking url, have to be... {currect_url}"):
-    #         self.browser.switch_to.window(self.browser.window_handles[-1])
-    #         assert self.checking_url_to_be(currect_url), f'URL is not correct. Have to be {currect_url}, but {self.browser.current_url}'
-
-    # def iterator_mathcing_list(self, matching_list: list, text: str):
-    #     with allure.step("Start itereting..."):
-    #         for item in matching_list:
-    #             if item in text:
-    #                     continue
-    #             else:
-    #                     return False
-    #         return True
-    
-    # def checking_if_matching_text_in_element(self, matching_list: list,  locator: tuple):
-    #     """Checking if items from matching_list in text by iterator
-        
-    #     match_list: list like ['ПОЛУЧИТЬ ТОТ САМЫЙ ОПЫТ', 'ПОРАБОТАТЬ В КОМАНДЕ'] \n
-    #     locator: tuple like (By.CSS_SELECTOR, 'random selector'). Not unzipped
-    #     """
-    #     with allure.step("Getting text and check in matching_list"):
-    #         text = self.get_element_text(locator)
-    #         assert self.iterator_mathcing_list(matching_list, text), f"Text is wrong. Not found one or more elements from {matching_list} in {text}"
-            
-
+    def checking_url_after_click_on_boosty_help_project(self):
+        """Switch to the last opened window and check URL"""
+        with allure.step(f"Checking url opened page"):
+            self.switch_to_the_last_opened_window()
+            self.url_have_to_contain('https://boosty.to')
