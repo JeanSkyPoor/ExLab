@@ -396,6 +396,10 @@ class MainPage(BasePage):
             with allure.step(f"Checking {index+1} spoiler of mentors"):
                 locator = (By.CSS_SELECTOR, f'div:nth-child({index+1}) > div.sc-bUbCnL.gFhhBm') #локатор закрытого спойлера
 
+                with allure.step("Checking spoiler for clickable"):
+                    if self.is_element_clickable(spoiler) != True:
+                        raise AssertionError(f"Spoiler is not clickable. {index+1} spoiler")
+
                 spoiler.click()
 
                 if self.checking_visibility_of_element_located(MainPageLocators.MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER, checking_time=0.5) != True: 
@@ -411,10 +415,10 @@ class MainPage(BasePage):
                     raise AssertionError(f"Description info of mentor is not displayed. {index+1} spoiler")
 
                 spoiler.click()
-
+    
                 if self.is_element_present(locator) != True: #При закрытом спойлере появляется объект с локатором locator, если спойлер не закрыть, объекта не будет и тест упадет
                     self.attach_screenshot('Spoiler_is_not_closed') 
-                    raise AssertionError(f"Spoiler is not closed {index+1} spoiler")
+                    raise AssertionError(f"Spoiler is not closed. {index+1} spoiler")
 
     
     def checking_boosty_help_project_button_is_present_and_displayed(self):
