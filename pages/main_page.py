@@ -2,6 +2,7 @@ from pages.locators import MainPageLocators
 from pages.base_page import BasePage
 import allure
 import re
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 import time
 
@@ -329,7 +330,11 @@ class MainPage(BasePage):
 
     def check_all_mentors_spoilers(self):
         """One by one checking mentor's spoilers in mentors block"""
-        spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
+        try:
+            spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
+        except NoSuchElementException:
+            raise NoSuchElementException("Mentor's spoilers is not found")
+            
         for index, spoiler in enumerate(spoilers):
             with allure.step(f"Checking {index+1} spoiler of mentors"):
                 locator = (By.CSS_SELECTOR, f'div:nth-child({index+1}) > div.sc-bUbCnL.gFhhBm') #локатор закрытого спойлера
