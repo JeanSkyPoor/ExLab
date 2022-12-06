@@ -33,8 +33,14 @@ class MainPage(BasePage):
             self.attach_screenshot('About_Us_button_in_HEADER_is_not_displayed')
             raise AssertionError("About Us button in HEADER is not displayed")    
 
+
     def click_on_about_us_header(self):
-        """Click on 'About Us' button in HEADER"""
+        """Check 'About Us' button in HEADER for clickable and click on it"""
+
+        with allure.step("Checking 'About Us' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.ABOUT_US_HEADER_BUTTON) != True:
+                raise AssertionError('About Us button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.ABOUT_US_HEADER_BUTTON)
 
 
@@ -48,8 +54,14 @@ class MainPage(BasePage):
             self.attach_screenshot('Project_button_in_HEADER_is_not_displayed')
             raise AssertionError("Projects button in HEADER is not displayed")
 
+
     def click_on_projects_header(self):
-        """Click on 'Projects' button in HEADER"""
+        """Check 'Projects' button in HEADER for clickable and click on it"""
+
+        with allure.step("Checking 'Projects' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.PROJECTS_HEADER_BUTTON) != True:
+                raise AssertionError('Projects button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.PROJECTS_HEADER_BUTTON)
 
 
@@ -64,7 +76,12 @@ class MainPage(BasePage):
             raise AssertionError("Mentors button in HEADER is not displayed")
 
     def click_on_mentors_header(self):
-        """Click on 'Mentors' button in HEADER"""
+        """Check 'Mentors' button in HEADER for clickable and click on it"""
+
+        with allure.step("Checking 'Mentors' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.MENTORS_HEADER_BUTTON) != True:
+                raise AssertionError('Mentors button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.MENTORS_HEADER_BUTTON)
 
 
@@ -79,7 +96,12 @@ class MainPage(BasePage):
             raise AssertionError("StartUp for button in HEADER is not displayed")
 
     def click_on_startup_for_header(self):
-        """Click on 'StartUp for' button in HEADER"""
+        """Check 'StartUp for' button in HEADER for clickable and click on it"""
+
+        with allure.step("Checking 'StartUp for' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.STARTUP_FOR_HEADER_BUTTON) != True:
+                raise AssertionError('StartUp for button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.STARTUP_FOR_HEADER_BUTTON)
 
  
@@ -94,7 +116,12 @@ class MainPage(BasePage):
             raise AssertionError("Sun icon button in HEADER is not displayed")
 
     def click_on_sun_icon_header(self):
-        """Click on 'Sun icon' button in HEADER"""
+        """Check 'Sun Icon' button in HEADER for clickable and click on it"""
+        
+        with allure.step("Checking 'Sun icon' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.SUN_ICON_HEADER_BUTTON) != True:
+                raise AssertionError('Sun icon button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.SUN_ICON_HEADER_BUTTON)
 
 
@@ -109,7 +136,12 @@ class MainPage(BasePage):
             raise AssertionError("Join button in HEADER is not displayed")
 
     def click_on_join_header(self):
-        """Click on 'Join' button in HEADER"""
+        """Check 'Join' button in HEADER for clickable and click on it"""
+
+        with allure.step("Checking 'Join' button in HEADER for clickable"):
+            if self.is_element_clickable(MainPageLocators.JOIN_HEADER_BUTTON) != True:
+                raise AssertionError('Join button in HEADER is not clickable')
+
         self.click_on_element(MainPageLocators.JOIN_HEADER_BUTTON)
 
     def checking_url_after_click_on_join_header(self):
@@ -234,7 +266,12 @@ class MainPage(BasePage):
             raise AssertionError('Linkedin button in FOOTER block is not displayed')
 
     def click_on_linkedin_footer(self):
-        """Click on 'Linkedin' button in FOOTER"""
+        """Check 'Linkedin' button in FOOTER for clickable and click on it"""
+
+        with allure.step("Checking 'Linkedin' button in FOOTER for clickable"):
+            if self.is_element_clickable(MainPageLocators.LINKEDIN_FOOTER) != True:
+                raise AssertionError('Linkedin button in FOOTER is not clickable')
+
         self.click_on_element(MainPageLocators.LINKEDIN_FOOTER)
 
     def checking_url_after_click_on_linkedin_footer(self):
@@ -255,7 +292,12 @@ class MainPage(BasePage):
             raise AssertionError('Instagram button in FOOTER block is not displayed')
 
     def click_on_instagram_footer(self):
-        """Click on 'Instagram' button in FOOTER"""
+        """Check 'Instagram' button in FOOTER for clickable and click on it"""
+
+        with allure.step("Checking 'Instagram' button in FOOTER for clickable"):
+            if self.is_element_clickable(MainPageLocators.INSTAGRAM_FOOTER) != True:
+                raise AssertionError('Instagram button in FOOTER is not clickable')
+
         self.click_on_element(MainPageLocators.INSTAGRAM_FOOTER)
 
     def checking_url_after_click_on_instagram_footer(self):
@@ -276,7 +318,12 @@ class MainPage(BasePage):
             raise AssertionError('Telegram button in FOOTER block is not displayed')
 
     def click_on_telegram_footer(self):
-        """Click on 'Telegram' button in FOOTER"""
+        """Check 'Telegram' button in FOOTER for clickable and click on it"""
+
+        with allure.step("Checking 'Telegram' button in FOOTER for clickable"):
+            if self.is_element_clickable(MainPageLocators.TELEGRAM_FOOTER) != True:
+                raise AssertionError('Telegram button in FOOTER is not clickable')
+
         self.click_on_element(MainPageLocators.TELEGRAM_FOOTER)
 
     def checking_url_after_click_on_telegram_footer(self):
@@ -297,7 +344,12 @@ class MainPage(BasePage):
             raise AssertionError('Youtube button in FOOTER block is not displayed')
 
     def click_on_youtube_footer(self):
-        """Click on 'Youtube' button in FOOTER"""
+        """Check 'Youtube' button in FOOTER for clickable and click on it"""
+
+        with allure.step("Checking 'Youtube' button in FOOTER for clickable"):
+            if self.is_element_clickable(MainPageLocators.YOUTUBE_FOOTER) != True:
+                raise AssertionError('Youtube button in FOOTER is not clickable')
+
         self.click_on_element(MainPageLocators.YOUTUBE_FOOTER)
 
     def checking_url_after_click_on_youtube_footer(self):
@@ -318,7 +370,12 @@ class MainPage(BasePage):
             raise AssertionError('Join button in Why Exlab block is not displayed')
 
     def click_on_join_why_exlab(self):
-        """Click on 'Join' button in Why Exlab"""
+        """Check 'Join' button in Why Exlab block for clickable and click on it"""
+
+        with allure.step("Checking 'Join' button in Why Exlab block for clickable"):
+            if self.is_element_clickable(MainPageLocators.JOIN_WHY_EXLAB_BLOCK) != True:
+                raise AssertionError('Join button in Why Exlab block is not clickable')
+
         self.click_on_element(MainPageLocators.JOIN_WHY_EXLAB_BLOCK)
 
     def checking_url_after_click_on_join_why_exlab(self):
@@ -371,7 +428,12 @@ class MainPage(BasePage):
             raise AssertionError('Boosty button in help project block is not displayed')
                 
     def click_on_boosty_help_project(self):
-        """Click on 'Boosty' button in Help Project block"""
+        """Check 'Boosty' button in Help Project block for clickable and click on it"""
+
+        with allure.step("Checking 'Boosty' button in Help Project block for clickable"):
+            if self.is_element_clickable(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON) != True:
+                raise AssertionError('Boosty button in Help Project block is not clickable')
+
         self.click_on_element(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON)
             
     def checking_url_after_click_on_boosty_help_project(self):
