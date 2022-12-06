@@ -44,12 +44,12 @@ class BasePage():
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
         """ 
-        with allure.step(f"Checking if element is present with {locator}"):
-            try:
-                self.browser.find_element(*locator)
-            except NoSuchElementException:
-                return False
+        
+        try:
+            self.browser.find_element(*locator)
             return True
+        except NoSuchElementException:
+            return False
 
     
     def is_element_displayed(self, locator: tuple) -> bool:
@@ -58,8 +58,24 @@ class BasePage():
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
         """
-        with allure.step(f"Checking if element is displayed with {locator}"):
-            return self.browser.find_element(*locator).is_displayed()
+        
+        return self.browser.find_element(*locator).is_displayed()
+
+
+    def is_element_clickable(self, locator: tuple, timeout: int = 5, checking_time: int = 0.5) -> bool:
+        """Checking for element is clickable. Have to use after self.is_element_displayed
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - timeout: int. How long wait while element will be clickable
+         - checking_time: int or float. How offen create clickable request 
+        """
+        
+        try:
+            WebDriverWait(self.browser, timeout, checking_time).until(EC.element_to_be_clickable(locator))
+            return True
+        except TimeoutException:
+            return False
 
 
     def get_text_from_element(self, locator: tuple) -> str:
@@ -112,8 +128,8 @@ class BasePage():
 
     def get_current_url(self) -> str:
         """Getting current URL"""
-        with allure.step("Getting current URL"):
-            return self.browser.current_url
+        
+        return self.browser.current_url
 
 
     def matching_current_and_correct_urls(self, correct_url: str) -> None:
@@ -149,9 +165,9 @@ class BasePage():
 
         try:
             WebDriverWait(self.browser, timeout, checking_time).until(EC.visibility_of_element_located((locator)))
+            return True
         except TimeoutException:
             return False
-        return True
 
 
     def checking_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
@@ -192,9 +208,9 @@ class BasePage():
         """
         try:
             WebDriverWait(self.browser, timeout, 1).until(EC.url_contains(fragment_url))
+            return True
         except TimeoutException:
             return False
-        return True
 
 
     def url_have_to_contain(self, fragment_url: str) -> None:
@@ -203,8 +219,9 @@ class BasePage():
         Args:
          - fragment_url: str like 'https://www.m-translate.ru'
         """
-        if self.is_url_contain(fragment_url) != True:
-            raise AssertionError(f"URL is wrong. Have to contain {fragment_url} in address, but have {self.get_current_url()}")
+        with allure.step("Checking if current URL contain framgent_url"):
+            if self.is_url_contain(fragment_url) != True:
+                raise AssertionError(f"URL is wrong. Have to contain {fragment_url} in address, but have {self.get_current_url()}")
 
 
 
