@@ -139,7 +139,7 @@ class BasePage():
 
 
     def checking_visibility_of_element_located(self, locator: tuple, timeout=5, checking_time=2) -> bool:
-        """Wait while element will be visible and return True. If element is not vilible, return False
+        """Wait while element will be visible and return True. If element is not visible, return False
         
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
@@ -152,6 +152,22 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+
+    def checking_visibility_is_not_of_element_located(self, locator: tuple, timeout=5, checking_time=2) -> bool:
+        """Wait while element won't be visible and return True. If element is  visible, return False
+        
+        Args:
+         - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - timeout: int. How long wait while element won't be visible
+         - checking_time: int or float. How offen create visibility request 
+        """
+
+        try:
+            WebDriverWait(self.browser, timeout, poll_frequency=checking_time).until_not(EC.visibility_of_element_located((locator)))
+        except TimeoutException:
+            return False
+        return True    
 
 
     def checking_anchor_element_after_shifting(self, anchor_element_name: str, anchor_locator: tuple) -> None:
