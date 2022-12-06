@@ -34,6 +34,9 @@ class MainPageLocators():
     TELEGRAM_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(3)')
     YOUTUBE_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(4)')
 
+    #block ABOUT US
+    WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-cCsOjp.bWNIcl')
+    JOIN_WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-jdAMXn.gLqyEH > a')
 
     # BACKGROUND_FOR_THEME = (By.CSS_SELECTOR, '#root > div')
 
