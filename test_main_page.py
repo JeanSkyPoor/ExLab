@@ -34,7 +34,7 @@ def test_about_us_header(browser):
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Сhecking if 'About Us' HEADER element present and displayed"):
+    with allure.step("Step 2. Сhecking if 'About Us' HEADER element present, displayed and clickable"):
         page.checking_about_us_header_is_present_and_displayed()
 
     with allure.step("Step 3. Click on 'About us' in HEADER"):
