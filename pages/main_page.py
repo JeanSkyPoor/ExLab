@@ -332,7 +332,7 @@ class MainPage(BasePage):
         spoilers = self.browser.find_elements(*MainPageLocators.MENTORS_ALL_SPOILERS_BLOCK)
         for index, spoiler in enumerate(spoilers):
             with allure.step(f"Checking {index+1} spoiler of mentors"):
-                locator = (By.CSS_SELECTOR, f'div:nth-child({index+1}) > div.sc-bUbCnL.gFhhBm > img')
+                locator = (By.CSS_SELECTOR, f'div:nth-child({index+1}) > div.sc-bUbCnL.gFhhBm') #локатор закрытого спойлера
 
                 spoiler.click()
 
@@ -350,6 +350,9 @@ class MainPage(BasePage):
 
                 spoiler.click()
 
+                if self.is_element_present(locator) != True: #При закрытом спойлере появляется объект с локатором locator, если спойлер не закрыть, объекта не будет и тест упадет
+                    self.attach_screenshot('Spoiler_is_not_closed') 
+                    raise AssertionError(f"Spoiler is not closed {index+1} spoiler")
                 #TO DO: реализовать проверку, что спойлер закрылся
                 
 
