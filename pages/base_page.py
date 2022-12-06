@@ -69,7 +69,7 @@ class BasePage():
         with allure.step(f"Checking if {element_name} is present in {block_name} block"):
             if self.is_element_present(locator) != True:
                 self.attach_screenshot(f"{element_name}_in_{block_name}_is_not_present")
-                raise AssertionError(f"{element_name} in {block_name} is not present")
+                raise AssertionError(f"{element_name} in {block_name} is not present.\n Type of searching: {locator[0]}\n Selector: {locator[1]}")
 
 
     def is_element_displayed(self, locator: tuple) -> bool:
@@ -95,7 +95,7 @@ class BasePage():
         with allure.step(f"Checking if {element_name} is displayed in {block_name} block"):
             if self.is_element_displayed(locator) != True:
                 self.attach_screenshot(f"{element_name}_in_{block_name}_is_not_displayed")
-                raise AssertionError(f"{element_name} in {block_name} is not displayed")
+                raise AssertionError(f"{element_name} in {block_name} is not displayed.\n Type of searching: {locator[0]}\n Selector: {locator[1]}")
 
 
     def get_value_of_css_property(self, locator: tuple, property: str) -> str:
