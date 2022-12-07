@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 
 class MainPage(BasePage):
 
-    def checking_landing_url(self,):
+    def checking_landing_url(self):
         """Checking that landing URL is correct"""
 
         self.matching_current_and_correct_urls('http://test.exlab.team/')
