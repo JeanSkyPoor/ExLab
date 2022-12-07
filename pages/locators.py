@@ -35,6 +35,9 @@ class MainPageLocators():
     YOUTUBE_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(4)')
 
     #block ABOUT US
+    MAIN_TITLE_ABOUT_US = (By.CSS_SELECTOR, '[id=about] > div.sc-eCYdqJ.koNCEH')
+    DESCRIPTION_ABOUT_US = (By.CSS_SELECTOR, 'p.sc-himrzO.bgsrpw')
+    
     WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-cCsOjp.bWNIcl')
     JOIN_WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-jdAMXn.gLqyEH > a')
 
