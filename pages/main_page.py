@@ -1,10 +1,8 @@
 from pages.locators import MainPageLocators
 from pages.base_page import BasePage
 import allure
-import re
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-import time
 
 
 class MainPage(BasePage):

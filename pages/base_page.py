@@ -3,11 +3,7 @@ import allure
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.color import Color
-from pages.locators import MainPageLocators
-from selenium.webdriver.common.keys import Keys
 from allure_commons.types import AttachmentType
-import requests
 import time
 
 

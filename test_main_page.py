@@ -1,9 +1,7 @@
 from pages.locators import MainPageLocators
 from pages.main_page import MainPage
 import pytest
-import time
 import allure
-from selenium.webdriver.common.by import By
 
 
 def test_landing_url_and_black_theme(browser):
