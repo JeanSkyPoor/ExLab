@@ -139,14 +139,14 @@ def test_join_header(browser):
 
 
 def test_logo_in_block_your_opportunity(browser):
-    """Test 'Logo_Gif' in block YOUR OPPORTYNITY is present and displayed. [11] test from check-list"""
+    """Test 'Logo_Gif' in block YOUR_OPPORTYNITY is present and displayed. [11] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Checking if 'Logo_Gif' in block 'Your opportunity' is present and displayed"):
+    with allure.step("Step 2. Checking if 'Logo_Gif' in block 'Your_Opportunity' is present and displayed"):
         page.checking_logo_gif_in_your_opportunity_block_is_present_and_displayed()
 
 
@@ -158,11 +158,30 @@ def test_text_your_opportunity_block(browser):
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Checking if 'Text_Under_Main_Title' in block Your opportunity is present and displayed"):
+    with allure.step("Step 2. Checking if 'Text_Under_Main_Title' in block Your_Opportunity is present and displayed"):
         page.checking_main_title_in_your_opportunity_block_is_present_and_displayed()
 
-    with allure.step("Step 3. Checking if 'Text_Under_Main_Title' in block ' in Your opportunity under Main title is present and displayed"):
+    with allure.step("Step 3. Checking if 'Text_Under_Main_Title' in block ' in Your_Opportunity under Main title is present and displayed"):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
+
+
+def test_about_us_block(browser):
+    """Test About_Us title and text under About_Us title is present and displayed. [13] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Scrolling to About_Us block"):
+        page.scroll_to_about_us()
+
+    with allure.step("Checking if 'About_Us' title in block About_Us is present and displayed"):
+        page.checking_main_title_about_us_is_present_and_displayed()
+
+    with allure.step("Checking if text under 'About_Us' title in block About_Us is present and displayed"):
+        page.checking_description_about_us_is_present_and_displayed()
+
 
 
 @allure.feature('FOOTER buttons')
