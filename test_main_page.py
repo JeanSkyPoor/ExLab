@@ -311,3 +311,4 @@ def test_boosty_button_help_project(browser):
     
     with allure.step("Step 5. Checking URL opened page"):
         page.checking_url_after_click_on_boosty_help_project()
+        

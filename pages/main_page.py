@@ -349,3 +349,4 @@ class MainPage(BasePage):
 
         self.switch_to_the_last_opened_window()
         self.url_have_to_contain('https://boosty.to')
+        

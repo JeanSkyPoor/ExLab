@@ -252,3 +252,4 @@ class BasePage():
         with allure.step("Checking if current URL contain framgent_url"):
             if self.is_url_contain(fragment_url) != True:
                 raise AssertionError(f"URL is wrong. Have to contain {fragment_url} in address, but have {self.get_current_url()}")
+                

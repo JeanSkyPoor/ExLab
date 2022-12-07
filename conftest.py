@@ -88,9 +88,4 @@ def browser(request):
 # --headless=true (default='None')
 # --width_window=(default='1920')
 # --height_window=(default='1080')
-
-"""
-pytest -v -s  --tb=line --reruns 1  --browser_name=chrome --width_window=1024 --height_window=768 --language=ru --headless=true   test_product_page.py
-pytest -v -s --tb=line  --browser_name=chrome --width_window=1024 --height_window=768 --language=ru --headless=true test_main_page.py
-"""
  
