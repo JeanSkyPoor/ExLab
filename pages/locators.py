@@ -22,6 +22,7 @@ class MainPageLocators():
     STARTUP_FOR_ANCHOR = (By.CSS_SELECTOR, '[id=startup]')
     HELP_PROJECT_ANCHOR = (By.CSS_SELECTOR, 'div.sc-jTYCaT.coDMnK')
     FOOTER_ANCHOR = (By.CSS_SELECTOR, '[id=footer]')
+    WHY_EXLAB_ANCHOR = (By.CSS_SELECTOR, 'div.sc-cCsOjp.bWNIcl')
 
     #Block YOUR OPPORTUNITY 
     LOGO_YOUR_OPPORTUNITY = (By.CSS_SELECTOR, 'div.sc-dIouRR.gWQVjR > img')
@@ -37,8 +38,9 @@ class MainPageLocators():
     #block ABOUT US
     MAIN_TITLE_ABOUT_US = (By.CSS_SELECTOR, '[id=about] > div.sc-eCYdqJ.koNCEH')
     DESCRIPTION_ABOUT_US = (By.CSS_SELECTOR, 'p.sc-himrzO.bgsrpw')
-    
-    WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-cCsOjp.bWNIcl')
+
+    MAIN_TITLE_WHY_EXLAB = (By.CSS_SELECTOR, 'div.sc-ciZhAO.fBFmnR')
+    DESCRIPTION_WHY_EXLAB = (By.CSS_SELECTOR, 'ol.sc-bZnhIo.fYGDkJ')
     JOIN_WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-jdAMXn.gLqyEH > a')
 
     #block MENTORS
