@@ -43,6 +43,9 @@ class MainPageLocators():
     DESCRIPTION_WHY_EXLAB = (By.CSS_SELECTOR, 'ol.sc-bZnhIo.fYGDkJ')
     JOIN_WHY_EXLAB_BLOCK = (By.CSS_SELECTOR, 'div.sc-jdAMXn.gLqyEH > a')
 
+    #block PROJECTS
+    MAIN_TITLE_PROJECTS = (By.CSS_SELECTOR, '[id=projects-title-wrapper]>div')
+
     #block MENTORS
     MENTORS_ALL_SPOILERS_BLOCK = (By.CSS_SELECTOR, 'div.sc-jIAOiI.eSpxWu')
     MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc')
