@@ -3,7 +3,7 @@ from pages.main_page import MainPage
 import pytest
 import allure
 
-
+@allure.feature("Unfunctional")
 def test_landing_url_and_black_theme(browser):
     """Test landing URL and black theme on default. [1] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -16,6 +16,7 @@ def test_landing_url_and_black_theme(browser):
         page.checking_dark_mode_on()
 
 
+@allure.feature("Functional")
 @pytest.mark.skip(reason="Refresh functioan is not created")
 def test_display_logo_ExLab(browser):
     """Test logo ExLab. [2] test from check-list"""
@@ -23,7 +24,7 @@ def test_display_logo_ExLab(browser):
     page.open()
 
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 def test_about_us_header(browser):
     """Test 'About_Us' button in HEADER. [3] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -42,7 +43,7 @@ def test_about_us_header(browser):
         page.checking_about_us_anchor_after_shifting()
 
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 def test_projects_header(browser):
     """Test 'Projects' button in HEADER. [4] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -61,7 +62,7 @@ def test_projects_header(browser):
         page.checking_projects_anchor_after_shifting()
 
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 def test_mentors_header(browser):
     """Test 'Mentors' button in HEADER. [5] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -80,7 +81,7 @@ def test_mentors_header(browser):
         page.checking_mentors_anchor_after_shifting()
 
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 @pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
     """Test 'StartUp_For' button in HEADER. [6] test from check-list"""
@@ -100,7 +101,7 @@ def test_startup_for_header(browser):
         page.checking_startup_for_anchor_after_shifting()
 
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 def test_sun_icon_header(browser):
     """Test 'Sun_Icon' button in HEADER. [7] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -119,7 +120,7 @@ def test_sun_icon_header(browser):
         page.checking_light_mode_on()
     
 
-@allure.feature("HEADER buttons")
+@allure.feature("Functional")
 def test_join_header(browser):
     """Test 'Join' button in HEADER. [9] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -138,6 +139,7 @@ def test_join_header(browser):
         page.checking_url_after_click_on_join_header()
 
 
+@allure.feature("Unfunctional")
 def test_logo_in_block_your_opportunity(browser):
     """Test 'Logo_Gif' in block YOUR_OPPORTYNITY is present and displayed. [11] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -150,6 +152,7 @@ def test_logo_in_block_your_opportunity(browser):
         page.checking_logo_gif_in_your_opportunity_block_is_present_and_displayed()
 
 
+@allure.feature("Unfunctional")
 def test_text_your_opportunity_block(browser):
     """Test 'Text_Under_Main_Title' block YOUR OPPORTUNITY is present and displayed. [12] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -165,8 +168,9 @@ def test_text_your_opportunity_block(browser):
         page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
 
 
+@allure.feature("Unfunctional")
 def test_about_us_block(browser):
-    """Test About_Us title and text under About_Us title is present and displayed. [13] test from check-list"""
+    """Test About_Us title and description is present and displayed. [13] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
@@ -179,12 +183,30 @@ def test_about_us_block(browser):
     with allure.step("Checking if 'About_Us' title in block About_Us is present and displayed"):
         page.checking_main_title_about_us_is_present_and_displayed()
 
-    with allure.step("Checking if text under 'About_Us' title in block About_Us is present and displayed"):
+    with allure.step("Checking if description in block About_Us is present and displayed"):
         page.checking_description_about_us_is_present_and_displayed()
 
 
+@allure.feature("Unfunctional")
+def test_why_exlab_block(browser):
+    """Test Why_Exlab title and description is present and displayed. [14] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
 
-@allure.feature('FOOTER buttons')
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Scrolling to Why_Exlab block"):
+        page.scroll_to_why_exlab()
+        
+    with allure.step("Checking if Why_Exlab title in block Why_Exlab is present and displayed"):
+        page.checking_why_exlab_title_why_exlab_is_present_and_displayed()
+
+    with allure.step("Checking if description in block Why_Exlab is present and displayed"):
+        page.checking_description_why_exlab_is_present_and_displayed()
+
+
+@allure.feature('Functional')
 def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -206,7 +228,7 @@ def test_linkedin_footer(browser):
         page.checking_url_after_click_on_linkedin_footer()
 
 
-@allure.feature('FOOTER buttons')
+@allure.feature('Functional')
 def test_instagram_footer(browser):
     """Test 'Instagram' button in FOOTER. [39] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -228,7 +250,7 @@ def test_instagram_footer(browser):
         page.checking_url_after_click_on_instagram_footer()    
 
 
-@allure.feature('FOOTER buttons')
+@allure.feature('Functional')
 def test_telegram_footer(browser):
     """Test 'Telegram' button in FOOTER. [40] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -250,7 +272,7 @@ def test_telegram_footer(browser):
         page.checking_url_after_click_on_telegram_footer()    
 
 
-@allure.feature('FOOTER buttons')
+@allure.feature('Functional')
 def test_youtube_footer(browser):
     """Test 'Youtube' button in FOOTER. [41] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
