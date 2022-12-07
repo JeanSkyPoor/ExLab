@@ -365,7 +365,7 @@ class MainPage(BasePage):
 
 
     def checking_why_exlab_title_why_exlab_is_present_and_displayed(self):
-        """Checking Why_Exlab title in Why_Exlab block is present and displayed"""
+        """Checking Why_Exlab_Title in Why_Exlab block is present and displayed"""
 
         self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_WHY_EXLAB, 'Why_Exlab_Title', 'Why_Exlab')
         self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_WHY_EXLAB, 'Why_Exlab_Title', 'Why_Exlab')
@@ -375,3 +375,10 @@ class MainPage(BasePage):
 
         self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_WHY_EXLAB, 'Description_Why_Exlab', 'Why_Exlab')
         self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_WHY_EXLAB, 'Description_Why_Exlab', 'Why_Exlab')
+
+    
+    def checking_projects_title_is_present_and_displayed(self):
+        """Checking Projects_Title in Projects block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_PROJECTS, 'Projects_Title', 'Projects')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_PROJECTS, 'Projects_Title', 'Projects')
