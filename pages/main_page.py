@@ -129,7 +129,7 @@ class MainPage(BasePage):
     def checking_why_exlab_anchor_after_shifting(self):
         """Checking anchor element in 'Why Exlab' block"""
 
-        self.checking_anchor_element_after_shifting(MainPageLocators.WHY_EXLAB_BLOCK, 'Why_Exlab')
+        self.checking_anchor_element_after_shifting(MainPageLocators.WHY_EXLAB_ANCHOR, 'Why_Exlab')
 
     def checking_projects_anchor_after_shifting(self):
         """Checking anchor element in 'Projects' block"""
@@ -169,7 +169,7 @@ class MainPage(BasePage):
 
         elements = self.browser.find_elements(*MainPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:2]) 
-        self.scroll_down_element_to_element([self.browser.find_element(*MainPageLocators.WHY_EXLAB_BLOCK)]) #Костыль!
+        self.scroll_down_element_to_element([self.browser.find_element(*MainPageLocators.WHY_EXLAB_ANCHOR)]) #Костыль!
         self.checking_why_exlab_anchor_after_shifting()
 
     def scroll_to_project(self):
@@ -358,7 +358,20 @@ class MainPage(BasePage):
         self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_ABOUT_US, 'About_Us_Title', 'About_Us')
 
     def checking_description_about_us_is_present_and_displayed(self):
-        """Checking text under About_Us title in About_Us block is present and displayed"""
+        """Checking description in About_Us block is present and displayed"""
 
         self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_ABOUT_US, 'Description_About_Us', 'About_Us')
         self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_ABOUT_US, 'Description_About_Us', 'About_Us')
+
+
+    def checking_why_exlab_title_why_exlab_is_present_and_displayed(self):
+        """Checking Why_Exlab title in Why_Exlab block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_WHY_EXLAB, 'Why_Exlab_Title', 'Why_Exlab')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_WHY_EXLAB, 'Why_Exlab_Title', 'Why_Exlab')
+
+    def checking_description_why_exlab_is_present_and_displayed(self):
+        """Checking description in Why_Exlab block is present and displayed"""  
+
+        self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_WHY_EXLAB, 'Description_Why_Exlab', 'Why_Exlab')
+        self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_WHY_EXLAB, 'Description_Why_Exlab', 'Why_Exlab')
