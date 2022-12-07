@@ -140,7 +140,7 @@ def test_join_header(browser):
 
 
 @allure.feature("Unfunctional")
-def test_logo_in_block_your_opportunity(browser):
+def test_logo_your_opportunity_block(browser):
     """Test 'Logo_Gif' in block YOUR_OPPORTYNITY is present and displayed. [11] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
@@ -177,13 +177,13 @@ def test_about_us_block(browser):
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Scrolling to About_Us block"):
+    with allure.step("Step 2. Scrolling to About_Us block"):
         page.scroll_to_about_us()
 
-    with allure.step("Checking if 'About_Us' title in block About_Us is present and displayed"):
+    with allure.step("Step 3. Checking if 'About_Us' title in block About_Us is present and displayed"):
         page.checking_main_title_about_us_is_present_and_displayed()
 
-    with allure.step("Checking if description in block About_Us is present and displayed"):
+    with allure.step("Step 4. Checking if description in block About_Us is present and displayed"):
         page.checking_description_about_us_is_present_and_displayed()
 
 
@@ -196,14 +196,52 @@ def test_why_exlab_block(browser):
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Scrolling to Why_Exlab block"):
+    with allure.step("Step 2. Scrolling to Why_Exlab block"):
         page.scroll_to_why_exlab()
         
-    with allure.step("Checking if Why_Exlab title in block Why_Exlab is present and displayed"):
+    with allure.step("Step 3. Checking if Why_Exlab title in block Why_Exlab is present and displayed"):
         page.checking_why_exlab_title_why_exlab_is_present_and_displayed()
 
-    with allure.step("Checking if description in block Why_Exlab is present and displayed"):
+    with allure.step("Step 4. Checking if description in block Why_Exlab is present and displayed"):
         page.checking_description_why_exlab_is_present_and_displayed()
+
+
+@allure.feature("Functional")
+def test_join_why_exlab_block(browser):
+    """Test 'Join' button in Why Exlab block. [15] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Why Exlab'"):
+        page.scroll_to_why_exlab()
+
+    with allure.step("Step 3. Checking if 'Join' button in 'Why Exlab' block is present and displayed"):
+        page.checking_join_why_exlab_is_present_and_displayed()
+
+    with allure.step("Step 4. Click on 'Join' in Why Exlab block"):
+        page.click_on_join_why_exlab()
+
+    with allure.step("Step 5. Checking URL opened page"):
+        page.checking_url_after_click_on_join_why_exlab()
+
+
+@allure.feature("Unfunctional")
+def test_title_projects_block(browser):
+    """Test 'Projects' title in Projects block is present and displayed. [16] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Projects'"):
+        page.scroll_to_project()
+
+    with allure.step("Step 3. Checking if 'Project_Title' in 'Projects' block is present and displayed"):
+        page.checking_projects_title_is_present_and_displayed()
 
 
 @allure.feature('Functional')
@@ -294,26 +332,7 @@ def test_youtube_footer(browser):
         page.checking_url_after_click_on_youtube_footer()    
 
 
-@allure.feature("Functional")
-def test_join_why_exlab_block(browser):
-    """Test 'Join' button in Why Exlab block. [15] test from check-list"""
-    page = MainPage(browser, MainPageLocators.LINK)
-    page.open()
 
-    with allure.step("Step 1. Checking landing URL"):
-        page.checking_landing_url()
-
-    with allure.step("Step 2. Scrolling to block 'Why Exlab'"):
-        page.scroll_to_why_exlab()
-
-    with allure.step("Step 3. Checking if 'Join' button in 'Why Exlab' block is present and displayed"):
-        page.checking_join_why_exlab_is_present_and_displayed()
-
-    with allure.step("Step 4. Click on 'Join' in Why Exlab block"):
-        page.click_on_join_why_exlab()
-
-    with allure.step("Step 5. Checking URL opened page"):
-        page.checking_url_after_click_on_join_why_exlab()
 
 
 @allure.feature("Functional")
