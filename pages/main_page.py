@@ -350,3 +350,15 @@ class MainPage(BasePage):
         self.switch_to_the_last_opened_window()
         self.url_have_to_contain('https://boosty.to')
         
+
+    def checking_main_title_about_us_is_present_and_displayed(self):
+        """Checking About_Us title in About_Us block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_ABOUT_US, 'About_Us_Title', 'About_Us')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_ABOUT_US, 'About_Us_Title', 'About_Us')
+
+    def checking_description_about_us_is_present_and_displayed(self):
+        """Checking text under About_Us title in About_Us block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_ABOUT_US, 'Description_About_Us', 'About_Us')
+        self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_ABOUT_US, 'Description_About_Us', 'About_Us')
