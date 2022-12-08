@@ -17,7 +17,7 @@ def test_landing_url_and_black_theme(browser):
 
 
 @allure.feature("Functional")
-@pytest.mark.skip(reason="Refresh functioan is not created")
+@pytest.mark.skip(reason="Refresh function is not created")
 def test_display_logo_ExLab(browser):
     """Test logo ExLab. [2] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -399,7 +399,7 @@ def test_patreon_button_help_project(browser):
 
 @allure.feature("Unfunctional")
 def test_title_stay_connected_block(browser):
-    """Test Title_Footer in FOOTER block are present and displayed. [34] test from check-list"""
+    """Test Title_Stay_Connected in FOOTER block are present and displayed. [34] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
@@ -409,7 +409,7 @@ def test_title_stay_connected_block(browser):
     with allure.step("Step 2. Scrolling to block 'FOOTER'"):
         page.scroll_to_footer()
 
-    with allure.step("Step 3. Checking 'Title_Footer' in FOOTER is present and displayed"):
+    with allure.step("Step 3. Checking 'Title_Stay_Connected' in FOOTER is present and displayed"):
         page.checking_title_stay_connected_is_present_and_displayed()
 
 
