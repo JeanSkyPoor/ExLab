@@ -244,6 +244,54 @@ def test_title_projects_block(browser):
         page.checking_projects_title_is_present_and_displayed()
 
 
+@allure.feature("Unfunctional")
+def test_logos_and_descriptions_projects_block(browser):
+    """Test logos and descriptions of projects in Projects block are present and displayed. [17] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Projects'"):
+        page.scroll_to_project()
+
+    with allure.step("Step 3. Checking logo and description of projects"):
+        page.checking_logos_and_descriptions_projects_block()
+
+
+@allure.feature("Unfunctional")
+def test_title_mentors_block(browser):
+    """Test Mentors_Title in Mentors block are present and displayed. [18] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Mentors'"):
+        page.scroll_to_mentors()
+
+    with allure.step("Step 3. Checking if Mentors_Title in Mentors block is presend and displayed"):
+        page.checking_title_mentors_is_present_and_displayed()
+
+
+@allure.feature("Functional")
+def test_mentors_spoilers(browser):
+    """Test spoilers of mentors in mentors block. [20] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Mentors'"):
+        page.scroll_to_mentors()
+
+    with allure.step("Step 3. Checking all mentor's spoilers"):
+        page.check_all_mentors_spoilers()
+
+
 @allure.feature('Functional')
 def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
@@ -333,22 +381,6 @@ def test_youtube_footer(browser):
 
 
 
-
-
-@allure.feature("Functional")
-def test_mentors_spoilers(browser):
-    """Test spoilers of mentors in mentors block. [20] test from check-list"""
-    page = MainPage(browser, MainPageLocators.LINK)
-    page.open()
-
-    with allure.step("Step 1. Checking landing URL"):
-        page.checking_landing_url()
-
-    with allure.step("Step 2. Scrolling to block 'Mentors'"):
-        page.scroll_to_mentors()
-
-    with allure.step("Step 3. Checking all mentor's spoilers"):
-        page.check_all_mentors_spoilers()
 
 
 @allure.feature("Functional")
