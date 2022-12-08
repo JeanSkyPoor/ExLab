@@ -488,3 +488,4 @@ class MainPage(BasePage):
 
         self.checking_if_element_is_present(MainPageLocators.MAIL_ADDRESS_FOOTER, 'Mail_Address', 'FOOTER')
         self.checking_if_element_is_displayed(MainPageLocators.MAIL_ADDRESS_FOOTER, 'Mail_Address', 'FOOTER')
+
