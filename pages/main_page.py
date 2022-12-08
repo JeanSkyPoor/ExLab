@@ -3,7 +3,7 @@ from pages.base_page import BasePage
 import allure
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-
+import time
 
 class MainPage(BasePage):
 
@@ -382,3 +382,32 @@ class MainPage(BasePage):
 
         self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_PROJECTS, 'Projects_Title', 'Projects')
         self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_PROJECTS, 'Projects_Title', 'Projects')
+
+
+    def checking_logos_and_descriptions_projects_block(self):
+        """One by One checking logos and descriptions of projects in Projects block"""
+
+        try:
+            projects = self.browser.find_elements(*MainPageLocators.ALL_PROJECTS_BLOCK)
+        except NoSuchElementException:
+            raise NoSuchElementException("Projects is not found")
+
+        for index, project in enumerate(projects):
+            img_locator = (By.CSS_SELECTOR, f'div.sc-hTtwUo.dfmShq > div:nth-child({index+1}) > img')
+            description_locator = (By.CSS_SELECTOR, f'div.sc-hTtwUo.dfmShq > div:nth-child({index+1}) > p')
+
+            self.browser.execute_script("arguments[0].scrollIntoView();", project)
+
+            self.checking_if_element_is_present(img_locator, 'Logo', f'{index+1} project')
+            self.checking_if_element_is_displayed(img_locator, 'Logo', f'{index+1} project')
+
+            self.checking_if_element_is_present(description_locator, 'Description', f'{index+1} project')
+            self.checking_if_element_is_displayed(description_locator, 'Description', f'{index+1} project')
+            time.sleep(0.5)
+        
+
+    def checking_title_mentors_is_present_and_displayed(self):
+        """Checking Mentors_Title in Mentors block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MENTORS_TITLE, 'Mentors_Title', 'Mentors')
+        self.checking_if_element_is_displayed(MainPageLocators.MENTORS_TITLE, 'Mentors_Title', 'Mentors')
