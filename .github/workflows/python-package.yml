@@ -30,4 +30,4 @@ jobs:
         pip install -r requirements.txt
        
     - name: Run tests
-      run: pytest --alluredir report test_main_page.py
+      run: pytest test_main_page.py
