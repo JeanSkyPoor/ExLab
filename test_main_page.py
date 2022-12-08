@@ -3,6 +3,7 @@ from pages.main_page import MainPage
 import pytest
 import allure
 
+
 @allure.feature("Unfunctional")
 def test_landing_url_and_black_theme(browser):
     """Test landing URL and black theme on default. [1] test from check-list"""
@@ -17,11 +18,17 @@ def test_landing_url_and_black_theme(browser):
 
 
 @allure.feature("Functional")
-@pytest.mark.skip(reason="Refresh function is not created")
-def test_display_logo_ExLab(browser):
-    """Test logo ExLab. [2] test from check-list"""
+def test_logo_exlab_header(browser):
+    """Test logo ExLab in HEADER. [2] test from check-list. Without refresh method in test"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Checking Logo in HEADER is present and displayed"):
+        page.checking_logo_header_is_present_and_displayed()
+    #TO DO: доделать, когда добавят функцию рефреша страницы
 
 
 @allure.feature("Functional")
@@ -82,7 +89,6 @@ def test_mentors_header(browser):
 
 
 @allure.feature("Functional")
-@pytest.mark.skip(reason='Button behaves strangely')
 def test_startup_for_header(browser):
     """Test 'StartUp_For' button in HEADER. [6] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
@@ -378,10 +384,9 @@ def test_boosty_button_help_project(browser):
         page.checking_url_after_click_on_boosty_help_project()
 
 
-@pytest.mark.skip(reason="Patreon page is not created")
 @allure.feature("Functional")
 def test_patreon_button_help_project(browser):
-    """Test Patreon button in Help Project block. [33] test from check-list"""
+    """Test Patreon button in Help Project block. [33] test from check-list. Without Patreon page checking"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
