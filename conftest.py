@@ -46,7 +46,7 @@ def browser(request):
         elif browser_name == "firefox":
 
             # Без браузерный режим для 'Firefox', через импорт библиотеки 'os'
-            if headless == 'true':
+            if headless == 'True':
                 os.environ['MOZ_HEADLESS'] = '1'
 
             # Чтобы указать язык браузера, использую класс Options и метод add_experimental_option
@@ -60,7 +60,7 @@ def browser(request):
 
         elif browser_name == "yandex":
             options = Options()
-            if headless == 'true':
+            if headless == 'True':
                 options.add_argument('headless')
 
             service = Service("C:\chromedriver\chromedriver_104.exe")
