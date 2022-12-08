@@ -32,7 +32,6 @@ def browser(request):
             options = Options()
             if headless == 'True':
                 options.add_argument('headless')
-                options.add_argument('disable-gpu')
 
             # // Отключение сообщений в консоли типа: USB: usb_device_handle...
             options.add_experimental_option('excludeSwitches', ['enable-logging'])

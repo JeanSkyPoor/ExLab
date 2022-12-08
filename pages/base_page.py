@@ -182,7 +182,7 @@ class BasePage():
         self.browser.find_element(*locator).click() 
 
 
-    def checking_visibility_of_element_located(self, locator: tuple, timeout=5, checking_time=2) -> bool:
+    def checking_visibility_of_element_located(self, locator: tuple, timeout=8, checking_time=2) -> bool:
         """Wait while element will be visible and return True. If element is not visible, return False
         
         Args:
