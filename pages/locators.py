@@ -45,12 +45,14 @@ class MainPageLocators():
 
     #block PROJECTS
     MAIN_TITLE_PROJECTS = (By.CSS_SELECTOR, '[id=projects-title-wrapper]>div')
+    ALL_PROJECTS_BLOCK = (By.CSS_SELECTOR, 'div.sc-bBXxYQ.iMLBAV')
 
     #block MENTORS
     MENTORS_ALL_SPOILERS_BLOCK = (By.CSS_SELECTOR, 'div.sc-jIAOiI.eSpxWu')
     MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc')
     MENTOR_IMAGE = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > img')
     MENTOR_DESCRIPTION = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > ul.sc-dsQDmV.iZMcmm')
+    MENTORS_TITLE = (By.CSS_SELECTOR, '[id=mentors] > div:nth-of-type(1)')
 
 
     #block HELP PROJECT
