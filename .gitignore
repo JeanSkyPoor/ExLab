@@ -3,5 +3,3 @@ __pycache__
 env
 .pytest_cache
 report
-chromedriver.exe
-
