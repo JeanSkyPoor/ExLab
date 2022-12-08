@@ -292,6 +292,38 @@ def test_mentors_spoilers(browser):
         page.check_all_mentors_spoilers()
 
 
+@allure.feature("Unfunctional")
+def test_title_startup_for_block(browser):
+    """Test StartUp_For_Title in StartUp_For block are present and displayed. [24] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'StartUp_For'"):
+        page.scroll_to_startup_for()
+
+    with allure.step("Step 3. Checking if StartUp_For_Title in StartUp_For block is present and displayed"):
+        page.checking_title_startup_for_is_present_and_displayed()
+
+
+@allure.feature("Unfunctional")
+def test_descriptions_startup_for_block(browser):
+    """Test Descriptions in StartUp_For block are present and displayed. [28] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'StartUp_For'"):
+        page.scroll_to_startup_for()
+
+    with allure.step("Step 3. Checking descriptions in block 'StartUp_For'"):
+        page.checking_descriptions_startup_for_is_present_and_displayed()
+
+
 @allure.feature('Functional')
 def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
