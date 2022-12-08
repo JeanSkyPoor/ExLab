@@ -53,6 +53,6 @@ jobs:
             if: always()
             uses: peaceiris/actions-gh-pages@v2
             env:
-                PERSONAL_TOKEN: ${{ secrets.BLOOD_SPORT }}
+                PERSONAL_TOKEN: ${{ secrets.Key }}
                 PUBLISH_BRANCH: gh-pages
                 PUBLISH_DIR: allure-history
