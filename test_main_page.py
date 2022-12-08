@@ -320,8 +320,144 @@ def test_descriptions_startup_for_block(browser):
     with allure.step("Step 2. Scrolling to block 'StartUp_For'"):
         page.scroll_to_startup_for()
 
-    with allure.step("Step 3. Checking descriptions in block 'StartUp_For'"):
+    with allure.step("Step 3. Checking descriptions in block 'StartUp_For' is present and displayed"):
         page.checking_descriptions_startup_for_is_present_and_displayed()
+
+
+@allure.feature("Unfunctional")
+def test_title_help_project_block(browser):
+    """Test Help_Project_Title in Help_Project block are present and displayed. [30] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Help_Project'"):
+        page.scroll_to_help_project()
+
+    with allure.step("Step 3. Checking if 'Help_Project_Title' in Help_Project block is present and displayed"):
+        page.checking_title_help_project_is_present_and_displayed()
+
+
+@allure.feature("Unfunctional")
+def test_description_help_project_block(browser):
+    """Test Description in Help_Project block are present and displayed. [31] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'Help_Project'"):
+        page.scroll_to_help_project()
+
+    with allure.step("Step 3. Checking descriptions in block 'Help_Project' is present and displayed"):
+        page.checking_description_help_project_is_present_and_displayed()
+    
+
+@allure.feature("Functional")
+def test_boosty_button_help_project(browser):
+    """Test Boosty button in Help Project block. [32] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to Help Project block"):
+        page.scroll_to_help_project()
+
+    with allure.step("Step 3. Checking if 'Boosty' button in Help Project block is present and displayed"):
+        page.checking_boosty_help_project_button_is_present_and_displayed()
+
+    with allure.step("Step 4. Click on Boosty button in Help Project block"):
+        page.click_on_boosty_help_project()
+    
+    with allure.step("Step 5. Checking URL opened page"):
+        page.checking_url_after_click_on_boosty_help_project()
+
+
+@allure.feature("Functional")
+def test_patreon_button_help_project(browser):
+    """Test Patreon button in Help Project block. [33] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to Help Project block"):
+        page.scroll_to_help_project()
+
+    with allure.step("Step 3. Checking if 'Patreon' button in Help Project block is present and displayed"):
+        page.checking_patreon_help_project_button_is_present_and_displayed()
+
+    #To Do: написать реализацию кнопки Patreon, когда добавят функционал
+
+
+@allure.feature("Unfunctional")
+def test_title_stay_connected_block(browser):
+    """Test Title_Footer in FOOTER block are present and displayed. [34] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'FOOTER'"):
+        page.scroll_to_footer()
+
+    with allure.step("Step 3. Checking 'Title_Footer' in FOOTER is present and displayed"):
+        page.checking_title_stay_connected_is_present_and_displayed()
+
+
+@allure.feature("Unfunctional")
+def test_description_stay_connected_block(browser):
+    """Test description in FOOTER block are present and displayed. [35] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'FOOTER'"):
+        page.scroll_to_footer()
+
+    with allure.step("Step 3. Checking desciption in FOOTER is present and displayed"):
+        page.checking_description_stay_connected_is_present_and_displayed()   
+
+
+@allure.feature("Unfunctional")
+def test_logo_footer_block(browser):
+    """Test Logo in FOOTER block are present and displayed. [36] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'FOOTER'"):
+        page.scroll_to_footer()
+
+    with allure.step("Step 3. Checking Logo in FOOTER is present and displayed"):
+        page.checking_logo_footer_is_present_and_displayed()
+
+
+@allure.feature("Unfunctional")
+def test_text_under_logo_footer_block(browser):
+    """Test Text_Under_Logo in FOOTER block are present and displayed. [37] test from check-list"""
+    page = MainPage(browser, MainPageLocators.LINK)
+    page.open()
+
+    with allure.step("Step 1. Checking landing URL"):
+        page.checking_landing_url()
+
+    with allure.step("Step 2. Scrolling to block 'FOOTER'"):
+        page.scroll_to_footer()
+    
+    with allure.step("Step 3. Checking Text_Under_Logo in FOOTER is present and displayed"):
+        page.checking_text_under_logo_footer_is_present_and_displayed()
 
 
 @allure.feature('Functional')
@@ -412,27 +548,17 @@ def test_youtube_footer(browser):
         page.checking_url_after_click_on_youtube_footer()    
 
 
-
-
-
-@allure.feature("Functional")
-def test_boosty_button_help_project(browser):
-    """Test Boosty button in Help Project block. [32] test from check-list"""
+@allure.feature("Unfunctional")
+def test_mail_address_footer_block(browser):
+    """Test Mail_Address in FOOTER block are present and displayed. [42] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Scrolling to Help Project block"):
-        page.scroll_to_help_project()
+    with allure.step("Step 2. Scrolling to block 'FOOTER'"):
+        page.scroll_to_footer()
 
-    with allure.step("Step 3. Checking if 'Boosty' button in Help Project block is present and displayed"):
-        page.checking_boosty_help_project_button_is_present_and_displayed()
-
-    with allure.step("Step 4. Click on Boosty button in Help Project block"):
-        page.click_on_boosty_help_project()
-    
-    with allure.step("Step 5. Checking URL opened page"):
-        page.checking_url_after_click_on_boosty_help_project()
-        
+    with allure.step("Step 3. Checking Mail_Address in FOOTER is present and displayed"):
+        page.checking_mail_address_footer_is_present_and_displayed()
