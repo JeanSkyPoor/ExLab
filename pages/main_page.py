@@ -411,3 +411,23 @@ class MainPage(BasePage):
 
         self.checking_if_element_is_present(MainPageLocators.MENTORS_TITLE, 'Mentors_Title', 'Mentors')
         self.checking_if_element_is_displayed(MainPageLocators.MENTORS_TITLE, 'Mentors_Title', 'Mentors')
+
+    
+    def checking_title_startup_for_is_present_and_displayed(self):
+        """Checking StartUp_For_Title in StartUp_For block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MAIN_TITLE_STARTUP_FOR, 'StartUp_For_Title', 'StartUp_For')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIN_TITLE_STARTUP_FOR, 'StartUp_For_Title', 'StartUp_For')
+
+    def checking_descriptions_startup_for_is_present_and_displayed(self):
+        """Checking Descriptions in StartUp_For block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.JUNIORS_DESCRIPTION_STARTUP_FOR, 'Junior_Description', 'StartUp_For')
+        self.checking_if_element_is_displayed(MainPageLocators.JUNIORS_DESCRIPTION_STARTUP_FOR, 'Junior_Description', 'StartUp_For')
+
+        self.scroll_down_element_to_element([self.browser.find_element(*MainPageLocators.RECRUTER_DESCRIPTIONS_STARTUP_FOR)]) #Костыль!
+
+        self.checking_if_element_is_present(MainPageLocators.RECRUTER_DESCRIPTIONS_STARTUP_FOR, 'Recruter_Description', 'StartUp_For')
+        self.checking_if_element_is_displayed(MainPageLocators.RECRUTER_DESCRIPTIONS_STARTUP_FOR, 'Recruter_Description', 'StartUp_For')
+
+        
