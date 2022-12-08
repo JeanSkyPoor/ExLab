@@ -338,6 +338,13 @@ class MainPage(BasePage):
         self.checking_if_element_is_present(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON, 'Boosty', 'Help_Project')
         self.checking_if_element_is_displayed(MainPageLocators.BOOSTY_HELP_PROJECT_BUTTON, 'Boosty', 'Help_Project')
 
+    def checking_patreon_help_project_button_is_present_and_displayed(self):
+        """Checking 'Patreon' button in Help Project block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.PATREON_HELP_PROJECT_BUTTON, 'Patreon', 'Help_Project')
+        self.checking_if_element_is_displayed(MainPageLocators.PATREON_HELP_PROJECT_BUTTON, 'Patreon', 'Help_Project')
+
+
                 
     def click_on_boosty_help_project(self):
         """Click on 'Boosty' button in Help Project block"""
@@ -431,3 +438,46 @@ class MainPage(BasePage):
         self.checking_if_element_is_displayed(MainPageLocators.RECRUTER_DESCRIPTIONS_STARTUP_FOR, 'Recruter_Description', 'StartUp_For')
 
         
+    def checking_title_help_project_is_present_and_displayed(self):
+        """Checking Help_Project_Title in Help_Project block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.TITLE_HELP_PROJECT, 'Help_Project_Title', 'Help_Project')
+        self.checking_if_element_is_displayed(MainPageLocators.TITLE_HELP_PROJECT, 'Help_Project_Title', 'Help_Project')
+
+    def checking_description_help_project_is_present_and_displayed(self):
+        """Checking Description in Help_Project block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_HELP_PROJECT, 'Description_Help_Project', 'Help_Project')
+        self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_HELP_PROJECT, 'Description_Help_Project', 'Help_Project')
+
+
+    def checking_title_stay_connected_is_present_and_displayed(self):
+        """Checking Title_Stay_Connected in Stay_Connected block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.STAY_CONNECTED_TITLE, 'Title_Stay_Connected', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.STAY_CONNECTED_TITLE, 'Title_Stay_Connected', 'FOOTER')
+
+    def checking_description_stay_connected_is_present_and_displayed(self):
+        """Checking Description in Stay_Connected block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.DESCRIPTION_STAY_CONNECTED, 'Description_Stay_Connected', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.DESCRIPTION_STAY_CONNECTED, 'Description_Stay_Connected', 'FOOTER')
+
+    
+    def checking_logo_footer_is_present_and_displayed(self):
+        """Checking Logo in FOOTER block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.LOGO_FOOTER, 'Logo', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.LOGO_FOOTER, 'Logo', 'FOOTER')
+
+    def checking_text_under_logo_footer_is_present_and_displayed(self):
+        """Checking Text_Under_Logo in FOOTER block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.TEXT_UNDER_LOGO_FOOTER, 'Text_Under_Logo', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.TEXT_UNDER_LOGO_FOOTER, 'Text_Under_Logo', 'FOOTER')
+    
+    def checking_mail_address_footer_is_present_and_displayed(self):
+        """Checking Mail_Address in FOOTER block is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.MAIL_ADDRESS_FOOTER, 'Mail_Address', 'FOOTER')
+        self.checking_if_element_is_displayed(MainPageLocators.MAIL_ADDRESS_FOOTER, 'Mail_Address', 'FOOTER')
