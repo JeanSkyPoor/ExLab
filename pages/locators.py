@@ -55,6 +55,11 @@ class MainPageLocators():
     MENTORS_TITLE = (By.CSS_SELECTOR, '[id=mentors] > div:nth-of-type(1)')
 
 
+    #block STARTUP FOR
+    MAIN_TITLE_STARTUP_FOR = (By.CSS_SELECTOR, '[id=startup] > [id=startup-title-wrapper]')
+    JUNIORS_DESCRIPTION_STARTUP_FOR = (By.CSS_SELECTOR, 'div.sc-jfmDQi.jtqNlU')
+    RECRUTER_DESCRIPTIONS_STARTUP_FOR = (By.CSS_SELECTOR, 'div.sc-ehmTmK.hNtRAb')
+
     #block HELP PROJECT
     BOOSTY_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(1)')
     PATREON_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(2)')
