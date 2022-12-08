@@ -35,6 +35,12 @@ class MainPageLocators():
     TELEGRAM_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(3)')
     YOUTUBE_FOOTER = (By.CSS_SELECTOR, 'li.sc-dkdnUF.fbGNMP:nth-of-type(4)')
 
+    STAY_CONNECTED_TITLE = (By.CSS_SELECTOR, 'div.sc-bhVIhj.uaVnA')
+    DESCRIPTION_STAY_CONNECTED = (By.CSS_SELECTOR, 'div.sc-eGAhfa.cacMWv')
+    LOGO_FOOTER = (By.CSS_SELECTOR, 'div.sc-fIavCj.fEzmxG')
+    TEXT_UNDER_LOGO_FOOTER = (By.CSS_SELECTOR, 'div.sc-gITdmR.hYaavu')
+    MAIL_ADDRESS_FOOTER = (By.CSS_SELECTOR, 'div.sc-evrZIY.UwGJa > a')
+
     #block ABOUT US
     MAIN_TITLE_ABOUT_US = (By.CSS_SELECTOR, '[id=about] > div.sc-eCYdqJ.koNCEH')
     DESCRIPTION_ABOUT_US = (By.CSS_SELECTOR, 'p.sc-himrzO.bgsrpw')
@@ -54,7 +60,6 @@ class MainPageLocators():
     MENTOR_DESCRIPTION = (By.CSS_SELECTOR, 'div.sc-bUbCnL.fJhsUc > ul.sc-dsQDmV.iZMcmm')
     MENTORS_TITLE = (By.CSS_SELECTOR, '[id=mentors] > div:nth-of-type(1)')
 
-
     #block STARTUP FOR
     MAIN_TITLE_STARTUP_FOR = (By.CSS_SELECTOR, '[id=startup] > [id=startup-title-wrapper]')
     JUNIORS_DESCRIPTION_STARTUP_FOR = (By.CSS_SELECTOR, 'div.sc-jfmDQi.jtqNlU')
@@ -63,3 +68,5 @@ class MainPageLocators():
     #block HELP PROJECT
     BOOSTY_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(1)')
     PATREON_HELP_PROJECT_BUTTON = (By.CSS_SELECTOR, 'div.sc-bWXABl.klepWn > a:nth-of-type(2)')
+    TITLE_HELP_PROJECT = (By.CSS_SELECTOR, 'div.sc-jTYCaT.coDMnK')
+    DESCRIPTION_HELP_PROJECT = (By.CSS_SELECTOR, 'div.sc-fctJkW.gfwicC')
