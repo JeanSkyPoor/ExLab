@@ -113,7 +113,7 @@ class MainPage(BasePage):
         """Checking 'Logo_Gif' in block YOUR OPPORTUNITY is present and displayed"""
 
         self.checking_if_element_is_present(MainPageLocators.LOGO_YOUR_OPPORTUNITY, 'Logo_Gif', 'YOUR_OPPORTUNITY')
-        self.checking_if_element_is_displayed(MainPageLocators.INSTAGRAM_FOOTER, 'Logo_Gif', 'YOUR_OPPORTUNITY')
+        self.checking_if_element_is_displayed(MainPageLocators.LOGO_YOUR_OPPORTUNITY, 'Logo_Gif', 'YOUR_OPPORTUNITY')
 
     def checking_main_title_in_your_opportunity_block_is_present_and_displayed(self):
         """Checking 'Main_Title' in your opportynity block is present and displayed"""
