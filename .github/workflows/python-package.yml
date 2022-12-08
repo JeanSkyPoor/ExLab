@@ -1,33 +1,58 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python package
+    # название
+name: ExLab tests 🦀
 
+# целевые события для запуска
+# в данном случае это push и pull_request, в ветку master
 on:
   push:
-    branches: [ "main" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ master ]
 
+# выполняемые действия
 jobs:
-  build:
-
+  Runs-tests:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.8", "3.9", "3.10"]
-
+    
+    # запускаются по шагам
+    # name - название шага
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-       
-    - name: Run tests
-      run: pytest test_main_page.py
+          - uses: actions/checkout@v3
+          - name: Set up Python
+            uses: actions/setup-python@v4
+            with:
+                 python-version: '3.x'
+          - name: Install dependencies 🔧
+            run: |
+                   python -m pip install --upgrade pip
+                   pip install -r requirements.txt
+          - name: Test with pytest 🔨
+            run: |
+                   pytest tests/test_LandingPage.py --alluredir=tests/results --reruns=5
+          
+          - name: Get Allure history 🕜
+            uses: actions/checkout@v2
+            if: always()
+            continue-on-error: true
+            with:
+                 ref: gh-pages
+                 path: gh-pages
+
+          - name: Allure Report action from marketplace 🎯
+            uses: simple-elf/allure-report-action@master
+            if: always()
+            id: allure-report
+            with:
+                  allure_results: tests/results
+                  gh_pages: gh-pages
+                  allure_report: allure-report
+                  allure_history: allure-history
+
+          - name: Deploy report to Github Pages ⌛
+            if: always()
+            uses: peaceiris/actions-gh-pages@v2
+            env:
+                PERSONAL_TOKEN: ${{ secrets.BLOOD_SPORT }}
+                PUBLISH_BRANCH: gh-pages
+                PUBLISH_DIR: allure-history
