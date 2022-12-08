@@ -1,2 +1,1 @@
 Landing Auto Tests. I don't know why, but code navigation doesn't work in this repo
- [![pages-build-deployment](https://github.com/JeanSkyPoor/ExLab/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main&event=push)](https://github.com/JeanSkyPoor/ExLab/actions/workflows/pages/pages-build-deployment)
