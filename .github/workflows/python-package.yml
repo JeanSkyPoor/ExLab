@@ -29,7 +29,7 @@ jobs:
                    pip install -r requirements.txt
           - name: Test with pytest 🔨
             run: |
-                   pytest tests/test_LandingPage.py --alluredir=tests/results --reruns=5
+                   pytest test_main_page.py --alluredir=tests/results --reruns=5
           
           - name: Get Allure history 🕜
             uses: actions/checkout@v2
