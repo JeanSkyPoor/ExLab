@@ -41,8 +41,8 @@ def browser(request):
             options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
             browser = webdriver.Chrome(options=options)
 
-            browser.maximize_window()
-            #browser.set_window_size(width_window, height_window) #Настройка размера открывающегося окна
+            #browser.maximize_window()
+            browser.set_window_size(width_window, height_window) #Настройка размера открывающегося окна
             browser.implicitly_wait(5) # Не явное ожидание элементов 5 сек.
 
         elif browser_name == "firefox":
