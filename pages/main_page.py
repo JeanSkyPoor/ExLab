@@ -24,6 +24,13 @@ class MainPage(BasePage):
         self.matching_attribute_value_with_correct_value(MainPageLocators.THEME, 'class', 'sc-bczRLJ cxdoLY')
 
 
+    def checking_logo_header_is_present_and_displayed(self):
+        """Checking 'Logo' in HEADER is present and displayed"""
+
+        self.checking_if_element_is_present(MainPageLocators.EXLAB_LOGO_HEADER, 'Logo', 'HEADER')
+        self.checking_if_element_is_displayed(MainPageLocators.EXLAB_LOGO_HEADER, 'Logo', 'HEADER')
+        
+
     def checking_about_us_header_is_present_and_displayed(self):
         """Checking 'About_Us' button in HEADER is present and displayed"""
 
