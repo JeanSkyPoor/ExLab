@@ -570,4 +570,3 @@ def test_mail_address_footer_block(browser):
 
     with allure.step("Step 3. Checking Mail_Address in FOOTER is present and displayed"):
         page.checking_mail_address_footer_is_present_and_displayed()
-        
