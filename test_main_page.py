@@ -146,7 +146,7 @@ def test_join_header(browser):
 
 
 @allure.feature("Unfunctional")
-def test_logo_your_opportunity_block(browser):
+def test_logo_gif_your_opportunity_block(browser):
     """Test 'Logo_Gif' in block YOUR_OPPORTYNITY is present and displayed. [11] test from check-list"""
     page = MainPage(browser, MainPageLocators.LINK)
     page.open()
