@@ -378,6 +378,7 @@ def test_boosty_button_help_project(browser):
         page.checking_url_after_click_on_boosty_help_project()
 
 
+@pytest.mark.skip(reason="Patreon page is not created")
 @allure.feature("Functional")
 def test_patreon_button_help_project(browser):
     """Test Patreon button in Help Project block. [33] test from check-list"""
