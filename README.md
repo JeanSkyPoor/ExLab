@@ -7,4 +7,5 @@ pip install -r requirements.txt
 pytest --alluredir report test_landing_page.py
 allure serve report/
 ```
-### To check last created allure report go to [here](https://github.com/JeanSkyPoor/ExLab/deployments) and click 'View deployment'
+### For tests you have to download driver, for [example](https://chromedriver.chromium.org/downloads) and add exe file in main directory (./Exlab/)
+### [Here](https://jeanskypoor.github.io/ExLab/) you can check last allure report 
