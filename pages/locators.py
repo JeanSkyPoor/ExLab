@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class MainPageLocators():
+class LandingPageLocators():
     
     LINK = 'http://test.exlab.team/'
     THEME = (By.CSS_SELECTOR, 'div.sc-bczRLJ')
