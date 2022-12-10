@@ -1,4 +1,4 @@
-### Landing Auto Tests. I don't know why, but code navigation DOESN'T work in this repo.
+### UI automated tests for Exlab Start Up 
 ## [The latest allure report](https://jeanskypoor.github.io/ExLab/)
 ## How to start:
 ```sh
