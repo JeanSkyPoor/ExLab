@@ -132,37 +132,37 @@ class LandingPage(BasePage):
     def checking_about_us_anchor_after_shifting(self):
         """Checking anchor element in 'About Us' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.ABOUT_US_ANCHOR, 'About_Us')
+        self.checking_visibility_of_element_located(LandingPageLocators.ABOUT_US_ANCHOR, 'About_Us')
 
     def checking_why_exlab_anchor_after_shifting(self):
         """Checking anchor element in 'Why Exlab' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.WHY_EXLAB_ANCHOR, 'Why_Exlab')
+        self.checking_visibility_of_element_located(LandingPageLocators.WHY_EXLAB_ANCHOR, 'Why_Exlab')
 
     def checking_projects_anchor_after_shifting(self):
         """Checking anchor element in 'Projects' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.PROJECTS_ANCHOR, 'Project')
+        self.checking_visibility_of_element_located(LandingPageLocators.PROJECTS_ANCHOR, 'Project')
 
     def checking_mentors_anchor_after_shifting(self):
         """Checking anchor element in 'Mentors' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.MENTORS_ANCHOR, 'Mentors')
+        self.checking_visibility_of_element_located(LandingPageLocators.MENTORS_ANCHOR, 'Mentors')
 
     def checking_startup_for_anchor_after_shifting(self):
         """Checking anchor element in 'StartUp for' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.STARTUP_FOR_ANCHOR, 'StartUp_For')
+        self.checking_visibility_of_element_located(LandingPageLocators.STARTUP_FOR_ANCHOR, 'StartUp_For')
 
     def checking_help_project_anchor_after_shifting(self):
         """Checking anchor element in 'Help project' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.HELP_PROJECT_ANCHOR, 'Help_Project')
+        self.checking_visibility_of_element_located(LandingPageLocators.HELP_PROJECT_ANCHOR, 'Help_Project')
 
     def checking_footer_anchor_after_shifting(self):
         """Checking anchor element in 'Footer' block"""
 
-        self.checking_anchor_element_after_shifting(LandingPageLocators.FOOTER_ANCHOR, 'Footer')
+        self.checking_visibility_of_element_located(LandingPageLocators.FOOTER_ANCHOR, 'Footer')
 
 
     def scroll_to_about_us(self):
@@ -320,15 +320,15 @@ class LandingPage(BasePage):
 
                 spoiler.click()
 
-                if self.checking_visibility_of_element_located(LandingPageLocators.MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER, checking_time=0.5) != True: 
+                if self.is_visibility_of_element_located(LandingPageLocators.MENTORS_BLOCK_WITH_DATA_OPENED_SPOILER, checking_time=0.5) != True: 
                     self.attach_screenshot('Block_with_data_of_mentor_is_not_displayed')           
                     raise AssertionError(f"Block with data of mentor is not displayed. {index+1} spoiler")
 
-                if self.checking_visibility_of_element_located(LandingPageLocators.MENTOR_IMAGE, checking_time=0.5) != True:
+                if self.is_visibility_of_element_located(LandingPageLocators.MENTOR_IMAGE, checking_time=0.5) != True:
                     self.attach_screenshot('Image_of_mentor_is_not_displayed') 
                     raise AssertionError(f"Image of mentor is not displayed. {index+1} spoiler")    
 
-                if self.checking_visibility_of_element_located(LandingPageLocators.MENTOR_DESCRIPTION, checking_time=0.5) != True:
+                if self.is_visibility_of_element_located(LandingPageLocators.MENTOR_DESCRIPTION, checking_time=0.5) != True:
                     self.attach_screenshot('Description_info_of_mentor_is_not_displayed') 
                     raise AssertionError(f"Description info of mentor is not displayed. {index+1} spoiler")
 
@@ -351,7 +351,6 @@ class LandingPage(BasePage):
 
         self.checking_if_element_is_present(LandingPageLocators.PATREON_HELP_PROJECT_BUTTON, 'Patreon', 'Help_Project')
         self.checking_if_element_is_displayed(LandingPageLocators.PATREON_HELP_PROJECT_BUTTON, 'Patreon', 'Help_Project')
-
 
                 
     def click_on_boosty_help_project(self):

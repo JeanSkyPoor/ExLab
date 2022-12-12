@@ -76,7 +76,7 @@ class BasePage():
         """
         
         # element = self.browser.find_element(*locator)
-        return self.checking_visibility_of_element_located(locator)
+        return self.is_visibility_of_element_located(locator)
 
 
     def checking_if_element_is_displayed(self, locator: tuple, element_name: str, block_name: str) -> None:
@@ -183,7 +183,7 @@ class BasePage():
         self.browser.find_element(*locator).click() 
 
 
-    def checking_visibility_of_element_located(self, locator: tuple, timeout=8, checking_time=2) -> bool:
+    def is_visibility_of_element_located(self, locator: tuple, timeout=8, checking_time=2) -> bool:
         """Wait while element will be visible and return True. If element is not visible, return False
         
         Args:
@@ -199,7 +199,7 @@ class BasePage():
             return False
 
 
-    def checking_anchor_element_after_shifting(self, anchor_locator: tuple, anchor_element_name: str) -> None:
+    def checking_visibility_of_element_located(self, anchor_locator: tuple, anchor_element_name: str) -> None:
         """Checking anchor element after shifting\n
 
         Args:
@@ -210,7 +210,7 @@ class BasePage():
         """
 
         with allure.step(f"Checking {anchor_element_name} anchor after shifting"):
-            if self.checking_visibility_of_element_located(anchor_locator) != True:
+            if self.is_visibility_of_element_located(anchor_locator) != True:
                 self.attach_screenshot(f"{anchor_element_name} anchor_is_not_founded_after_shifting")
                 raise AssertionError(f"{anchor_element_name} anchor is not founded after shifting")
 
