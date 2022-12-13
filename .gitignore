@@ -4,3 +4,4 @@ env
 .pytest_cache
 report
 chromedriver.exe
+check_versions.py
