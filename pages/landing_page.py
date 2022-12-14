@@ -9,8 +9,9 @@ import time
 class LandingPage(BasePage):
     
     def __init__(self, browser) -> None:
-        self.link = 'http://test.exlab.team/'
-        super().__init__(browser, self.link)
+        link = 'http://test.exlab.team/'
+        
+        super().__init__(browser, link)
 
 
     def checking_landing_url(self):
