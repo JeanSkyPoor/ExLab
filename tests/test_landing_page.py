@@ -1,4 +1,3 @@
-from pages.locators import LandingPageLocators
 from pages.landing_page import LandingPage
 import pytest
 import allure
