@@ -161,18 +161,18 @@ def test_logo_gif_your_opportunity_block(browser):
 
 @allure.feature("Unfunctional")
 def test_text_your_opportunity_block(browser):
-    """Test 'Text_Under_Main_Title' block YOUR OPPORTUNITY is present and displayed. [12] test from check-list"""
+    """Test 'Main_Title' and 'Description' in YOUR OPPORTUNITY block is present and displayed. [12] test from check-list"""
     page = LandingPage(browser)
     page.open()
 
     with allure.step("Step 1. Checking landing URL"):
         page.checking_landing_url()
 
-    with allure.step("Step 2. Checking if 'Text_Under_Main_Title' in block Your_Opportunity is present and displayed"):
+    with allure.step("Step 2. Checking if 'Main_Title' in block Your_Opportunity is present and displayed"):
         page.checking_main_title_in_your_opportunity_block_is_present_and_displayed()
 
-    with allure.step("Step 3. Checking if 'Text_Under_Main_Title' in block ' in Your_Opportunity under Main title is present and displayed"):
-        page.checking_text_under_main_title_in_your_opportunity_block_is_present_and_displayed()
+    with allure.step("Step 3. Checking if 'Description' in block Your_Opportunity is present and displayed"):
+        page.checking_description_in_your_opportunity_block_is_present_and_displayed()
 
 
 @allure.feature("Unfunctional")
