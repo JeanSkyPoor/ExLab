@@ -38,7 +38,7 @@ class BasePage():
 
 
     def is_element_present(self, locator: tuple) -> bool:
-        """Сhecking for the presence of an element on the page. doesn't mean element is visible on screen \n
+        """Сhecks if the element is present on the page. Doesn't mean element is visible on screen \n
 
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
@@ -51,8 +51,8 @@ class BasePage():
             return False
 
 
-    def checking_if_element_is_present(self, locator: tuple, element_name: str, block_name: str) -> None:
-        """Checking if element is present. If not, create screenshot of visible window and raise AssertionError
+    def checking_is_element_present(self, locator: tuple, element_name: str, block_name: str) -> None:
+        """Сhecks if the element is present on the page. If not, create screenshot of visible window and raise AssertionError
         
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
@@ -69,7 +69,7 @@ class BasePage():
 
 
     def is_element_displayed(self, locator: tuple) -> bool:
-        """Checking for element is displayed on screen. Have to use after self.is_element_present
+        """checks if the element is displayed on the page. Have to use after self.is_element_present
         
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
@@ -79,7 +79,7 @@ class BasePage():
         return self.is_visibility_of_element_located(locator)
 
 
-    def checking_if_element_is_displayed(self, locator: tuple, element_name: str, block_name: str) -> None:
+    def checking_is_element_displayed(self, locator: tuple, element_name: str, block_name: str) -> None:
         """Checking if element is displayed. If not, create screenshot of visible window and raise AssertionError
         
         Args:
