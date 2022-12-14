@@ -7,6 +7,11 @@ import time
 
 
 class LandingPage(BasePage):
+    
+    def __init__(self, browser) -> None:
+        self.link = LandingPageLocators.LINK
+        super().__init__(browser, self.link)
+
 
     def checking_landing_url(self):
         """Checking that landing URL is correct"""
