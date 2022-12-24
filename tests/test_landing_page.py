@@ -266,7 +266,6 @@ def test_patreon_button_help_project(browser):
    
     page.scroll_to_help_project()
     page.checking_patreon_help_project_button_is_present_and_displayed()
-
     #To Do: написать реализацию кнопки Patreon, когда добавят функционал
 
 

@@ -186,7 +186,7 @@ class LandingPage(BasePage):
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_FOOTER, 'Footer')
 
-    @allure.step("Scrolling to About_Us block")
+    @allure.step("Scrolling to About_Us block and check anchor element")
     def scroll_to_about_us(self):
         """Scroll from top to 'About us' block and check anchor element"""
 
@@ -194,7 +194,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element(elements[:2])
         self.checking_about_us_anchor_after_shifting()
 
-    @allure.step("Scrolling to Why_Exlab block")
+    @allure.step("Scrolling to Why_Exlab block and check anchor element")
     def scroll_to_why_exlab(self):
         """Scroll from top to 'Why Exlab' block and check anchor element"""
 
@@ -203,7 +203,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element([self.browser.find_element(*LandingPageLocators.ANCHOR_WHY_EXLAB)]) #Костыль!
         self.checking_why_exlab_anchor_after_shifting()
 
-    @allure.step("Scrolling to Projects block")
+    @allure.step("Scrolling to Projects block and check anchor element")
     def scroll_to_project(self):
         """Scroll from top to 'Project' block and check anchor element"""
 
@@ -211,7 +211,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element(elements[:3])
         self.checking_projects_anchor_after_shifting()
 
-    @allure.step("Scrolling to Mentors block")
+    @allure.step("Scrolling to Mentors block and check anchor element")
     def scroll_to_mentors(self):
         """Scroll from top to 'Mentors' block and check anchor element"""
 
@@ -219,7 +219,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element(elements[:4])
         self.checking_mentors_anchor_after_shifting()
 
-    @allure.step("Scrolling to StartUp_For block")
+    @allure.step("Scrolling to StartUp_For block and check anchor element")
     def scroll_to_startup_for(self):
         """Scroll from top to 'StartUp for' block and check anchor element"""
 
@@ -227,7 +227,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element(elements[:5])
         self.checking_startup_for_anchor_after_shifting()
 
-    @allure.step("Scrolling to Help_Project block")
+    @allure.step("Scrolling to Help_Project block and check anchor element")
     def scroll_to_help_project(self):
         """Scroll from top to 'Help project' block and check anchor element"""
 
@@ -235,7 +235,7 @@ class LandingPage(BasePage):
         self.scroll_down_element_to_element(elements[:6])
         self.checking_help_project_anchor_after_shifting()
 
-    @allure.step("Scrolling to FOOTER block")
+    @allure.step("Scrolling to FOOTER block and check anchor element")
     def scroll_to_footer(self):
         """Scroll from top to 'Footer' block and check anchor element"""
 
