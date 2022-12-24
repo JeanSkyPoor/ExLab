@@ -2,6 +2,7 @@ __pycache__
 .vscode
 env
 .pytest_cache
+.idea
 report
 chromedriver.exe
 check_versions.py
