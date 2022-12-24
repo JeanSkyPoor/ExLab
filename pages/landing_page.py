@@ -12,6 +12,8 @@ class LandingPage(BasePage):
         link = 'http://test.exlab.team/'
         
         super().__init__(browser, link)
+        self.open()
+        self.checking_landing_url()
 
     @allure.step("Checking landing URL")
     def checking_landing_url(self):
@@ -38,7 +40,7 @@ class LandingPage(BasePage):
         self.checking_is_element_present(LandingPageLocators.HEADER_EXLAB_LOGO, 'Logo', 'HEADER')
         self.checking_is_element_displayed(LandingPageLocators.HEADER_EXLAB_LOGO, 'Logo', 'HEADER')
         
-    @allure.step("Checking if 'About_Us' HEADER element present and displayed")
+    @allure.step("Checking if 'About_Us' HEADER present and displayed")
     def checking_about_us_header_is_present_and_displayed(self):
         """Checking 'About_Us' button in HEADER is present and displayed"""
 
@@ -51,7 +53,7 @@ class LandingPage(BasePage):
 
         self.click_on_element(LandingPageLocators.HEADER_ABOUT_US_BUTTON)
 
-    @allure.step("Сhecking if 'Projects' HEADER element present and displayed")
+    @allure.step("Сhecking if 'Projects' HEADER present and displayed")
     def checking_projects_header_is_present_and_displayed(self):
         """Checking Project button in HEADER is present and displayed"""
 
@@ -64,7 +66,7 @@ class LandingPage(BasePage):
 
         self.click_on_element(LandingPageLocators.HEADER_PROJECTS_BUTTON)
 
-    @allure.step("Сhecking if 'Mentors' HEADER element present and displayed")
+    @allure.step("Сhecking if 'Mentors' HEADER present and displayed")
     def checking_mentors_header_is_present_and_displayed(self):
         """Checking 'Mentors' button in HEADER is present and displayed"""
 
@@ -77,7 +79,7 @@ class LandingPage(BasePage):
 
         self.click_on_element(LandingPageLocators.HEADER_MENTORS_BUTTON)
 
-    @allure.step("Сhecking if 'StartUp_For' HEADER element present and displayed")
+    @allure.step("Сhecking if 'StartUp_For' HEADER present and displayed")
     def checking_startup_for_header_is_present_and_displayed(self):
         """Checking 'StartUp_for' button in HEADER is present and displayed"""
 
@@ -90,7 +92,7 @@ class LandingPage(BasePage):
 
         self.click_on_element(LandingPageLocators.HEADER_STARTUP_FOR_BUTTON)
 
-    @allure.step("Сhecking if 'Sun_Icon' HEADER element present and displayed")
+    @allure.step("Сhecking if 'Sun_Icon' HEADER present and displayed")
     def checking_sun_icon_header_is_present_and_displayed(self):
         """Checking 'Sun_icon' button in HEADER is present and displayed"""
 
@@ -103,7 +105,7 @@ class LandingPage(BasePage):
 
         self.click_on_element(LandingPageLocators.HEADER_SUN_ICON)
 
-    @allure.step("Сhecking if 'Join' HEADER element present and displayed")
+    @allure.step("Сhecking if 'Join' HEADER present and displayed")
     def checking_join_header_is_present_and_displayed(self):
         """Checking 'Join' button in HEADER is present and displayed"""
 
