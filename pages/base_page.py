@@ -75,7 +75,6 @@ class BasePage():
          - locator: tuple like (By.CSS_SELECTOR, '#about')
         """
         
-        # element = self.browser.find_element(*locator)
         return self.is_visibility_of_element_located(locator)
 
 

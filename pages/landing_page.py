@@ -146,47 +146,42 @@ class LandingPage(BasePage):
         self.checking_is_element_present(LandingPageLocators.YOUR_OPPORTUNITY_DESCRIPTION, 'Description', 'YOUR_OPPORTUNITY')
         self.checking_is_element_displayed(LandingPageLocators.YOUR_OPPORTUNITY_DESCRIPTION, 'Description', 'YOUR_OPPORTUNITY')
 
-    @allure.step("Checking 'About_Us' anchor element after shifting")
+
     def checking_about_us_anchor_after_shifting(self):
         """Checking anchor element in 'About Us' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_ABOUT_US, 'About_Us')
 
-    @allure.step("Checking 'Why_Exlab' anchor element after shifting")
     def checking_why_exlab_anchor_after_shifting(self):
         """Checking anchor element in 'Why Exlab' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_WHY_EXLAB, 'Why_Exlab')
 
-    @allure.step("Checking 'Projects' anchor element after shifting")
     def checking_projects_anchor_after_shifting(self):
         """Checking anchor element in 'Projects' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_PROJECTS, 'Project')
 
-    @allure.step("Checking 'Mentors' anchor element after shifting")
     def checking_mentors_anchor_after_shifting(self):
         """Checking anchor element in 'Mentors' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_MENTORS, 'Mentors')
 
-    @allure.step("Checking 'StartUp_For' anchor element after shifting")
     def checking_startup_for_anchor_after_shifting(self):
         """Checking anchor element in 'StartUp for' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_STARTUP_FOR, 'StartUp_For')
 
-    @allure.step("Checking 'Help_Project' anchor element after shifting")
     def checking_help_project_anchor_after_shifting(self):
         """Checking anchor element in 'Help project' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_HELP_PROJECT, 'Help_Project')
 
-    @allure.step("Checking 'FOOTER' anchor element after shifting")
     def checking_footer_anchor_after_shifting(self):
         """Checking anchor element in 'Footer' block"""
 
         self.checking_visibility_of_element_located(LandingPageLocators.ANCHOR_FOOTER, 'Footer')
+
 
     @allure.step("Scrolling to About_Us block and check anchor element")
     def scroll_to_about_us(self):
@@ -244,6 +239,7 @@ class LandingPage(BasePage):
         elements = self.browser.find_elements(*LandingPageLocators.SELECTOR_FOR_SCROLL)
         self.scroll_down_element_to_element(elements[:7])
         self.checking_footer_anchor_after_shifting()
+
 
     @allure.step("Checking if 'Linkedin' button in FOOTER is present and displayed")
     def checking_linkedin_footer_is_present_and_displayed(self):
