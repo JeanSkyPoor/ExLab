@@ -1,10 +1,10 @@
-from selenium.common.exceptions import NoSuchElementException
+import time
 import allure
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from allure_commons.types import AttachmentType
-import time
 
 
 class BasePage():    

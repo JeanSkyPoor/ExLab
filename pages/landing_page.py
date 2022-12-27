@@ -1,9 +1,9 @@
+import allure
+import time
 from pages.locators import LandingPageLocators
 from pages.base_page import BasePage
-import allure
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-import time
 
 
 class LandingPage(BasePage):

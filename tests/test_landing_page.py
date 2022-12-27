@@ -1,6 +1,6 @@
-from pages.landing_page import LandingPage
 import pytest
 import allure
+from pages.landing_page import LandingPage
 
 
 @allure.feature("Unfunctional")
