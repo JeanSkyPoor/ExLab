@@ -104,6 +104,7 @@ def test_about_us_block(browser):
     """Test About_Us title and description is present and displayed. [13] test from check-list"""
     
     LandingPage(browser).\
+        scroll_to_about_us().\
         checking_main_title_about_us_is_present_and_displayed().\
         checking_description_about_us_is_present_and_displayed()
 
@@ -113,6 +114,7 @@ def test_why_exlab_block(browser):
     """Test Why_Exlab title and description is present and displayed. [14] test from check-list"""
 
     LandingPage(browser).\
+        scroll_to_why_exlab().\
         checking_why_exlab_title_why_exlab_is_present_and_displayed().\
         checking_description_why_exlab_is_present_and_displayed()
 
