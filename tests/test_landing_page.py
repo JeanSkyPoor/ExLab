@@ -4,7 +4,7 @@ from pages.landing_page import LandingPage
 
 
 @allure.feature("Unfunctional")
-def test_landing_url_and_black_theme(browser):
+def test_black_theme_on_by_default(browser):
     """Test landing URL and black theme on default. [1] test from check-list"""
 
     LandingPage(browser).\
@@ -12,7 +12,7 @@ def test_landing_url_and_black_theme(browser):
 
 
 @allure.feature("Functional")
-def test_logo_exlab_header(browser):
+def test_expected_result_logo_exlab_header(browser):
     """Test logo ExLab in HEADER. [2] test from check-list. Without refresh method in test"""
 
     LandingPage(browser).\
@@ -21,7 +21,7 @@ def test_logo_exlab_header(browser):
 
 
 @allure.feature("Functional")
-def test_about_us_header(browser):
+def test_expected_result_about_us_header(browser):
     """Test 'About_Us' button in HEADER. [3] test from check-list"""
 
     LandingPage(browser).\
@@ -29,7 +29,7 @@ def test_about_us_header(browser):
 
 
 @allure.feature("Functional")
-def test_projects_header(browser):
+def test_expected_result_projects_header(browser):
     """Test 'Projects' button in HEADER. [4] test from check-list"""
 
     LandingPage(browser).\
@@ -37,7 +37,7 @@ def test_projects_header(browser):
 
 @pytest.mark.skip(reason="Auto-Scroll to mentor's block works wrong")
 @allure.feature("Functional")
-def test_mentors_header(browser):
+def test_expected_result_mentors_header(browser):
     """Test 'Mentors' button in HEADER. [5] test from check-list"""
 
     LandingPage(browser).\
@@ -46,7 +46,7 @@ def test_mentors_header(browser):
 
 @pytest.mark.skip(reason="Auto-Scroll to StartUp_For block works wrong")
 @allure.feature("Functional")
-def test_startup_for_header(browser):
+def test_expected_result_startup_for_header(browser):
     """Test 'StartUp_For' button in HEADER. [6] test from check-list"""
 
     LandingPage(browser).\
@@ -54,7 +54,7 @@ def test_startup_for_header(browser):
 
 
 @allure.feature("Functional")
-def test_sun_icon_header(browser):
+def test_expected_result_sun_icon_header(browser):
     """Test 'Sun_Icon' button in HEADER. [7] test from check-list"""
     
     LandingPage(browser).\
@@ -62,7 +62,7 @@ def test_sun_icon_header(browser):
 
 
 @allure.feature("Functional")
-def test_join_header(browser):
+def test_expected_result_join_header(browser):
     """Test 'Join' button in HEADER. [9] test from check-list"""
 
     LandingPage(browser).\
@@ -187,7 +187,7 @@ def test_description_help_project_block(browser):
     
 
 @allure.feature("Functional")
-def test_boosty_button_help_project(browser):
+def test_expected_result_boosty_button_help_project(browser):
     """Test Boosty button in Help Project block. [32] test from check-list"""
 
     LandingPage(browser).\
@@ -195,7 +195,7 @@ def test_boosty_button_help_project(browser):
 
 
 @allure.feature("Functional")
-def test_patreon_button_help_project(browser):
+def test_expected_result_patreon_button_help_project(browser):
     """Test Patreon button in Help Project block. [33] test from check-list. Without Patreon page checking"""
     
     LandingPage(browser).\
@@ -241,7 +241,7 @@ def test_text_under_logo_footer_block(browser):
 
 
 @allure.feature('Functional')
-def test_linkedin_footer(browser):
+def test_expected_result_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
 
     LandingPage(browser).\
@@ -249,7 +249,7 @@ def test_linkedin_footer(browser):
 
 
 @allure.feature('Functional')
-def test_instagram_footer(browser):
+def test_expected_result_instagram_footer(browser):
     """Test 'Instagram' button in FOOTER. [39] test from check-list"""
 
     LandingPage(browser).\
@@ -257,7 +257,7 @@ def test_instagram_footer(browser):
 
 
 @allure.feature('Functional')
-def test_telegram_footer(browser):
+def test_expected_result_telegram_footer(browser):
     """Test 'Telegram' button in FOOTER. [40] test from check-list"""
 
     LandingPage(browser).\
@@ -265,7 +265,7 @@ def test_telegram_footer(browser):
 
 
 @allure.feature('Functional')
-def test_youtube_footer(browser):
+def test_expected_result_youtube_footer(browser):
     """Test 'Youtube' button in FOOTER. [41] test from check-list"""
 
     LandingPage(browser).\
