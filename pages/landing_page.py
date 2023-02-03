@@ -8,12 +8,14 @@ from selenium.webdriver.common.by import By
 
 class LandingPage(BasePage):
     
-    def __init__(self, browser) -> None:
+    def __init__(self, browser, open_page: bool = True) -> None:
         link = 'http://test.exlab.team/'
         
         super().__init__(browser, link)
-        self.open()
-        self.checking_landing_url()
+        
+        if open_page == True:
+            self.open()
+            self.checking_landing_url()
 
     
     def checking_landing_url(self):
