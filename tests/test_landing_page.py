@@ -25,9 +25,7 @@ def test_about_us_header(browser):
     """Test 'About_Us' button in HEADER. [3] test from check-list"""
 
     LandingPage(browser).\
-        checking_about_us_header_is_present_and_displayed().\
-        click_on_about_us_header().\
-        checking_about_us_anchor_after_shifting()
+        click_on_about_us_header()
 
 
 @allure.feature("Functional")
@@ -35,10 +33,7 @@ def test_projects_header(browser):
     """Test 'Projects' button in HEADER. [4] test from check-list"""
 
     LandingPage(browser).\
-        checking_projects_header_is_present_and_displayed().\
-        click_on_projects_header().\
-        checking_projects_anchor_after_shifting()
-
+        click_on_projects_header()
 
 @pytest.mark.skip(reason="Auto-Scroll to mentor's block works wrong")
 @allure.feature("Functional")
@@ -46,9 +41,7 @@ def test_mentors_header(browser):
     """Test 'Mentors' button in HEADER. [5] test from check-list"""
 
     LandingPage(browser).\
-        checking_mentors_header_is_present_and_displayed().\
-        click_on_mentors_header().\
-        checking_mentors_anchor_after_shifting()
+        click_on_mentors_header()
 
 
 @pytest.mark.skip(reason="Auto-Scroll to StartUp_For block works wrong")
@@ -57,9 +50,7 @@ def test_startup_for_header(browser):
     """Test 'StartUp_For' button in HEADER. [6] test from check-list"""
 
     LandingPage(browser).\
-        checking_startup_for_header_is_present_and_displayed().\
-        click_on_startup_for_header().\
-        checking_startup_for_anchor_after_shifting()
+        click_on_startup_for_header()
 
 
 @allure.feature("Functional")
@@ -67,9 +58,7 @@ def test_sun_icon_header(browser):
     """Test 'Sun_Icon' button in HEADER. [7] test from check-list"""
     
     LandingPage(browser).\
-        checking_sun_icon_header_is_present_and_displayed().\
-        click_on_sun_icon_header().\
-        checking_light_mode_on()
+        click_on_sun_icon_header()
 
 
 @allure.feature("Functional")
@@ -77,9 +66,7 @@ def test_join_header(browser):
     """Test 'Join' button in HEADER. [9] test from check-list"""
 
     LandingPage(browser).\
-        checking_join_header_is_present_and_displayed().\
-        click_on_join_header().\
-        checking_url_after_click_on_join_header()
+        click_on_join_header()
 
 
 @allure.feature("Unfunctional")
@@ -124,10 +111,7 @@ def test_join_why_exlab_block(browser):
     """Test 'Join' button in Why Exlab block. [15] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_why_exlab().\
-        checking_join_why_exlab_is_present_and_displayed().\
-        click_on_join_why_exlab().\
-        checking_url_after_click_on_join_why_exlab()
+        click_on_join_why_exlab()
 
 
 @allure.feature("Unfunctional")
@@ -164,7 +148,7 @@ def test_mentors_spoilers(browser):
     LandingPage(browser).\
         scroll_to_mentors().\
         check_all_mentors_spoilers()
-
+        #To Do: подумать об объединении 
 
 @allure.feature("Unfunctional")
 def test_title_startup_for_block(browser):
@@ -207,10 +191,7 @@ def test_boosty_button_help_project(browser):
     """Test Boosty button in Help Project block. [32] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_help_project().\
-        checking_boosty_help_project_button_is_present_and_displayed().\
-        click_on_boosty_help_project().\
-        checking_url_after_click_on_boosty_help_project()
+        click_on_boosty_help_project()
 
 
 @allure.feature("Functional")
@@ -264,10 +245,7 @@ def test_linkedin_footer(browser):
     """Test 'Linkedin' button in FOOTER. [38] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_footer().\
-        checking_linkedin_footer_is_present_and_displayed().\
-        click_on_linkedin_footer().\
-        checking_url_after_click_on_linkedin_footer()
+        click_on_linkedin_footer()
 
 
 @allure.feature('Functional')
@@ -275,10 +253,7 @@ def test_instagram_footer(browser):
     """Test 'Instagram' button in FOOTER. [39] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_footer().\
-        checking_instagram_footer_is_present_and_displayed().\
-        click_on_instagram_footer().\
-        checking_url_after_click_on_instagram_footer()
+        click_on_instagram_footer()
 
 
 @allure.feature('Functional')
@@ -286,10 +261,7 @@ def test_telegram_footer(browser):
     """Test 'Telegram' button in FOOTER. [40] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_footer().\
-        checking_telegram_footer_is_present_and_displayed().\
-        click_on_telegram_footer().\
-        checking_url_after_click_on_telegram_footer()
+        click_on_telegram_footer()
 
 
 @allure.feature('Functional')
@@ -297,10 +269,7 @@ def test_youtube_footer(browser):
     """Test 'Youtube' button in FOOTER. [41] test from check-list"""
 
     LandingPage(browser).\
-        scroll_to_footer().\
-        checking_youtube_footer_is_present_and_displayed().\
-        click_on_youtube_footer().\
-        checking_url_after_click_on_youtube_footer()
+        click_on_youtube_footer()
 
 
 @allure.feature("Unfunctional")

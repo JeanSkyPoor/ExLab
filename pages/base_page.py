@@ -172,15 +172,17 @@ class BasePage():
                 raise AssertionError(f"URL is wrong. Have to be {correct_url}, but have {current_url}")
 
 
-    def click_on_element(self, locator: tuple) -> None:
+    def click_on_element(self, locator: tuple, element_name: str, block_name: str) -> None:
         """Click on element using locator\n
 
         Args:
          - locator: tuple like (By.CSS_SELECTOR, '#about')
+         - element_name: str like 'Join' or 'StartUp_for'
+         - block_name: str like 'HEADER' or 'YOUR_OPPORTUNITY'
         """
-
-        element = self.browser.find_element(*locator)
-        element.click() 
+        with allure.step(f"Click on {element_name} in {block_name} block"):
+            element = self.browser.find_element(*locator)
+            element.click() 
 
 
     def is_visibility_of_element_located(self, locator: tuple, timeout=8, checking_time=2) -> bool:
